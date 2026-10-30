@@ -1,0 +1,9 @@
+net E41-decoder ctrl inputs [0, 1] past 36 logits v_id 6087 [1, 1, 103424]
+prompt 2 tokens [94515, 94036]
+padfix walk 3 steps (token 94515 repeated at step 1)
+step   0 fed 94515   past 1    -> 4        (13.9s, logits -14.617..8.719)
+step   1 fed 94515   past 1    -> 23       (13.2s, logits -6.055..12.953)
+step   2 fed 94036   past 2    -> 8231     (13.8s, logits -13.156..12.508)
+step   3 fed 8231    past 3    -> 35501    (13.4s, logits -12.531..17.781)
+step   4 fed 35501   past 4    -> 10514    (13.7s, logits -13.312..16.719)
+sequence [94515, 94036, 8231, 35501, 10514]

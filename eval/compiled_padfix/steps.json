@@ -1,0 +1,74 @@
+[
+ {
+  "step": 0,
+  "fed": 94515,
+  "past_len": 1,
+  "argmax": 4,
+  "logits_min": -14.6171875,
+  "logits_max": 8.71875,
+  "seconds": 31.1
+ },
+ {
+  "step": 1,
+  "fed": 94515,
+  "past_len": 1,
+  "argmax": 23,
+  "logits_min": -6.0546875,
+  "logits_max": 12.953125,
+  "seconds": 13.4
+ },
+ {
+  "step": 2,
+  "fed": 94036,
+  "past_len": 2,
+  "argmax": 8231,
+  "logits_min": -13.15625,
+  "logits_max": 12.5078125,
+  "seconds": 13.3
+ },
+ {
+  "step": 3,
+  "fed": 31282,
+  "past_len": 3,
+  "argmax": 31123,
+  "logits_min": -15.9921875,
+  "logits_max": 19.765625,
+  "seconds": 13.5
+ },
+ {
+  "step": 4,
+  "fed": 5502,
+  "past_len": 4,
+  "argmax": 2640,
+  "logits_min": -14.1796875,
+  "logits_max": 11.5859375,
+  "seconds": 12.7
+ },
+ {
+  "step": 5,
+  "fed": 44284,
+  "past_len": 5,
+  "argmax": 33576,
+  "logits_min": -15.4453125,
+  "logits_max": 15.953125,
+  "seconds": 13.1
+ },
+ {
+  "step": 6,
+  "fed": 3458,
+  "past_len": 6,
+  "argmax": 12022,
+  "logits_min": -15.265625,
+  "logits_max": 14.703125,
+  "seconds": 13.2
+ },
+ {
+  "step": 7,
+  "fed": 93977,
+  "past_len": 7,
+  "argmax": 23,
+  "logits_min": -10.6796875,
+  "logits_max": 18.34375,
+  "seconds": 13.0
+ }
+]

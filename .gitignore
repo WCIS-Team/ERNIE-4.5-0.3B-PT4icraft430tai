@@ -1,0 +1,64 @@
+# 出库规则沿用主 repos 库那套（D-21/D-23 凭据硬闸＋D-37/D-38 体积类）。
+# 放行类不在这里写——*.xls/*.xlsx/*.pdf 已放行；位流/镜像/压缩包/权重按下面体积类挡回。
+# 需要单件进库时用 `git add -f <路径>` 放行（D-38 那条口径）。
+
+# ---- 体积类：位流、磁盘镜像、压缩包、Procise 检查点 ----
+*.bit
+*.bin
+*.img
+*.elf
+*.dcp
+*.pb
+*.tar
+*.tar.xz
+*.tar.gz
+*.tgz
+*.zip
+*.gz
+*.rar
+*.7z
+
+# ---- 模型权重与板端件：正本在校机与板上，按体积类挡回 ----
+# model.onnx(103 KB)/model.onnx.data(755 MB)/_ZG.raw(GB 级) 都在这一条外面。
+*.onnx
+*.onnx.data
+*.raw
+*.safetensors
+*.pt
+*.pth
+*.onnx.data
+*.whl
+*.a
+*.lib
+*.o
+
+# ---- iCraft 构建产物与中间件目录（体积大、可复跑）----
+*.runs/
+*.cache/
+*.sim/
+*.gen/
+.gen_e41*/
+feed_rand/
+*.ftmp
+*.log.bak
+
+# ---- Python 虚拟环境与便携运行时 ----
+venv/
+.venv/
+runtime/
+python3*/
+__pycache__/
+*.pyc
+
+# ---- 编辑器与杂项 ----
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+
+# ---- 凭据载体：永不进库（D-23 硬闸）----
+**/10_etc.tar.gz
+**/11_root_home_vendor.tar.gz
+**/53_rc_local_and_login.txt
+board-ssh.py
+.env

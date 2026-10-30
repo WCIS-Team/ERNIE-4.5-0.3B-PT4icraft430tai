@@ -1,0 +1,219 @@
+[
+ {
+  "step": 0,
+  "fed": 94515,
+  "comp_vs_hf": {
+   "maxabs": 15.5562,
+   "relmax": 1.20245,
+   "cos": -0.253818,
+   "kl": 1.48102,
+   "top1_match": false,
+   "rank_of_ref_top1": 5
+  },
+  "ort_vs_hf": {
+   "maxabs": 15.5718,
+   "relmax": 1.20366,
+   "cos": -0.254535,
+   "kl": 1.4861,
+   "top1_match": false,
+   "rank_of_ref_top1": 5
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.0352,
+   "relmax": 0.00241,
+   "cos": 0.999999,
+   "kl": 2e-05,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 4,
+  "argmax_ort": 4,
+  "argmax_hf": 23
+ },
+ {
+  "step": 1,
+  "fed": 94036,
+  "comp_vs_hf": {
+   "maxabs": 2.6041,
+   "relmax": 0.19447,
+   "cos": 0.98761,
+   "kl": 0.12578,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_hf": {
+   "maxabs": 2.5885,
+   "relmax": 0.1933,
+   "cos": 0.987664,
+   "kl": 0.12533,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.042,
+   "relmax": 0.00278,
+   "cos": 0.999996,
+   "kl": 3e-05,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 18196,
+  "argmax_ort": 18196,
+  "argmax_hf": 18196
+ },
+ {
+  "step": 2,
+  "fed": 31282,
+  "comp_vs_hf": {
+   "maxabs": 2.1128,
+   "relmax": 0.10245,
+   "cos": 0.991373,
+   "kl": 0.02822,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_hf": {
+   "maxabs": 2.1206,
+   "relmax": 0.10283,
+   "cos": 0.991353,
+   "kl": 0.02867,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.043,
+   "relmax": 0.00201,
+   "cos": 0.999997,
+   "kl": 1e-05,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 31123,
+  "argmax_ort": 31123,
+  "argmax_hf": 31123
+ },
+ {
+  "step": 3,
+  "fed": 5502,
+  "comp_vs_hf": {
+   "maxabs": 1.5583,
+   "relmax": 0.09755,
+   "cos": 0.997204,
+   "kl": 0.0568,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_hf": {
+   "maxabs": 1.5818,
+   "relmax": 0.09902,
+   "cos": 0.997177,
+   "kl": 0.05819,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.0391,
+   "relmax": 0.00237,
+   "cos": 0.999998,
+   "kl": 4e-05,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 94042,
+  "argmax_ort": 94042,
+  "argmax_hf": 94042
+ },
+ {
+  "step": 4,
+  "fed": 44284,
+  "comp_vs_hf": {
+   "maxabs": 2.9086,
+   "relmax": 0.18305,
+   "cos": 0.994505,
+   "kl": 0.03501,
+   "top1_match": false,
+   "rank_of_ref_top1": 1
+  },
+  "ort_vs_hf": {
+   "maxabs": 2.9203,
+   "relmax": 0.18379,
+   "cos": 0.994511,
+   "kl": 0.03415,
+   "top1_match": false,
+   "rank_of_ref_top1": 1
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.0352,
+   "relmax": 0.00207,
+   "cos": 0.999999,
+   "kl": 3e-05,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 94113,
+  "argmax_ort": 94113,
+  "argmax_hf": 33576
+ },
+ {
+  "step": 5,
+  "fed": 3458,
+  "comp_vs_hf": {
+   "maxabs": 2.0344,
+   "relmax": 0.12916,
+   "cos": 0.994148,
+   "kl": 0.06253,
+   "top1_match": false,
+   "rank_of_ref_top1": 2
+  },
+  "ort_vs_hf": {
+   "maxabs": 2.0461,
+   "relmax": 0.12991,
+   "cos": 0.9941,
+   "kl": 0.0619,
+   "top1_match": false,
+   "rank_of_ref_top1": 2
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.0547,
+   "relmax": 0.0032,
+   "cos": 0.999997,
+   "kl": 4e-05,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 12022,
+  "argmax_ort": 12022,
+  "argmax_hf": 93977
+ },
+ {
+  "step": 6,
+  "fed": 93977,
+  "comp_vs_hf": {
+   "maxabs": 1.8572,
+   "relmax": 0.1003,
+   "cos": 0.992162,
+   "kl": 0.01352,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_hf": {
+   "maxabs": 1.8689,
+   "relmax": 0.10093,
+   "cos": 0.992094,
+   "kl": 0.01341,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "ort_vs_compiled": {
+   "maxabs": 0.0449,
+   "relmax": 0.00238,
+   "cos": 0.999995,
+   "kl": 0.0,
+   "top1_match": true,
+   "rank_of_ref_top1": 0
+  },
+  "argmax_compiled": 23,
+  "argmax_ort": 23,
+  "argmax_hf": 23
+ }
+]

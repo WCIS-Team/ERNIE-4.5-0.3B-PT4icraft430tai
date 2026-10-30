@@ -1,0 +1,41 @@
+Valid precision + execution provider combinations are: FP32 CPU, FP32 CUDA, FP16 CUDA, FP16 DML, FP16 TRT-RTX, BF16 CUDA, BF16 TRT-RTX, INT8 CPU, INT8 CUDA, INT8 WebGPU, INT4 CPU, INT4 CUDA, INT4 DML, INT4 WebGPU
+Extra options: {}
+GroupQueryAttention (GQA) is used in this model.
+python.exe :
+所在位置 D:\yzd\WCIS\MOD\ernie\export_a.ps1:5 字符: 1
++ & $py -m onnxruntime_genai.models.builder `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+Reading embedding layer
+Reading layer 0
+Reading layer 1
+Reading layer 2
+Reading layer 3
+Reading layer 4
+Reading layer 5
+Reading layer 6
+Reading layer 7
+Reading layer 8
+Reading layer 9
+Reading layer 10
+Reading layer 11
+Reading layer 12
+Reading layer 13
+Reading layer 14
+Reading layer 15
+Reading layer 16
+Reading layer 17
+Reading final norm
+Reading LM head
+Saving ONNX model in D:\yzd\WCIS\MOD\ernie\ernie_fp16_cuda
+Saving GenAI config in D:\yzd\WCIS\MOD\ernie\ernie_fp16_cuda
+Saving processing files in D:\yzd\WCIS\MOD\ernie\ernie_fp16_cuda for GenAI
+
+EXIT=0
+
+# 编码说明：正本 D:/yzd/WCIS/MOD/ernie/export_a.log 是 PS5.1 Tee-Object 落的 UTF-16LE ＋ 末尾一行 ASCII 的 EXIT，
+# 本件已转 UTF-8/LF；含 tqdm 进度条的行（判定＝整行里有 '|'）已滤掉，重复行去重。
+# 第 4~9 行不是失败：python 把进度写到 stderr，PS5.1 的 2>&1 把它包成 NativeCommandError 记录，
+# 脚本里 $ErrorActionPreference='Continue'，真正的判据是末尾 EXIT=0（A）。
+

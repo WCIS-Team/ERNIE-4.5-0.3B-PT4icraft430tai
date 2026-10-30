@@ -1,0 +1,3839 @@
+{
+ "summary": {
+  "overall": {
+   "hf32": {
+    "n": 60,
+    "acc_top1": 0.0,
+    "mean_target_rank": 1431.2,
+    "mean_prob": 0.00172,
+    "cos": 1.0,
+    "maxabs": 0.0,
+    "kl": 0.0,
+    "top1_match_vs_hf32": 1.0
+   },
+   "hf16": {
+    "n": 60,
+    "acc_top1": 0.0,
+    "mean_target_rank": 1428.87,
+    "cos": 0.999999,
+    "cos_min": 0.999995,
+    "maxabs": 0.0316,
+    "maxabs_max": 0.0552,
+    "kl": 1e-05,
+    "kl_max": 4e-05,
+    "top1_match_vs_hf32": 1.0,
+    "mean_rank_of_hf32_top1": 0.0
+   },
+   "native": {
+    "n": 60,
+    "acc_top1": 0.0,
+    "mean_target_rank": 1429.15,
+    "cos": 0.999999,
+    "cos_min": 0.999998,
+    "maxabs": 0.0259,
+    "maxabs_max": 0.0366,
+    "kl": 1e-05,
+    "kl_max": 3e-05,
+    "top1_match_vs_hf32": 1.0,
+    "mean_rank_of_hf32_top1": 0.0
+   },
+   "e41_seeded": {
+    "n": 60,
+    "acc_top1": 0.0,
+    "mean_target_rank": 1768.47,
+    "cos": 0.994946,
+    "cos_min": 0.986981,
+    "maxabs": 2.6031,
+    "maxabs_max": 4.0209,
+    "kl": 0.068,
+    "kl_max": 0.17877,
+    "top1_match_vs_hf32": 0.9667,
+    "mean_rank_of_hf32_top1": 0.03
+   },
+   "e41_chain": {
+    "n": 60,
+    "acc_top1": 0.0,
+    "mean_target_rank": 6506.93,
+    "cos": 0.766122,
+    "cos_min": 0.609853,
+    "maxabs": 13.9126,
+    "maxabs_max": 18.1003,
+    "kl": 3.30084,
+    "kl_max": 8.55653,
+    "top1_match_vs_hf32": 0.1833,
+    "mean_rank_of_hf32_top1": 70.65,
+    "mean_step_agree": 3.5,
+    "mean_prompt_len": 12.65
+   }
+  },
+  "by_cat": {
+   "arith": {
+    "hf32": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 42.67,
+     "mean_prob": 0.00533,
+     "cos": 1.0,
+     "maxabs": 0.0,
+     "kl": 0.0,
+     "top1_match_vs_hf32": 1.0
+    },
+    "native": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 42.6,
+     "cos": 0.999999,
+     "cos_min": 0.999998,
+     "maxabs": 0.0261,
+     "maxabs_max": 0.0334,
+     "kl": 1e-05,
+     "kl_max": 3e-05,
+     "top1_match_vs_hf32": 1.0,
+     "mean_rank_of_hf32_top1": 0.0
+    },
+    "e41_chain": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 618.6,
+     "cos": 0.668976,
+     "cos_min": 0.609853,
+     "maxabs": 14.6288,
+     "maxabs_max": 16.4683,
+     "kl": 2.7165,
+     "kl_max": 3.83738,
+     "top1_match_vs_hf32": 0.2,
+     "mean_rank_of_hf32_top1": 143.6
+    }
+   },
+   "chengyu": {
+    "hf32": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 4778.67,
+     "mean_prob": 1e-05,
+     "cos": 1.0,
+     "maxabs": 0.0,
+     "kl": 0.0,
+     "top1_match_vs_hf32": 1.0
+    },
+    "native": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 4770.8,
+     "cos": 0.999999,
+     "cos_min": 0.999998,
+     "maxabs": 0.0273,
+     "maxabs_max": 0.0366,
+     "kl": 1e-05,
+     "kl_max": 3e-05,
+     "top1_match_vs_hf32": 1.0,
+     "mean_rank_of_hf32_top1": 0.0
+    },
+    "e41_chain": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 15610.8,
+     "cos": 0.800151,
+     "cos_min": 0.619154,
+     "maxabs": 13.66,
+     "maxabs_max": 16.1202,
+     "kl": 3.79563,
+     "kl_max": 8.55653,
+     "top1_match_vs_hf32": 0.0,
+     "mean_rank_of_hf32_top1": 72.73
+    }
+   },
+   "poetry": {
+    "hf32": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 712.53,
+     "mean_prob": 0.0001,
+     "cos": 1.0,
+     "maxabs": 0.0,
+     "kl": 0.0,
+     "top1_match_vs_hf32": 1.0
+    },
+    "native": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 712.07,
+     "cos": 0.999999,
+     "cos_min": 0.999999,
+     "maxabs": 0.0273,
+     "maxabs_max": 0.0366,
+     "kl": 1e-05,
+     "kl_max": 3e-05,
+     "top1_match_vs_hf32": 1.0,
+     "mean_rank_of_hf32_top1": 0.0
+    },
+    "e41_chain": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 7376.8,
+     "cos": 0.783341,
+     "cos_min": 0.695549,
+     "maxabs": 14.9457,
+     "maxabs_max": 18.1003,
+     "kl": 4.22095,
+     "kl_max": 7.28259,
+     "top1_match_vs_hf32": 0.0,
+     "mean_rank_of_hf32_top1": 44.53
+    }
+   },
+   "qa": {
+    "hf32": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 190.93,
+     "mean_prob": 0.00143,
+     "cos": 1.0,
+     "maxabs": 0.0,
+     "kl": 0.0,
+     "top1_match_vs_hf32": 1.0
+    },
+    "native": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 191.13,
+     "cos": 0.999999,
+     "cos_min": 0.999999,
+     "maxabs": 0.023,
+     "maxabs_max": 0.0303,
+     "kl": 1e-05,
+     "kl_max": 2e-05,
+     "top1_match_vs_hf32": 1.0,
+     "mean_rank_of_hf32_top1": 0.0
+    },
+    "e41_chain": {
+     "n": 15,
+     "acc_top1": 0.0,
+     "mean_target_rank": 2421.53,
+     "cos": 0.812021,
+     "cos_min": 0.624131,
+     "maxabs": 12.416,
+     "maxabs_max": 16.4282,
+     "kl": 2.47027,
+     "kl_max": 6.79529,
+     "top1_match_vs_hf32": 0.5333,
+     "mean_rank_of_hf32_top1": 21.73
+    }
+   }
+  }
+ },
+ "items": [
+  {
+   "id": 1,
+   "cat": "chengyu",
+   "prompt": "井底之",
+   "answer": "蛙",
+   "n_tokens": 11,
+   "answer_tokens": [
+    98534
+   ],
+   "target": 98534,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 1248,
+   "hf16": {
+    "maxabs": 0.0286,
+    "relmax": 0.00162,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1239,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0257,
+    "relmax": 0.00146,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1237,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8324,
+    "relmax": 0.16103,
+    "cos": 0.995256,
+    "kl": 0.02828,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1305,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 12.4,
+    "relmax": 0.70498,
+    "cos": 0.855938,
+    "kl": 2.54535,
+    "top1_match": false,
+    "rank_of_ref_top1": 3,
+    "top1": 96189,
+    "target_rank": 572,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.855938
+  },
+  {
+   "id": 2,
+   "cat": "chengyu",
+   "prompt": "亡羊补",
+   "answer": "牢",
+   "n_tokens": 11,
+   "answer_tokens": [
+    96776
+   ],
+   "target": 96776,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 2627,
+   "hf16": {
+    "maxabs": 0.0266,
+    "relmax": 0.00142,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2617,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0289,
+    "relmax": 0.00155,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2623,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8964,
+    "relmax": 0.15501,
+    "cos": 0.994362,
+    "kl": 0.03142,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2969,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.7912,
+    "relmax": 0.73808,
+    "cos": 0.807846,
+    "kl": 3.77146,
+    "top1_match": false,
+    "rank_of_ref_top1": 11,
+    "top1": 93993,
+    "target_rank": 2246,
+    "acc_top1": false
+   },
+   "chain_step_agree": 1,
+   "chain_step_cos_last": 0.807846
+  },
+  {
+   "id": 3,
+   "cat": "chengyu",
+   "prompt": "守株待",
+   "answer": "兔",
+   "n_tokens": 11,
+   "answer_tokens": [
+    96635
+   ],
+   "target": 96635,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 929,
+   "hf16": {
+    "maxabs": 0.0347,
+    "relmax": 0.00189,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 928,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.028,
+    "relmax": 0.00152,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 930,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.2106,
+    "relmax": 0.17436,
+    "cos": 0.994588,
+    "kl": 0.04031,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1624,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.4979,
+    "relmax": 0.84164,
+    "cos": 0.751971,
+    "kl": 8.55653,
+    "top1_match": false,
+    "rank_of_ref_top1": 311,
+    "top1": 94027,
+    "target_rank": 3747,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.751971
+  },
+  {
+   "id": 4,
+   "cat": "chengyu",
+   "prompt": "画蛇添",
+   "answer": "足",
+   "n_tokens": 11,
+   "answer_tokens": [
+    94670
+   ],
+   "target": 94670,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 7971,
+   "hf16": {
+    "maxabs": 0.0274,
+    "relmax": 0.00152,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 7951,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0284,
+    "relmax": 0.00158,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 7945,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.5595,
+    "relmax": 0.14193,
+    "cos": 0.996311,
+    "kl": 0.03934,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 10304,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.4491,
+    "relmax": 0.74578,
+    "cos": 0.802483,
+    "kl": 3.17857,
+    "top1_match": false,
+    "rank_of_ref_top1": 8,
+    "top1": 94798,
+    "target_rank": 2904,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.802483
+  },
+  {
+   "id": 5,
+   "cat": "chengyu",
+   "prompt": "对牛弹",
+   "answer": "琴",
+   "n_tokens": 10,
+   "answer_tokens": [
+    96241
+   ],
+   "target": 96241,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 3364,
+   "hf16": {
+    "maxabs": 0.0291,
+    "relmax": 0.00172,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 3348,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0273,
+    "relmax": 0.00161,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 3351,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8108,
+    "relmax": 0.16597,
+    "cos": 0.996648,
+    "kl": 0.0339,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 3813,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 11.4638,
+    "relmax": 0.67693,
+    "cos": 0.847148,
+    "kl": 2.02469,
+    "top1_match": false,
+    "rank_of_ref_top1": 26,
+    "top1": 73847,
+    "target_rank": 35350,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.847148
+  },
+  {
+   "id": 6,
+   "cat": "chengyu",
+   "prompt": "掩耳盗",
+   "answer": "铃",
+   "n_tokens": 11,
+   "answer_tokens": [
+    97147
+   ],
+   "target": 97147,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 14361,
+   "hf16": {
+    "maxabs": 0.0335,
+    "relmax": 0.00199,
+    "cos": 0.999998,
+    "kl": 4e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 14307,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0288,
+    "relmax": 0.00171,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 14330,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.9829,
+    "relmax": 0.17739,
+    "cos": 0.994848,
+    "kl": 0.05216,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 18463,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.0633,
+    "relmax": 0.77688,
+    "cos": 0.809507,
+    "kl": 2.88692,
+    "top1_match": false,
+    "rank_of_ref_top1": 15,
+    "top1": 30770,
+    "target_rank": 44811,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.809507
+  },
+  {
+   "id": 7,
+   "cat": "chengyu",
+   "prompt": "买椟还",
+   "answer": "珠",
+   "n_tokens": 13,
+   "answer_tokens": [
+    95691
+   ],
+   "target": 95691,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 1705,
+   "hf16": {
+    "maxabs": 0.032,
+    "relmax": 0.00176,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1702,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0238,
+    "relmax": 0.00131,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1707,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.2168,
+    "relmax": 0.17683,
+    "cos": 0.995627,
+    "kl": 0.05334,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1590,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.6729,
+    "relmax": 0.8066,
+    "cos": 0.785786,
+    "kl": 3.31958,
+    "top1_match": false,
+    "rank_of_ref_top1": 12,
+    "top1": 30770,
+    "target_rank": 1091,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.785786
+  },
+  {
+   "id": 8,
+   "cat": "chengyu",
+   "prompt": "杯弓蛇",
+   "answer": "影",
+   "n_tokens": 11,
+   "answer_tokens": [
+    94371
+   ],
+   "target": 94371,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 2846,
+   "hf16": {
+    "maxabs": 0.0552,
+    "relmax": 0.003,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2828,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0359,
+    "relmax": 0.00195,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2825,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.6818,
+    "relmax": 0.19991,
+    "cos": 0.99426,
+    "kl": 0.05828,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 4554,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.7874,
+    "relmax": 0.7486,
+    "cos": 0.828077,
+    "kl": 2.59913,
+    "top1_match": false,
+    "rank_of_ref_top1": 1,
+    "top1": 93926,
+    "target_rank": 1268,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.828077
+  },
+  {
+   "id": 9,
+   "cat": "chengyu",
+   "prompt": "鹤立鸡",
+   "answer": "群",
+   "n_tokens": 11,
+   "answer_tokens": [
+    94898
+   ],
+   "target": 94898,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 5780,
+   "hf16": {
+    "maxabs": 0.0271,
+    "relmax": 0.00147,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 5777,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0255,
+    "relmax": 0.00138,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 5782,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.2977,
+    "relmax": 0.17861,
+    "cos": 0.995851,
+    "kl": 0.03281,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 6729,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.0622,
+    "relmax": 0.70747,
+    "cos": 0.860235,
+    "kl": 3.85651,
+    "top1_match": false,
+    "rank_of_ref_top1": 4,
+    "top1": 97330,
+    "target_rank": 57,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.860235
+  },
+  {
+   "id": 10,
+   "cat": "chengyu",
+   "prompt": "破釜沉",
+   "answer": "舟",
+   "n_tokens": 13,
+   "answer_tokens": [
+    97240
+   ],
+   "target": 97240,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 14406,
+   "hf16": {
+    "maxabs": 0.0499,
+    "relmax": 0.00282,
+    "cos": 0.999998,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 14428,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.029,
+    "relmax": 0.00164,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 14368,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 4.0209,
+    "relmax": 0.22707,
+    "cos": 0.994539,
+    "kl": 0.04952,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 20617,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.3765,
+    "relmax": 0.75541,
+    "cos": 0.814973,
+    "kl": 4.27897,
+    "top1_match": false,
+    "rank_of_ref_top1": 243,
+    "top1": 94960,
+    "target_rank": 21449,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.814973
+  },
+  {
+   "id": 11,
+   "cat": "chengyu",
+   "prompt": "卧薪尝",
+   "answer": "胆",
+   "n_tokens": 11,
+   "answer_tokens": [
+    95831
+   ],
+   "target": 95831,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 3038,
+   "hf16": {
+    "maxabs": 0.0409,
+    "relmax": 0.00228,
+    "cos": 0.999998,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 3032,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0225,
+    "relmax": 0.00125,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 3046,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.1409,
+    "relmax": 0.17495,
+    "cos": 0.994494,
+    "kl": 0.02343,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2974,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.5116,
+    "relmax": 0.75259,
+    "cos": 0.842299,
+    "kl": 3.20559,
+    "top1_match": false,
+    "rank_of_ref_top1": 5,
+    "top1": 96588,
+    "target_rank": 7494,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.842299
+  },
+  {
+   "id": 12,
+   "cat": "chengyu",
+   "prompt": "纸上谈",
+   "answer": "兵",
+   "n_tokens": 10,
+   "answer_tokens": [
+    95452
+   ],
+   "target": 95452,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 10854,
+   "hf16": {
+    "maxabs": 0.0319,
+    "relmax": 0.00177,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 10864,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0202,
+    "relmax": 0.00112,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 10866,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.108,
+    "relmax": 0.1728,
+    "cos": 0.996635,
+    "kl": 0.03931,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 11553,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 12.7314,
+    "relmax": 0.70785,
+    "cos": 0.782657,
+    "kl": 4.22557,
+    "top1_match": false,
+    "rank_of_ref_top1": 51,
+    "top1": 93993,
+    "target_rank": 69115,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.782657
+  },
+  {
+   "id": 13,
+   "cat": "chengyu",
+   "prompt": "刻舟求",
+   "answer": "剑",
+   "n_tokens": 11,
+   "answer_tokens": [
+    95688
+   ],
+   "target": 95688,
+   "hf32_top1": 94037,
+   "hf32_prob": 5e-05,
+   "target_rank_hf32": 175,
+   "hf16": {
+    "maxabs": 0.0368,
+    "relmax": 0.00203,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 174,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.026,
+    "relmax": 0.00143,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 174,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.0382,
+    "relmax": 0.16709,
+    "cos": 0.994947,
+    "kl": 0.12423,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 237,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.1202,
+    "relmax": 0.88657,
+    "cos": 0.619154,
+    "kl": 5.85927,
+    "top1_match": false,
+    "rank_of_ref_top1": 163,
+    "top1": 93993,
+    "target_rank": 42967,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.619154
+  },
+  {
+   "id": 14,
+   "cat": "chengyu",
+   "prompt": "一叶障",
+   "answer": "目",
+   "n_tokens": 10,
+   "answer_tokens": [
+    94239
+   ],
+   "target": 94239,
+   "hf32_top1": 94037,
+   "hf32_prob": 1e-05,
+   "target_rank_hf32": 1990,
+   "hf16": {
+    "maxabs": 0.0299,
+    "relmax": 0.00172,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1975,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0366,
+    "relmax": 0.0021,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1994,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.911,
+    "relmax": 0.16723,
+    "cos": 0.996098,
+    "kl": 0.04917,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2198,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.1464,
+    "relmax": 0.75523,
+    "cos": 0.784796,
+    "kl": 4.83085,
+    "top1_match": false,
+    "rank_of_ref_top1": 237,
+    "top1": 93991,
+    "target_rank": 506,
+    "acc_top1": false
+   },
+   "chain_step_agree": 1,
+   "chain_step_cos_last": 0.784796
+  },
+  {
+   "id": 15,
+   "cat": "chengyu",
+   "prompt": "螳螂捕",
+   "answer": "蝉",
+   "n_tokens": 13,
+   "answer_tokens": [
+    98585
+   ],
+   "target": 98585,
+   "hf32_top1": 94037,
+   "hf32_prob": 2e-05,
+   "target_rank_hf32": 386,
+   "hf16": {
+    "maxabs": 0.033,
+    "relmax": 0.00192,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 386,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0222,
+    "relmax": 0.00129,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 384,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.7062,
+    "relmax": 0.15712,
+    "cos": 0.99617,
+    "kl": 0.02966,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 641,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.8258,
+    "relmax": 0.86077,
+    "cos": 0.809394,
+    "kl": 1.79546,
+    "top1_match": false,
+    "rank_of_ref_top1": 1,
+    "top1": 93946,
+    "target_rank": 585,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.809394
+  },
+  {
+   "id": 16,
+   "cat": "poetry",
+   "prompt": "床前明月光，",
+   "answer": "疑",
+   "n_tokens": 13,
+   "answer_tokens": [
+    95362
+   ],
+   "target": 95362,
+   "hf32_top1": 94037,
+   "hf32_prob": 1e-05,
+   "target_rank_hf32": 1666,
+   "hf16": {
+    "maxabs": 0.0315,
+    "relmax": 0.00161,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1662,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0264,
+    "relmax": 0.00135,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1670,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.9397,
+    "relmax": 0.15043,
+    "cos": 0.997685,
+    "kl": 0.0823,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1681,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.8039,
+    "relmax": 0.85993,
+    "cos": 0.80015,
+    "kl": 4.00354,
+    "top1_match": false,
+    "rank_of_ref_top1": 46,
+    "top1": 30770,
+    "target_rank": 9630,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.80015
+  },
+  {
+   "id": 17,
+   "cat": "poetry",
+   "prompt": "白日依山尽，",
+   "answer": "黄",
+   "n_tokens": 13,
+   "answer_tokens": [
+    94773
+   ],
+   "target": 94773,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.00011,
+   "target_rank_hf32": 192,
+   "hf16": {
+    "maxabs": 0.0321,
+    "relmax": 0.00176,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 191,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0232,
+    "relmax": 0.00127,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 190,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.186,
+    "relmax": 0.12021,
+    "cos": 0.996983,
+    "kl": 0.11228,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 192,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.6083,
+    "relmax": 0.74835,
+    "cos": 0.816498,
+    "kl": 4.00702,
+    "top1_match": false,
+    "rank_of_ref_top1": 45,
+    "top1": 94416,
+    "target_rank": 3736,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.816498
+  },
+  {
+   "id": 18,
+   "cat": "poetry",
+   "prompt": "春眠不觉晓，",
+   "answer": "处",
+   "n_tokens": 13,
+   "answer_tokens": [
+    94346
+   ],
+   "target": 94346,
+   "hf32_top1": 94037,
+   "hf32_prob": 2e-05,
+   "target_rank_hf32": 574,
+   "hf16": {
+    "maxabs": 0.0255,
+    "relmax": 0.00134,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 571,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.021,
+    "relmax": 0.00111,
+    "cos": 1.0,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 572,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.2824,
+    "relmax": 0.12015,
+    "cos": 0.996578,
+    "kl": 0.16536,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 595,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.161,
+    "relmax": 0.79808,
+    "cos": 0.770877,
+    "kl": 4.5958,
+    "top1_match": false,
+    "rank_of_ref_top1": 36,
+    "top1": 30770,
+    "target_rank": 17851,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.770877
+  },
+  {
+   "id": 19,
+   "cat": "poetry",
+   "prompt": "举头望明月，",
+   "answer": "低",
+   "n_tokens": 13,
+   "answer_tokens": [
+    94537
+   ],
+   "target": 94537,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 1409,
+   "hf16": {
+    "maxabs": 0.0277,
+    "relmax": 0.00161,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1418,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0311,
+    "relmax": 0.00181,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1413,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.8242,
+    "relmax": 0.10626,
+    "cos": 0.995468,
+    "kl": 0.10666,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1652,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.6933,
+    "relmax": 0.9141,
+    "cos": 0.78718,
+    "kl": 4.45893,
+    "top1_match": false,
+    "rank_of_ref_top1": 28,
+    "top1": 30770,
+    "target_rank": 3766,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.78718
+  },
+  {
+   "id": 20,
+   "cat": "poetry",
+   "prompt": "锄禾日当午，",
+   "answer": "汗",
+   "n_tokens": 16,
+   "answer_tokens": [
+    96064
+   ],
+   "target": 96064,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 2378,
+   "hf16": {
+    "maxabs": 0.041,
+    "relmax": 0.00219,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2382,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0365,
+    "relmax": 0.00195,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 2372,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.7501,
+    "relmax": 0.09343,
+    "cos": 0.996627,
+    "kl": 0.17598,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 3021,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.0069,
+    "relmax": 0.85459,
+    "cos": 0.773134,
+    "kl": 5.28088,
+    "top1_match": false,
+    "rank_of_ref_top1": 28,
+    "top1": 30770,
+    "target_rank": 4316,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.773134
+  },
+  {
+   "id": 21,
+   "cat": "poetry",
+   "prompt": "红豆生南国，",
+   "answer": "春",
+   "n_tokens": 13,
+   "answer_tokens": [
+    94942
+   ],
+   "target": 94942,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.00027,
+   "target_rank_hf32": 137,
+   "hf16": {
+    "maxabs": 0.0325,
+    "relmax": 0.0017,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 135,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0232,
+    "relmax": 0.00121,
+    "cos": 1.0,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 137,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.7271,
+    "relmax": 0.09035,
+    "cos": 0.997709,
+    "kl": 0.1566,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 198,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.8646,
+    "relmax": 0.72531,
+    "cos": 0.747259,
+    "kl": 5.46221,
+    "top1_match": false,
+    "rank_of_ref_top1": 22,
+    "top1": 30770,
+    "target_rank": 40331,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.747259
+  },
+  {
+   "id": 22,
+   "cat": "poetry",
+   "prompt": "大江东去，",
+   "answer": "浪",
+   "n_tokens": 12,
+   "answer_tokens": [
+    95555
+   ],
+   "target": 95555,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.00018,
+   "target_rank_hf32": 198,
+   "hf16": {
+    "maxabs": 0.0353,
+    "relmax": 0.00171,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 198,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0227,
+    "relmax": 0.0011,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 198,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.7616,
+    "relmax": 0.13363,
+    "cos": 0.997069,
+    "kl": 0.08614,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 291,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 12.1307,
+    "relmax": 0.58698,
+    "cos": 0.884846,
+    "kl": 2.11112,
+    "top1_match": false,
+    "rank_of_ref_top1": 5,
+    "top1": 94025,
+    "target_rank": 68,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.884846
+  },
+  {
+   "id": 23,
+   "cat": "poetry",
+   "prompt": "明月几时有，",
+   "answer": "把",
+   "n_tokens": 12,
+   "answer_tokens": [
+    94334
+   ],
+   "target": 94334,
+   "hf32_top1": 94037,
+   "hf32_prob": 4e-05,
+   "target_rank_hf32": 276,
+   "hf16": {
+    "maxabs": 0.0253,
+    "relmax": 0.00146,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 275,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.024,
+    "relmax": 0.00138,
+    "cos": 1.0,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 276,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.448,
+    "relmax": 0.08343,
+    "cos": 0.998567,
+    "kl": 0.09439,
+    "top1_match": false,
+    "rank_of_ref_top1": 1,
+    "top1": 46782,
+    "target_rank": 312,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.1664,
+    "relmax": 0.75862,
+    "cos": 0.837834,
+    "kl": 3.55509,
+    "top1_match": false,
+    "rank_of_ref_top1": 28,
+    "top1": 30770,
+    "target_rank": 2803,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.837834
+  },
+  {
+   "id": 24,
+   "cat": "poetry",
+   "prompt": "千里莺啼绿映红，",
+   "answer": "水",
+   "n_tokens": 15,
+   "answer_tokens": [
+    94194
+   ],
+   "target": 94194,
+   "hf32_top1": 78002,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 1273,
+   "hf16": {
+    "maxabs": 0.03,
+    "relmax": 0.00164,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 78002,
+    "target_rank": 1272,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0254,
+    "relmax": 0.00139,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 78002,
+    "target_rank": 1271,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.2129,
+    "relmax": 0.12096,
+    "cos": 0.997556,
+    "kl": 0.06864,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 78002,
+    "target_rank": 1731,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.5027,
+    "relmax": 0.84739,
+    "cos": 0.702247,
+    "kl": 4.32216,
+    "top1_match": false,
+    "rank_of_ref_top1": 54,
+    "top1": 30770,
+    "target_rank": 1393,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.702247
+  },
+  {
+   "id": 25,
+   "cat": "poetry",
+   "prompt": "会当凌绝顶，",
+   "answer": "一",
+   "n_tokens": 13,
+   "answer_tokens": [
+    93991
+   ],
+   "target": 93991,
+   "hf32_top1": 94037,
+   "hf32_prob": 3e-05,
+   "target_rank_hf32": 902,
+   "hf16": {
+    "maxabs": 0.0386,
+    "relmax": 0.002,
+    "cos": 0.999998,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 900,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0258,
+    "relmax": 0.00134,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 900,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.9819,
+    "relmax": 0.20691,
+    "cos": 0.995367,
+    "kl": 0.12509,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 1056,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.1191,
+    "relmax": 0.68171,
+    "cos": 0.82168,
+    "kl": 3.0387,
+    "top1_match": false,
+    "rank_of_ref_top1": 21,
+    "top1": 30770,
+    "target_rank": 2541,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.82168
+  },
+  {
+   "id": 26,
+   "cat": "poetry",
+   "prompt": "欲穷千里目，",
+   "answer": "更",
+   "n_tokens": 13,
+   "answer_tokens": [
+    94256
+   ],
+   "target": 94256,
+   "hf32_top1": 94037,
+   "hf32_prob": 2e-05,
+   "target_rank_hf32": 254,
+   "hf16": {
+    "maxabs": 0.0343,
+    "relmax": 0.00165,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 254,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0366,
+    "relmax": 0.00176,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 254,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.3471,
+    "relmax": 0.11298,
+    "cos": 0.996449,
+    "kl": 0.05145,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 285,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 18.1003,
+    "relmax": 0.8713,
+    "cos": 0.709661,
+    "kl": 7.28259,
+    "top1_match": false,
+    "rank_of_ref_top1": 269,
+    "top1": 30770,
+    "target_rank": 285,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.709661
+  },
+  {
+   "id": 27,
+   "cat": "poetry",
+   "prompt": "空山不见人，",
+   "answer": "但",
+   "n_tokens": 13,
+   "answer_tokens": [
+    94235
+   ],
+   "target": 94235,
+   "hf32_top1": 94037,
+   "hf32_prob": 4e-05,
+   "target_rank_hf32": 593,
+   "hf16": {
+    "maxabs": 0.034,
+    "relmax": 0.00176,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 591,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0223,
+    "relmax": 0.00115,
+    "cos": 1.0,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 591,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8181,
+    "relmax": 0.14561,
+    "cos": 0.996106,
+    "kl": 0.06619,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 814,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.0871,
+    "relmax": 0.83119,
+    "cos": 0.762103,
+    "kl": 5.00705,
+    "top1_match": false,
+    "rank_of_ref_top1": 29,
+    "top1": 30770,
+    "target_rank": 688,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.762103
+  },
+  {
+   "id": 28,
+   "cat": "poetry",
+   "prompt": "但使龙城飞将在，",
+   "answer": "不",
+   "n_tokens": 14,
+   "answer_tokens": [
+    93994
+   ],
+   "target": 93994,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.00021,
+   "target_rank_hf32": 175,
+   "hf16": {
+    "maxabs": 0.0306,
+    "relmax": 0.00159,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 176,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.035,
+    "relmax": 0.00182,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 174,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.7141,
+    "relmax": 0.08897,
+    "cos": 0.9979,
+    "kl": 0.08666,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 237,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.4067,
+    "relmax": 0.74779,
+    "cos": 0.786673,
+    "kl": 2.35406,
+    "top1_match": false,
+    "rank_of_ref_top1": 5,
+    "top1": 94850,
+    "target_rank": 71,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.786673
+  },
+  {
+   "id": 29,
+   "cat": "poetry",
+   "prompt": "停车坐爱枫林晚，",
+   "answer": "霜",
+   "n_tokens": 15,
+   "answer_tokens": [
+    96894
+   ],
+   "target": 96894,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.0005,
+   "target_rank_hf32": 115,
+   "hf16": {
+    "maxabs": 0.0391,
+    "relmax": 0.00201,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 115,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0257,
+    "relmax": 0.00132,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 115,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.4142,
+    "relmax": 0.12389,
+    "cos": 0.996833,
+    "kl": 0.14146,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 173,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.3837,
+    "relmax": 0.84073,
+    "cos": 0.695549,
+    "kl": 3.92075,
+    "top1_match": false,
+    "rank_of_ref_top1": 9,
+    "top1": 93953,
+    "target_rank": 21307,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.695549
+  },
+  {
+   "id": 30,
+   "cat": "poetry",
+   "prompt": "问君能有几多愁，",
+   "answer": "恰",
+   "n_tokens": 15,
+   "answer_tokens": [
+    96576
+   ],
+   "target": 96576,
+   "hf32_top1": 94037,
+   "hf32_prob": 3e-05,
+   "target_rank_hf32": 546,
+   "hf16": {
+    "maxabs": 0.0311,
+    "relmax": 0.0016,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 544,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.03,
+    "relmax": 0.00155,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 548,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.8475,
+    "relmax": 0.09525,
+    "cos": 0.997456,
+    "kl": 0.12614,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 825,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.1515,
+    "relmax": 0.72959,
+    "cos": 0.854423,
+    "kl": 3.91432,
+    "top1_match": false,
+    "rank_of_ref_top1": 43,
+    "top1": 30770,
+    "target_rank": 1866,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.854423
+  },
+  {
+   "id": 31,
+   "cat": "qa",
+   "prompt": "中国的首都是",
+   "answer": "北京",
+   "n_tokens": 11,
+   "answer_tokens": [
+    3991
+   ],
+   "target": 3991,
+   "hf32_top1": 14740,
+   "hf32_prob": 0.00026,
+   "target_rank_hf32": 24,
+   "hf16": {
+    "maxabs": 0.0233,
+    "relmax": 0.00117,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14740,
+    "target_rank": 24,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0203,
+    "relmax": 0.00101,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14740,
+    "target_rank": 24,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.4972,
+    "relmax": 0.12494,
+    "cos": 0.997358,
+    "kl": 0.02422,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14740,
+    "target_rank": 28,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 10.7956,
+    "relmax": 0.54013,
+    "cos": 0.83711,
+    "kl": 1.27106,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14740,
+    "target_rank": 299,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.83711
+  },
+  {
+   "id": 32,
+   "cat": "qa",
+   "prompt": "法国的首都是",
+   "answer": "巴黎",
+   "n_tokens": 11,
+   "answer_tokens": [
+    29005
+   ],
+   "target": 29005,
+   "hf32_top1": 14756,
+   "hf32_prob": 0.00274,
+   "target_rank_hf32": 8,
+   "hf16": {
+    "maxabs": 0.0307,
+    "relmax": 0.00134,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14756,
+    "target_rank": 8,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0229,
+    "relmax": 0.001,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14756,
+    "target_rank": 8,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.4896,
+    "relmax": 0.10859,
+    "cos": 0.997945,
+    "kl": 0.00861,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 14756,
+    "target_rank": 7,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 12.5554,
+    "relmax": 0.54765,
+    "cos": 0.868974,
+    "kl": 1.70616,
+    "top1_match": false,
+    "rank_of_ref_top1": 2,
+    "top1": 5119,
+    "target_rank": 7,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.868974
+  },
+  {
+   "id": 33,
+   "cat": "qa",
+   "prompt": "日本的首都是",
+   "answer": "东京",
+   "n_tokens": 10,
+   "answer_tokens": [
+    29137
+   ],
+   "target": 29137,
+   "hf32_top1": 5980,
+   "hf32_prob": 0.00136,
+   "target_rank_hf32": 13,
+   "hf16": {
+    "maxabs": 0.0265,
+    "relmax": 0.00123,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5980,
+    "target_rank": 13,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0303,
+    "relmax": 0.0014,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5980,
+    "target_rank": 13,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.273,
+    "relmax": 0.10549,
+    "cos": 0.99803,
+    "kl": 0.02622,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5980,
+    "target_rank": 13,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.0934,
+    "relmax": 0.65411,
+    "cos": 0.860627,
+    "kl": 0.59302,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5980,
+    "target_rank": 211,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.860627
+  },
+  {
+   "id": 34,
+   "cat": "qa",
+   "prompt": "美国的首都是",
+   "answer": "华盛顿",
+   "n_tokens": 10,
+   "answer_tokens": [
+    68824
+   ],
+   "target": 68824,
+   "hf32_top1": 3903,
+   "hf32_prob": 0.00022,
+   "target_rank_hf32": 42,
+   "hf16": {
+    "maxabs": 0.0272,
+    "relmax": 0.00119,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 3903,
+    "target_rank": 42,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0297,
+    "relmax": 0.0013,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 3903,
+    "target_rank": 42,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.6227,
+    "relmax": 0.11498,
+    "cos": 0.997567,
+    "kl": 0.02381,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 3903,
+    "target_rank": 36,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 12.8061,
+    "relmax": 0.56143,
+    "cos": 0.866793,
+    "kl": 1.26169,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 3903,
+    "target_rank": 597,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.866793
+  },
+  {
+   "id": 35,
+   "cat": "qa",
+   "prompt": "英国的首都是",
+   "answer": "伦敦",
+   "n_tokens": 11,
+   "answer_tokens": [
+    32993
+   ],
+   "target": 32993,
+   "hf32_top1": 11333,
+   "hf32_prob": 0.00322,
+   "target_rank_hf32": 4,
+   "hf16": {
+    "maxabs": 0.023,
+    "relmax": 0.00105,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11333,
+    "target_rank": 4,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0231,
+    "relmax": 0.00105,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11333,
+    "target_rank": 4,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.2857,
+    "relmax": 0.10405,
+    "cos": 0.998125,
+    "kl": 0.0138,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11333,
+    "target_rank": 4,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.1273,
+    "relmax": 0.59759,
+    "cos": 0.87157,
+    "kl": 0.51312,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11333,
+    "target_rank": 125,
+    "acc_top1": false
+   },
+   "chain_step_agree": 5,
+   "chain_step_cos_last": 0.87157
+  },
+  {
+   "id": 36,
+   "cat": "qa",
+   "prompt": "俄罗斯的首都是",
+   "answer": "莫斯科",
+   "n_tokens": 11,
+   "answer_tokens": [
+    61639
+   ],
+   "target": 61639,
+   "hf32_top1": 18473,
+   "hf32_prob": 0.00089,
+   "target_rank_hf32": 14,
+   "hf16": {
+    "maxabs": 0.0261,
+    "relmax": 0.0013,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 18473,
+    "target_rank": 14,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0197,
+    "relmax": 0.00098,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 18473,
+    "target_rank": 14,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.2576,
+    "relmax": 0.11262,
+    "cos": 0.998087,
+    "kl": 0.01774,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 18473,
+    "target_rank": 15,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 10.2244,
+    "relmax": 0.51005,
+    "cos": 0.866301,
+    "kl": 0.50733,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 18473,
+    "target_rank": 130,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.866301
+  },
+  {
+   "id": 37,
+   "cat": "qa",
+   "prompt": "德国的首都是",
+   "answer": "柏林",
+   "n_tokens": 11,
+   "answer_tokens": [
+    50868
+   ],
+   "target": 50868,
+   "hf32_top1": 13648,
+   "hf32_prob": 0.00253,
+   "target_rank_hf32": 8,
+   "hf16": {
+    "maxabs": 0.028,
+    "relmax": 0.00131,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 13648,
+    "target_rank": 8,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0221,
+    "relmax": 0.00104,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 13648,
+    "target_rank": 8,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.4057,
+    "relmax": 0.11304,
+    "cos": 0.997993,
+    "kl": 0.01218,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 13648,
+    "target_rank": 9,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 11.2238,
+    "relmax": 0.52741,
+    "cos": 0.870783,
+    "kl": 0.9037,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 13648,
+    "target_rank": 218,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.870783
+  },
+  {
+   "id": 38,
+   "cat": "qa",
+   "prompt": "意大利的首都是",
+   "answer": "罗马",
+   "n_tokens": 11,
+   "answer_tokens": [
+    24573
+   ],
+   "target": 24573,
+   "hf32_top1": 21195,
+   "hf32_prob": 0.00242,
+   "target_rank_hf32": 9,
+   "hf16": {
+    "maxabs": 0.0309,
+    "relmax": 0.00144,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 21195,
+    "target_rank": 9,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0205,
+    "relmax": 0.00095,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 21195,
+    "target_rank": 9,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.3623,
+    "relmax": 0.10969,
+    "cos": 0.998141,
+    "kl": 0.01725,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 21195,
+    "target_rank": 11,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 10.2683,
+    "relmax": 0.4768,
+    "cos": 0.873814,
+    "kl": 1.19182,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 21195,
+    "target_rank": 179,
+    "acc_top1": false
+   },
+   "chain_step_agree": 5,
+   "chain_step_cos_last": 0.873814
+  },
+  {
+   "id": 39,
+   "cat": "qa",
+   "prompt": "《红楼梦》的作者是",
+   "answer": "曹雪芹",
+   "n_tokens": 12,
+   "answer_tokens": [
+    95973,
+    95277,
+    98852
+   ],
+   "target": 95973,
+   "hf32_top1": 94227,
+   "hf32_prob": 0.00596,
+   "target_rank_hf32": 3,
+   "hf16": {
+    "maxabs": 0.0257,
+    "relmax": 0.0012,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 3,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0182,
+    "relmax": 0.00085,
+    "cos": 1.0,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 3,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.0979,
+    "relmax": 0.14439,
+    "cos": 0.995953,
+    "kl": 0.1787,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 2,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.2957,
+    "relmax": 0.61972,
+    "cos": 0.792547,
+    "kl": 6.55667,
+    "top1_match": false,
+    "rank_of_ref_top1": 119,
+    "top1": 94004,
+    "target_rank": 795,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.792547
+  },
+  {
+   "id": 40,
+   "cat": "qa",
+   "prompt": "《西游记》的作者是",
+   "answer": "吴承恩",
+   "n_tokens": 13,
+   "answer_tokens": [
+    95907,
+    94903,
+    95528
+   ],
+   "target": 95907,
+   "hf32_top1": 94227,
+   "hf32_prob": 3e-05,
+   "target_rank_hf32": 106,
+   "hf16": {
+    "maxabs": 0.0274,
+    "relmax": 0.00115,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 106,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0282,
+    "relmax": 0.00118,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 106,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.0479,
+    "relmax": 0.12754,
+    "cos": 0.996842,
+    "kl": 0.09545,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 79,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.0472,
+    "relmax": 0.54596,
+    "cos": 0.787914,
+    "kl": 6.79529,
+    "top1_match": false,
+    "rank_of_ref_top1": 94,
+    "top1": 94395,
+    "target_rank": 5355,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.787914
+  },
+  {
+   "id": 41,
+   "cat": "qa",
+   "prompt": "《狂人日记》的作者是",
+   "answer": "鲁迅",
+   "n_tokens": 14,
+   "answer_tokens": [
+    41520
+   ],
+   "target": 41520,
+   "hf32_top1": 94227,
+   "hf32_prob": 0.00095,
+   "target_rank_hf32": 22,
+   "hf16": {
+    "maxabs": 0.0266,
+    "relmax": 0.00117,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 21,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0207,
+    "relmax": 0.00091,
+    "cos": 1.0,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 22,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 3.2359,
+    "relmax": 0.14202,
+    "cos": 0.996406,
+    "kl": 0.17877,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94227,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.0809,
+    "relmax": 0.57411,
+    "cos": 0.785864,
+    "kl": 3.95288,
+    "top1_match": false,
+    "rank_of_ref_top1": 21,
+    "top1": 30770,
+    "target_rank": 6059,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.785864
+  },
+  {
+   "id": 42,
+   "cat": "qa",
+   "prompt": "人体最大的器官是",
+   "answer": "皮肤",
+   "n_tokens": 12,
+   "answer_tokens": [
+    6525
+   ],
+   "target": 6525,
+   "hf32_top1": 12591,
+   "hf32_prob": 9e-05,
+   "target_rank_hf32": 63,
+   "hf16": {
+    "maxabs": 0.0287,
+    "relmax": 0.00145,
+    "cos": 0.999999,
+    "kl": 0.0,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12591,
+    "target_rank": 63,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0204,
+    "relmax": 0.00103,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12591,
+    "target_rank": 63,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.3956,
+    "relmax": 0.12077,
+    "cos": 0.99599,
+    "kl": 0.01152,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12591,
+    "target_rank": 68,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 10.6716,
+    "relmax": 0.53798,
+    "cos": 0.77586,
+    "kl": 1.79983,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12591,
+    "target_rank": 1810,
+    "acc_top1": false
+   },
+   "chain_step_agree": 5,
+   "chain_step_cos_last": 0.77586
+  },
+  {
+   "id": 43,
+   "cat": "qa",
+   "prompt": "光在真空中的速度约为每秒30万",
+   "answer": "公里",
+   "n_tokens": 18,
+   "answer_tokens": [
+    5274
+   ],
+   "target": 5274,
+   "hf32_top1": 94436,
+   "hf32_prob": 0.0,
+   "target_rank_hf32": 2170,
+   "hf16": {
+    "maxabs": 0.034,
+    "relmax": 0.00178,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94436,
+    "target_rank": 2161,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0224,
+    "relmax": 0.00117,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94436,
+    "target_rank": 2174,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.9172,
+    "relmax": 0.09998,
+    "cos": 0.99564,
+    "kl": 0.01611,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94436,
+    "target_rank": 1784,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.4282,
+    "relmax": 0.85669,
+    "cos": 0.624131,
+    "kl": 4.57696,
+    "top1_match": false,
+    "rank_of_ref_top1": 11,
+    "top1": 1187,
+    "target_rank": 19642,
+    "acc_top1": false
+   },
+   "chain_step_agree": 5,
+   "chain_step_cos_last": 0.624131
+  },
+  {
+   "id": 44,
+   "cat": "qa",
+   "prompt": "一年平常有365",
+   "answer": "天",
+   "n_tokens": 14,
+   "answer_tokens": [
+    94112
+   ],
+   "target": 94112,
+   "hf32_top1": 94037,
+   "hf32_prob": 0.00081,
+   "target_rank_hf32": 82,
+   "hf16": {
+    "maxabs": 0.0229,
+    "relmax": 0.00127,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 82,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0223,
+    "relmax": 0.00124,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 82,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8446,
+    "relmax": 0.15832,
+    "cos": 0.995627,
+    "kl": 0.04219,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94037,
+    "target_rank": 104,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 12.8994,
+    "relmax": 0.71796,
+    "cos": 0.72324,
+    "kl": 3.20199,
+    "top1_match": false,
+    "rank_of_ref_top1": 72,
+    "top1": 93993,
+    "target_rank": 495,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.72324
+  },
+  {
+   "id": 45,
+   "cat": "qa",
+   "prompt": "水在标准大气压下加热到100摄氏度会",
+   "answer": "沸腾",
+   "n_tokens": 20,
+   "answer_tokens": [
+    65164
+   ],
+   "target": 65164,
+   "hf32_top1": 94004,
+   "hf32_prob": 4e-05,
+   "target_rank_hf32": 296,
+   "hf16": {
+    "maxabs": 0.0316,
+    "relmax": 0.00169,
+    "cos": 0.999998,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94004,
+    "target_rank": 295,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0241,
+    "relmax": 0.00129,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94004,
+    "target_rank": 295,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 1.565,
+    "relmax": 0.08388,
+    "cos": 0.995298,
+    "kl": 0.02122,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94004,
+    "target_rank": 290,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 11.7221,
+    "relmax": 0.62829,
+    "cos": 0.774787,
+    "kl": 2.22258,
+    "top1_match": false,
+    "rank_of_ref_top1": 7,
+    "top1": 4923,
+    "target_rank": 401,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.774787
+  },
+  {
+   "id": 46,
+   "cat": "arith",
+   "prompt": "1+1=",
+   "answer": "2",
+   "n_tokens": 12,
+   "answer_tokens": [
+    5
+   ],
+   "target": 5,
+   "hf32_top1": 4,
+   "hf32_prob": 0.00077,
+   "target_rank_hf32": 52,
+   "hf16": {
+    "maxabs": 0.0279,
+    "relmax": 0.0015,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 4,
+    "target_rank": 51,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0242,
+    "relmax": 0.00131,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 4,
+    "target_rank": 52,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.0274,
+    "relmax": 0.10946,
+    "cos": 0.991583,
+    "kl": 0.05714,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 4,
+    "target_rank": 92,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.6425,
+    "relmax": 0.84452,
+    "cos": 0.725979,
+    "kl": 1.32103,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 4,
+    "target_rank": 96,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.725979
+  },
+  {
+   "id": 47,
+   "cat": "arith",
+   "prompt": "2+3=",
+   "answer": "5",
+   "n_tokens": 12,
+   "answer_tokens": [
+    8
+   ],
+   "target": 8,
+   "hf32_top1": 5,
+   "hf32_prob": 0.00228,
+   "target_rank_hf32": 42,
+   "hf16": {
+    "maxabs": 0.0348,
+    "relmax": 0.00187,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5,
+    "target_rank": 41,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0238,
+    "relmax": 0.00128,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5,
+    "target_rank": 42,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.5707,
+    "relmax": 0.13836,
+    "cos": 0.99107,
+    "kl": 0.05977,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5,
+    "target_rank": 67,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.7581,
+    "relmax": 0.79432,
+    "cos": 0.672799,
+    "kl": 1.83269,
+    "top1_match": false,
+    "rank_of_ref_top1": 1,
+    "top1": 1187,
+    "target_rank": 53,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.672799
+  },
+  {
+   "id": 48,
+   "cat": "arith",
+   "prompt": "3+4=",
+   "answer": "7",
+   "n_tokens": 12,
+   "answer_tokens": [
+    10
+   ],
+   "target": 10,
+   "hf32_top1": 6,
+   "hf32_prob": 0.0059,
+   "target_rank_hf32": 16,
+   "hf16": {
+    "maxabs": 0.0312,
+    "relmax": 0.00169,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 6,
+    "target_rank": 16,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0245,
+    "relmax": 0.00133,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 6,
+    "target_rank": 16,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.7686,
+    "relmax": 0.15002,
+    "cos": 0.991647,
+    "kl": 0.0508,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 6,
+    "target_rank": 23,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.0043,
+    "relmax": 0.81301,
+    "cos": 0.692321,
+    "kl": 2.79,
+    "top1_match": false,
+    "rank_of_ref_top1": 2,
+    "top1": 1187,
+    "target_rank": 108,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.692321
+  },
+  {
+   "id": 49,
+   "cat": "arith",
+   "prompt": "5+5=",
+   "answer": "10",
+   "n_tokens": 12,
+   "answer_tokens": [
+    4,
+    3
+   ],
+   "target": 4,
+   "hf32_top1": 8,
+   "hf32_prob": 0.00378,
+   "target_rank_hf32": 20,
+   "hf16": {
+    "maxabs": 0.0325,
+    "relmax": 0.00173,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 8,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.028,
+    "relmax": 0.00149,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 8,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.6705,
+    "relmax": 0.14198,
+    "cos": 0.989771,
+    "kl": 0.05924,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 8,
+    "target_rank": 27,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.1142,
+    "relmax": 0.7504,
+    "cos": 0.643469,
+    "kl": 2.70063,
+    "top1_match": false,
+    "rank_of_ref_top1": 3,
+    "top1": 31432,
+    "target_rank": 58,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.643469
+  },
+  {
+   "id": 50,
+   "cat": "arith",
+   "prompt": "7+8=",
+   "answer": "15",
+   "n_tokens": 12,
+   "answer_tokens": [
+    4,
+    8
+   ],
+   "target": 4,
+   "hf32_top1": 10,
+   "hf32_prob": 0.00423,
+   "target_rank_hf32": 20,
+   "hf16": {
+    "maxabs": 0.029,
+    "relmax": 0.00157,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 10,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0204,
+    "relmax": 0.0011,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 10,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.6719,
+    "relmax": 0.14496,
+    "cos": 0.990244,
+    "kl": 0.06348,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 10,
+    "target_rank": 27,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.5583,
+    "relmax": 0.78984,
+    "cos": 0.668664,
+    "kl": 2.27782,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 10,
+    "target_rank": 10,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.668664
+  },
+  {
+   "id": 51,
+   "cat": "arith",
+   "prompt": "9+9=",
+   "answer": "18",
+   "n_tokens": 12,
+   "answer_tokens": [
+    4,
+    11
+   ],
+   "target": 4,
+   "hf32_top1": 12,
+   "hf32_prob": 0.0027,
+   "target_rank_hf32": 35,
+   "hf16": {
+    "maxabs": 0.0297,
+    "relmax": 0.0017,
+    "cos": 0.999998,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12,
+    "target_rank": 35,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0248,
+    "relmax": 0.00143,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12,
+    "target_rank": 35,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8166,
+    "relmax": 0.16168,
+    "cos": 0.991489,
+    "kl": 0.09509,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12,
+    "target_rank": 49,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.2884,
+    "relmax": 0.7628,
+    "cos": 0.729481,
+    "kl": 1.88063,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 12,
+    "target_rank": 32,
+    "acc_top1": false
+   },
+   "chain_step_agree": 6,
+   "chain_step_cos_last": 0.729481
+  },
+  {
+   "id": 52,
+   "cat": "arith",
+   "prompt": "12-5=",
+   "answer": "7",
+   "n_tokens": 13,
+   "answer_tokens": [
+    10
+   ],
+   "target": 10,
+   "hf32_top1": 94120,
+   "hf32_prob": 0.02483,
+   "target_rank_hf32": 7,
+   "hf16": {
+    "maxabs": 0.051,
+    "relmax": 0.00277,
+    "cos": 0.999995,
+    "kl": 4e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 7,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.033,
+    "relmax": 0.00179,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 7,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.111,
+    "relmax": 0.11475,
+    "cos": 0.994057,
+    "kl": 0.02717,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 10,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 15.4331,
+    "relmax": 0.83887,
+    "cos": 0.670612,
+    "kl": 3.30313,
+    "top1_match": false,
+    "rank_of_ref_top1": 131,
+    "top1": 93953,
+    "target_rank": 150,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.670612
+  },
+  {
+   "id": 53,
+   "cat": "arith",
+   "prompt": "20-7=",
+   "answer": "13",
+   "n_tokens": 13,
+   "answer_tokens": [
+    4,
+    6
+   ],
+   "target": 4,
+   "hf32_top1": 94120,
+   "hf32_prob": 0.01654,
+   "target_rank_hf32": 11,
+   "hf16": {
+    "maxabs": 0.0315,
+    "relmax": 0.00172,
+    "cos": 0.999998,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 11,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0334,
+    "relmax": 0.00183,
+    "cos": 0.999998,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 11,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.1506,
+    "relmax": 0.11757,
+    "cos": 0.993918,
+    "kl": 0.04005,
+    "top1_match": false,
+    "rank_of_ref_top1": 1,
+    "top1": 5,
+    "target_rank": 13,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 16.4683,
+    "relmax": 0.90032,
+    "cos": 0.623899,
+    "kl": 3.83738,
+    "top1_match": false,
+    "rank_of_ref_top1": 977,
+    "top1": 1187,
+    "target_rank": 39,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.623899
+  },
+  {
+   "id": 54,
+   "cat": "arith",
+   "prompt": "3*3=",
+   "answer": "9",
+   "n_tokens": 12,
+   "answer_tokens": [
+    12
+   ],
+   "target": 12,
+   "hf32_top1": 6,
+   "hf32_prob": 0.00101,
+   "target_rank_hf32": 59,
+   "hf16": {
+    "maxabs": 0.0357,
+    "relmax": 0.00196,
+    "cos": 0.999997,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 6,
+    "target_rank": 59,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.028,
+    "relmax": 0.00153,
+    "cos": 0.999998,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 6,
+    "target_rank": 59,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8009,
+    "relmax": 0.15373,
+    "cos": 0.987919,
+    "kl": 0.09614,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 6,
+    "target_rank": 86,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.9536,
+    "relmax": 0.76584,
+    "cos": 0.685183,
+    "kl": 2.04589,
+    "top1_match": false,
+    "rank_of_ref_top1": 1,
+    "top1": 1187,
+    "target_rank": 709,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.685183
+  },
+  {
+   "id": 55,
+   "cat": "arith",
+   "prompt": "6*7=",
+   "answer": "42",
+   "n_tokens": 12,
+   "answer_tokens": [
+    7,
+    5
+   ],
+   "target": 7,
+   "hf32_top1": 9,
+   "hf32_prob": 0.00347,
+   "target_rank_hf32": 28,
+   "hf16": {
+    "maxabs": 0.0322,
+    "relmax": 0.00175,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 9,
+    "target_rank": 28,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0251,
+    "relmax": 0.00136,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 9,
+    "target_rank": 28,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8138,
+    "relmax": 0.15246,
+    "cos": 0.988119,
+    "kl": 0.1395,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 9,
+    "target_rank": 37,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.7244,
+    "relmax": 0.79782,
+    "cos": 0.636395,
+    "kl": 2.81163,
+    "top1_match": false,
+    "rank_of_ref_top1": 7,
+    "top1": 1187,
+    "target_rank": 2061,
+    "acc_top1": false
+   },
+   "chain_step_agree": 3,
+   "chain_step_cos_last": 0.636395
+  },
+  {
+   "id": 56,
+   "cat": "arith",
+   "prompt": "8*9=",
+   "answer": "72",
+   "n_tokens": 12,
+   "answer_tokens": [
+    10,
+    5
+   ],
+   "target": 10,
+   "hf32_top1": 11,
+   "hf32_prob": 0.00472,
+   "target_rank_hf32": 20,
+   "hf16": {
+    "maxabs": 0.025,
+    "relmax": 0.00136,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0288,
+    "relmax": 0.00156,
+    "cos": 0.999998,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11,
+    "target_rank": 20,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.8591,
+    "relmax": 0.15523,
+    "cos": 0.986981,
+    "kl": 0.10284,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 11,
+    "target_rank": 28,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.5005,
+    "relmax": 0.78727,
+    "cos": 0.609853,
+    "kl": 2.57916,
+    "top1_match": false,
+    "rank_of_ref_top1": 2,
+    "top1": 1187,
+    "target_rank": 5266,
+    "acc_top1": false
+   },
+   "chain_step_agree": 2,
+   "chain_step_cos_last": 0.609853
+  },
+  {
+   "id": 57,
+   "cat": "arith",
+   "prompt": "100/4=",
+   "answer": "25",
+   "n_tokens": 14,
+   "answer_tokens": [
+    5,
+    8
+   ],
+   "target": 5,
+   "hf32_top1": 94120,
+   "hf32_prob": 0.00536,
+   "target_rank_hf32": 18,
+   "hf16": {
+    "maxabs": 0.0287,
+    "relmax": 0.0015,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 18,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0215,
+    "relmax": 0.00113,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 18,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.5489,
+    "relmax": 0.13338,
+    "cos": 0.990527,
+    "kl": 0.09822,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 94120,
+    "target_rank": 21,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.6467,
+    "relmax": 0.76646,
+    "cos": 0.705803,
+    "kl": 2.91034,
+    "top1_match": false,
+    "rank_of_ref_top1": 107,
+    "top1": 1187,
+    "target_rank": 295,
+    "acc_top1": false
+   },
+   "chain_step_agree": 4,
+   "chain_step_cos_last": 0.705803
+  },
+  {
+   "id": 58,
+   "cat": "arith",
+   "prompt": "2,4,6,8,",
+   "answer": "10",
+   "n_tokens": 16,
+   "answer_tokens": [
+    4,
+    3
+   ],
+   "target": 4,
+   "hf32_top1": 5777,
+   "hf32_prob": 0.00403,
+   "target_rank_hf32": 25,
+   "hf16": {
+    "maxabs": 0.0382,
+    "relmax": 0.00217,
+    "cos": 0.999998,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5777,
+    "target_rank": 25,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0255,
+    "relmax": 0.00145,
+    "cos": 0.999999,
+    "kl": 2e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5777,
+    "target_rank": 25,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.3318,
+    "relmax": 0.13275,
+    "cos": 0.990002,
+    "kl": 0.06317,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5777,
+    "target_rank": 52,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 13.5287,
+    "relmax": 0.77018,
+    "cos": 0.627877,
+    "kl": 3.33699,
+    "top1_match": false,
+    "rank_of_ref_top1": 583,
+    "top1": 1187,
+    "target_rank": 54,
+    "acc_top1": false
+   },
+   "chain_step_agree": 9,
+   "chain_step_cos_last": 0.627877
+  },
+  {
+   "id": 59,
+   "cat": "arith",
+   "prompt": "1,4,9,16,",
+   "answer": "25",
+   "n_tokens": 17,
+   "answer_tokens": [
+    5,
+    8
+   ],
+   "target": 5,
+   "hf32_top1": 5777,
+   "hf32_prob": 0.00022,
+   "target_rank_hf32": 90,
+   "hf16": {
+    "maxabs": 0.0292,
+    "relmax": 0.00151,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5777,
+    "target_rank": 90,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0212,
+    "relmax": 0.00109,
+    "cos": 0.999999,
+    "kl": 1e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5777,
+    "target_rank": 90,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.6833,
+    "relmax": 0.13815,
+    "cos": 0.988753,
+    "kl": 0.05075,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 5777,
+    "target_rank": 155,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.4306,
+    "relmax": 0.74299,
+    "cos": 0.665634,
+    "kl": 3.72702,
+    "top1_match": false,
+    "rank_of_ref_top1": 329,
+    "top1": 1187,
+    "target_rank": 26,
+    "acc_top1": false
+   },
+   "chain_step_agree": 7,
+   "chain_step_cos_last": 0.665634
+  },
+  {
+   "id": 60,
+   "cat": "arith",
+   "prompt": "1,1,2,3,5,",
+   "answer": "8",
+   "n_tokens": 18,
+   "answer_tokens": [
+    11
+   ],
+   "target": 11,
+   "hf32_top1": 7725,
+   "hf32_prob": 7e-05,
+   "target_rank_hf32": 197,
+   "hf16": {
+    "maxabs": 0.0246,
+    "relmax": 0.00129,
+    "cos": 0.999999,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 7725,
+    "target_rank": 198,
+    "acc_top1": false
+   },
+   "native": {
+    "maxabs": 0.0289,
+    "relmax": 0.00152,
+    "cos": 0.999998,
+    "kl": 3e-05,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 7725,
+    "target_rank": 196,
+    "acc_top1": false
+   },
+   "e41_seeded": {
+    "maxabs": 2.3916,
+    "relmax": 0.12562,
+    "cos": 0.990719,
+    "kl": 0.05818,
+    "top1_match": true,
+    "rank_of_ref_top1": 0,
+    "top1": 7725,
+    "target_rank": 317,
+    "acc_top1": false
+   },
+   "e41_chain": {
+    "maxabs": 14.38,
+    "relmax": 0.75529,
+    "cos": 0.676668,
+    "kl": 3.39312,
+    "top1_match": false,
+    "rank_of_ref_top1": 11,
+    "top1": 1187,
+    "target_rank": 322,
+    "acc_top1": false
+   },
+   "chain_step_agree": 10,
+   "chain_step_cos_last": 0.676668
+  }
+ ]
+}

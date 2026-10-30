@@ -1,0 +1,47 @@
+[
+ {
+  "step": 0,
+  "fed": 94515,
+  "past_len": 1,
+  "argmax": 4,
+  "logits_min": -14.6171875,
+  "logits_max": 8.71875,
+  "seconds": 13.9
+ },
+ {
+  "step": 1,
+  "fed": 94515,
+  "past_len": 1,
+  "argmax": 23,
+  "logits_min": -6.0546875,
+  "logits_max": 12.953125,
+  "seconds": 13.2
+ },
+ {
+  "step": 2,
+  "fed": 94036,
+  "past_len": 2,
+  "argmax": 8231,
+  "logits_min": -13.15625,
+  "logits_max": 12.5078125,
+  "seconds": 13.8
+ },
+ {
+  "step": 3,
+  "fed": 8231,
+  "past_len": 3,
+  "argmax": 35501,
+  "logits_min": -12.53125,
+  "logits_max": 17.78125,
+  "seconds": 13.4
+ },
+ {
+  "step": 4,
+  "fed": 35501,
+  "past_len": 4,
+  "argmax": 10514,
+  "logits_min": -13.3125,
+  "logits_max": 16.71875,
+  "seconds": 13.7
+ }
+]

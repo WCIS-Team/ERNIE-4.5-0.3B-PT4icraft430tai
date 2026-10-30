@@ -1,0 +1,76 @@
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]Loading weights:  41%|████▏     | 68/164 [00:00<00:00, 651.78it/s]Loading weights:  82%|████████▏ | 134/164 [00:00<00:00, 626.92it/s]Loading weights: 100%|██████████| 164/164 [00:00<00:00, 636.11it/s]
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]Loading weights:  32%|███▏      | 53/164 [00:00<00:00, 527.81it/s]Loading weights:  70%|██████▉   | 114/164 [00:00<00:00, 574.68it/s]Loading weights: 100%|██████████| 164/164 [00:00<00:00, 595.36it/s]
+MODEL vocab=103424 threads=24
+ITEMS 60
+[ 1] chengyu  L= 3 '井底之'                  hf32->95760 tgt_rank=849 | seeded cos 0.960732 top1 2617 rank 706 | chain cos 0.683071 top1 94786 rank 19443 | native cos 0.999998 | hf16 cos 0.999999
+[ 2] chengyu  L= 3 '亡羊补'                  hf32->94124 tgt_rank=104 | seeded cos 0.963424 top1 93956 rank 90 | chain cos 0.891319 top1 94285 rank 152 | native cos 0.999999 | hf16 cos 0.999996
+[ 3] chengyu  L= 3 '守株待'                  hf32->94004 tgt_rank=692 | seeded cos 0.982555 top1 94004 rank 426 | chain cos 0.987655 top1 94682 rank 807 | native cos 1.0 | hf16 cos 0.999998
+[ 4] chengyu  L= 3 '画蛇添'                  hf32->95133 tgt_rank=96 | seeded cos 0.981807 top1 95133 rank 38 | chain cos 0.990428 top1 95133 rank 82 | native cos 0.999999 | hf16 cos 0.999999
+[ 5] chengyu  L= 3 '对牛弹'                  hf32->94143 tgt_rank= 2 | seeded cos 0.94256 top1 2604 rank 5 | chain cos 0.37138 top1 4 rank 5165 | native cos 0.999999 | hf16 cos 0.999998
+[ 6] chengyu  L= 3 '掩耳盗'                  hf32->97106 tgt_rank=32 | seeded cos 0.977172 top1 97106 rank 23 | chain cos 0.990658 top1 93956 rank 18 | native cos 0.999999 | hf16 cos 0.999999
+[ 7] chengyu  L= 5 '买椟还'                  hf32->243 tgt_rank=386 | seeded cos 0.988328 top1 243 rank 111 | chain cos 0.996998 top1 243 rank 240 | native cos 0.999999 | hf16 cos 0.999999
+[ 8] chengyu  L= 3 '杯弓蛇'                  hf32->93956 tgt_rank= 3 | seeded cos 0.984196 top1 93956 rank 8 | chain cos 0.585551 top1 23 rank 29700 | native cos 0.999999 | hf16 cos 0.999999
+[ 9] chengyu  L= 3 '鹤立鸡'                  hf32->93956 tgt_rank=38 | seeded cos 0.980895 top1 93956 rank 24 | chain cos 0.990643 top1 93956 rank 29 | native cos 0.999999 | hf16 cos 0.999999
+[10] chengyu  L= 5 '破釜沉'                  hf32->97240 tgt_rank= 0 | seeded cos 0.983597 top1 94213 rank 5 | chain cos 0.994346 top1 94786 rank 3 | native cos 0.999999 | hf16 cos 0.999999
+[11] chengyu  L= 3 '卧薪尝'                  hf32->93956 tgt_rank=957 | seeded cos 0.960372 top1 93956 rank 626 | chain cos 0.964635 top1 93956 rank 490 | native cos 0.999999 | hf16 cos 0.999997
+[12] chengyu  L= 2 '纸上谈'                  hf32->93956 tgt_rank=1311 | seeded cos 0.956702 top1 93956 rank 3044 | chain cos 0.986903 top1 93956 rank 1840 | native cos 0.999999 | hf16 cos 0.999998
+[13] chengyu  L= 3 '刻舟求'                  hf32->95488 tgt_rank=14 | seeded cos 0.947421 top1 95488 rank 23 | chain cos 0.97839 top1 95488 rank 22 | native cos 0.999999 | hf16 cos 0.999999
+[14] chengyu  L= 3 '一叶障'                  hf32->93956 tgt_rank=160 | seeded cos 0.968334 top1 93956 rank 463 | chain cos 0.575526 top1 23 rank 20 | native cos 0.999999 | hf16 cos 0.999998
+[15] chengyu  L= 5 '螳螂捕'                  hf32->94569 tgt_rank= 2 | seeded cos 0.991931 top1 94569 rank 2 | chain cos 0.728083 top1 96980 rank 8 | native cos 0.999999 | hf16 cos 0.999999
+[16] poetry   L= 5 '床前明月光，'               hf32->23 tgt_rank=1188 | seeded cos 0.995057 top1 94001 rank 2197 | chain cos 0.992851 top1 94001 rank 1250 | native cos 0.999999 | hf16 cos 0.999999
+[17] poetry   L= 6 '白日依山尽，'               hf32->23 tgt_rank=35 | seeded cos 0.992154 top1 23 rank 49 | chain cos 0.996832 top1 23 rank 41 | native cos 0.999999 | hf16 cos 1.0
+[18] poetry   L= 5 '春眠不觉晓，'               hf32->23 tgt_rank=1251 | seeded cos 0.995785 top1 23 rank 1346 | chain cos 0.99223 top1 23 rank 1874 | native cos 1.0 | hf16 cos 0.999999
+[19] poetry   L= 5 '举头望明月，'               hf32->94108 tgt_rank=627 | seeded cos 0.993196 top1 94108 rank 846 | chain cos 0.993543 top1 94108 rank 730 | native cos 0.999999 | hf16 cos 0.999999
+[20] poetry   L= 8 '锄禾日当午，'               hf32->23 tgt_rank=156 | seeded cos 0.989159 top1 23 rank 61 | chain cos 0.656027 top1 12 rank 9224 | native cos 0.999998 | hf16 cos 0.999997
+[21] poetry   L= 5 '红豆生南国，'               hf32->94487 tgt_rank=32 | seeded cos 0.996271 top1 94487 rank 46 | chain cos 0.997312 top1 94487 rank 37 | native cos 1.0 | hf16 cos 0.999999
+[22] poetry   L= 5 '大江东去，'                hf32->94744 tgt_rank=232 | seeded cos 0.998244 top1 94744 rank 209 | chain cos 0.996083 top1 94744 rank 170 | native cos 1.0 | hf16 cos 0.999999
+[23] poetry   L= 4 '明月几时有，'               hf32->94178 tgt_rank=402 | seeded cos 0.995095 top1 8773 rank 350 | chain cos 0.54581 top1 4 rank 470 | native cos 0.999999 | hf16 cos 0.999998
+[24] poetry   L= 7 '千里莺啼绿映红，'             hf32->23 tgt_rank=55 | seeded cos 0.998245 top1 23 rank 73 | chain cos 0.987054 top1 94466 rank 109 | native cos 0.999999 | hf16 cos 0.999999
+[25] poetry   L= 6 '会当凌绝顶，'               hf32->96397 tgt_rank=30 | seeded cos 0.997164 top1 96397 rank 41 | chain cos 0.996132 top1 94088 rank 46 | native cos 0.999999 | hf16 cos 0.999999
+[26] poetry   L= 5 '欲穷千里目，'               hf32->94108 tgt_rank=25 | seeded cos 0.990987 top1 94108 rank 38 | chain cos 0.977798 top1 23 rank 32 | native cos 0.999998 | hf16 cos 0.999998
+[27] poetry   L= 5 '空山不见人，'               hf32->94235 tgt_rank= 0 | seeded cos 0.997171 top1 94235 rank 0 | chain cos 0.991872 top1 94235 rank 0 | native cos 0.999999 | hf16 cos 0.999999
+[28] poetry   L= 7 '但使龙城飞将在，'             hf32->94128 tgt_rank=44 | seeded cos 0.997326 top1 94850 rank 63 | chain cos 0.997438 top1 94850 rank 61 | native cos 1.0 | hf16 cos 0.999998
+[29] poetry   L= 7 '停车坐爱枫林晚，'             hf32->23 tgt_rank=483 | seeded cos 0.990086 top1 94004 rank 1208 | chain cos 0.636578 top1 4 rank 8082 | native cos 1.0 | hf16 cos 0.999999
+[30] poetry   L= 7 '问君能有几多愁，'             hf32->23 tgt_rank=89 | seeded cos 0.989676 top1 95750 rank 113 | chain cos 0.992218 top1 23 rank 75 | native cos 0.999999 | hf16 cos 0.999999
+[31] qa       L= 3 '中国的首都是'               hf32->3991 tgt_rank= 0 | seeded cos 0.874814 top1 94232 rank 48 | chain cos 0.988438 top1 3991 rank 0 | native cos 0.999999 | hf16 cos 0.999998
+[32] qa       L= 3 '法国的首都是'               hf32->3991 tgt_rank=16 | seeded cos 0.976586 top1 3991 rank 29 | chain cos 0.987446 top1 3991 rank 17 | native cos 0.999999 | hf16 cos 0.999999
+[33] qa       L= 3 '日本的首都是'               hf32->4827 tgt_rank= 3 | seeded cos 0.957011 top1 6528 rank 95 | chain cos 0.987142 top1 4827 rank 1 | native cos 0.999999 | hf16 cos 1.0
+[34] qa       L= 3 '美国的首都是'               hf32->3991 tgt_rank=12 | seeded cos 0.945161 top1 4 rank 633 | chain cos 0.989557 top1 26807 rank 3 | native cos 1.0 | hf16 cos 0.999998
+[35] qa       L= 3 '英国的首都是'               hf32->29137 tgt_rank= 4 | seeded cos 0.973008 top1 3991 rank 38 | chain cos 0.980544 top1 29137 rank 6 | native cos 0.999999 | hf16 cos 0.999998
+[36] qa       L= 3 '俄罗斯的首都是'              hf32->3991 tgt_rank=79 | seeded cos 0.968001 top1 94549 rank 588 | chain cos 0.984371 top1 386 rank 15 | native cos 1.0 | hf16 cos 0.999999
+[37] qa       L= 3 '德国的首都是'               hf32->6528 tgt_rank=302 | seeded cos 0.976591 top1 4 rank 434 | chain cos 0.984366 top1 3903 rank 138 | native cos 0.999999 | hf16 cos 0.999998
+[38] qa       L= 3 '意大利的首都是'              hf32->4827 tgt_rank=16 | seeded cos 0.964185 top1 4 rank 59 | chain cos 0.969816 top1 29137 rank 8 | native cos 1.0 | hf16 cos 0.999999
+[39] qa       L= 5 '《红楼梦》的作者是'            hf32->95052 tgt_rank= 2 | seeded cos 0.995646 top1 47232 rank 2 | chain cos 0.97296 top1 95052 rank 5 | native cos 0.999999 | hf16 cos 0.999999
+[40] qa       L= 6 '《西游记》的作者是'            hf32->95052 tgt_rank= 1 | seeded cos 0.993174 top1 95907 rank 0 | chain cos 0.973662 top1 386 rank 1 | native cos 0.999999 | hf16 cos 0.999999
+[41] qa       L= 7 '《狂人日记》的作者是'           hf32->94035 tgt_rank= 3 | seeded cos 0.99575 top1 94035 rank 2 | chain cos 0.980771 top1 95052 rank 22 | native cos 1.0 | hf16 cos 0.999999
+[42] qa       L= 4 '人体最大的器官是'             hf32->15423 tgt_rank=22 | seeded cos 0.994402 top1 15423 rank 24 | chain cos 0.989666 top1 15423 rank 29 | native cos 1.0 | hf16 cos 0.999999
+[43] qa       L=11 '光在真空中的速度约为每秒30万'      hf32->5274 tgt_rank= 0 | seeded cos 0.996683 top1 5274 rank 0 | chain cos 0.797445 top1 94252 rank 139 | native cos 1.0 | hf16 cos 0.999999
+[44] qa       L= 6 '一年平常有365'             hf32->94112 tgt_rank= 0 | seeded cos 0.935331 top1 94112 rank 0 | chain cos 0.991268 top1 94112 rank 0 | native cos 0.999999 | hf16 cos 0.999999
+[45] qa       L=13 '水在标准大气压下加热到100摄氏度会'   hf32->21387 tgt_rank=11 | seeded cos 0.991502 top1 21387 rank 9 | chain cos 0.985546 top1 21387 rank 7 | native cos 0.999999 | hf16 cos 0.999998
+[46] arith    L= 4 '1+1='                 hf32->5 tgt_rank= 0 | seeded cos 0.995044 top1 5 rank 0 | chain cos 0.605447 top1 4 rank 3 | native cos 0.999999 | hf16 cos 0.999999
+[47] arith    L= 4 '2+3='                 hf32->4 tgt_rank= 1 | seeded cos 0.995757 top1 4 rank 1 | chain cos 0.312998 top1 12 rank 13 | native cos 0.999999 | hf16 cos 0.999999
+[48] arith    L= 4 '3+4='                 hf32->4 tgt_rank= 5 | seeded cos 0.993366 top1 4 rank 6 | chain cos 0.521844 top1 12 rank 11 | native cos 0.999999 | hf16 cos 0.999999
+[49] arith    L= 4 '5+5='                 hf32->4 tgt_rank= 0 | seeded cos 0.994753 top1 4 rank 0 | chain cos 0.511345 top1 8 rank 1 | native cos 0.999998 | hf16 cos 0.999999
+[50] arith    L= 4 '7+8='                 hf32->4 tgt_rank= 0 | seeded cos 0.995071 top1 4 rank 0 | chain cos 0.592075 top1 5 rank 1 | native cos 0.999999 | hf16 cos 0.999999
+[51] arith    L= 4 '9+9='                 hf32->4 tgt_rank= 0 | seeded cos 0.993837 top1 4 rank 0 | chain cos 0.557629 top1 5 rank 1 | native cos 0.999999 | hf16 cos 0.999999
+[52] arith    L= 5 '12-5='                hf32->4 tgt_rank= 8 | seeded cos 0.985589 top1 4 rank 9 | chain cos 0.567405 top1 5 rank 7 | native cos 0.999999 | hf16 cos 0.999999
+[53] arith    L= 5 '20-7='                hf32->4 tgt_rank= 0 | seeded cos 0.988904 top1 4 rank 0 | chain cos 0.525147 top1 5 rank 2 | native cos 0.999999 | hf16 cos 0.999998
+[54] arith    L= 4 '3*3='                 hf32->4 tgt_rank= 3 | seeded cos 0.995963 top1 4 rank 2 | chain cos 0.423527 top1 3 rank 21 | native cos 0.999999 | hf16 cos 0.999998
+[55] arith    L= 4 '6*7='                 hf32->4 tgt_rank= 3 | seeded cos 0.995376 top1 4 rank 3 | chain cos 0.397038 top1 4 rank 104 | native cos 0.999998 | hf16 cos 0.999999
+[56] arith    L= 4 '8*9='                 hf32->4 tgt_rank= 9 | seeded cos 0.995378 top1 4 rank 9 | chain cos 0.533042 top1 5 rank 174 | native cos 0.999999 | hf16 cos 0.999999
+[57] arith    L= 6 '100/4='               hf32->5 tgt_rank= 0 | seeded cos 0.99217 top1 5 rank 0 | chain cos 0.562149 top1 4 rank 2 | native cos 0.999999 | hf16 cos 0.999999
+[58] arith    L= 8 '2,4,6,8,'             hf32->4 tgt_rank= 0 | seeded cos 0.990904 top1 4 rank 0 | chain cos 0.650305 top1 4 rank 0 | native cos 0.999999 | hf16 cos 0.999999
+[59] arith    L= 9 '1,4,9,16,'            hf32->5 tgt_rank= 0 | seeded cos 0.991666 top1 5 rank 0 | chain cos 0.621278 top1 12 rank 2 | native cos 0.999999 | hf16 cos 0.999998
+[60] arith    L=10 '1,1,2,3,5,'           hf32->10 tgt_rank= 2 | seeded cos 0.983134 top1 11 rank 0 | chain cos 0.552957 top1 9 rank 6 | native cos 0.999999 | hf16 cos 0.999997
+ITEMS done in 44.8 s
+CAT arith      hf32 acc 0.5333 | e41_chain acc 0.0667 cos 0.528946 top1match 0.1333
+CAT chengyu    hf32 acc 0.0667 | e41_chain acc 0.0 cos 0.847706 top1match 0.4
+CAT poetry     hf32 acc 0.0667 | e41_chain acc 0.0667 cos 0.916652 top1match 0.4667
+CAT qa         hf32 acc 0.2 | e41_chain acc 0.1333 cos 0.970867 top1match 0.5333
+AGG hf16        acc 0.2167 rank 163.27 cos 0.999999 (min 0.999996) maxabs 0.0251 (max 0.055) kl 1e-05 top1match 1.0 hf1rank 0.0
+AGG native      acc 0.2167 rank 162.27 cos 0.999999 (min 0.999998) maxabs 0.0198 (max 0.0296) kl 1e-05 top1match 1.0 hf1rank 0.0
+AGG e41_seeded  acc 0.2167 rank 237.08 cos 0.98184 (min 0.874814) maxabs 2.6713 (max 7.7746) kl 0.22138 top1match 0.6833 hf1rank 3.57
+AGG e41_chain   acc 0.0667 rank 1349.32 cos 0.816042 (min 0.312998) maxabs 8.0894 (max 20.583) kl 1.22396 top1match 0.3833 hf1rank 887.55
+AGG hf32(ceiling) acc 0.2167 rank 163.28 prob 0.10781
+WROTE eval_items.json
+DONE_ITEMS

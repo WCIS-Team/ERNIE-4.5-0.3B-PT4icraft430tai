@@ -1,0 +1,124 @@
+=== D:\yzd\WCIS\MOD\ernie\ernie_fp16_cuda\model.onnx ===
+ir=10 opset=[('ai.onnx', 22), ('com.microsoft', 1)] producer=onnxruntime-genai/0.17.1+83de55a
+nodes=210 initializers=130 inputs=38 outputs=37
+--- inputs ---
+  [ 0] input_ids                    INT64['batch_size', 'sequence_length']
+  [ 1] attention_mask               INT64['batch_size', 'total_sequence_length']
+  [ 2] past_key_values.0.key        FLOAT16['batch_size', 2, 'past_sequence_length', 'kv_cache_dim']
+  [ 3] past_key_values.1.key        FLOAT16['batch_size', 2, 'past_sequence_length', 'kv_cache_dim']
+  [36] past_key_values.16.value     FLOAT16['batch_size', 2, 'past_sequence_length', 'kv_cache_dim']
+  [37] past_key_values.17.value     FLOAT16['batch_size', 2, 'past_sequence_length', 'kv_cache_dim']
+  total=38
+--- outputs ---
+  [ 0] logits                       FLOAT16['batch_size', 'sequence_length', 103424]
+  [ 1] present.0.key                FLOAT16['batch_size', 2, 'total_sequence_length', 'kv_cache_dim']
+  [ 2] present.1.key                FLOAT16['batch_size', 2, 'total_sequence_length', 'kv_cache_dim']
+  [ 3] present.2.key                FLOAT16['batch_size', 2, 'total_sequence_length', 'kv_cache_dim']
+  [35] present.16.value             FLOAT16['batch_size', 2, 'total_sequence_length', 'kv_cache_dim']
+  [36] present.17.value             FLOAT16['batch_size', 2, 'total_sequence_length', 'kv_cache_dim']
+  total=37
+--- op histogram (13 kinds) ---
+  MatMul                     91
+  SkipSimplifiedLayerNormalization 36
+  Mul                        36
+  GroupQueryAttention        18
+  Sigmoid                    18
+  Constant                   2
+  Cast                       2
+  Gather                     2
+  ReduceSum                  1
+  Sub                        1
+  Shape                      1
+  Transpose                  1
+  SimplifiedLayerNormalization 1
+--- rope / attention node attrs ---
+  GroupQueryAttention [/model/layers.0/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.1/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.2/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.3/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.4/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.5/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.6/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.7/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.8/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.9/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.10/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.11/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.12/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.13/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.14/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.15/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.16/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  GroupQueryAttention [/model/layers.17/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=2; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=1
+  INIT cos_cache                FLOAT16 (131072, 64) ext=[('location', 'model.onnx.data'), ('offset', '509739008'), ('length', '16777216')]
+  INIT sin_cache                FLOAT16 (131072, 64) ext=[('location', 'model.onnx.data'), ('offset', '526516224'), ('length', '16777216')]
+=== D:\yzd\WCIS\MOD\qwen3\qwen3_fp16_cuda\model.onnx ===
+ir=10 opset=[('ai.onnx', 22), ('com.microsoft', 1)] producer=onnxruntime-genai/0.17.1+83de55a
+nodes=520 initializers=256 inputs=58 outputs=57
+--- inputs ---
+  [ 0] input_ids                    INT64['batch_size', 'sequence_length']
+  [ 1] attention_mask               INT64['batch_size', 'total_sequence_length']
+  [ 2] past_key_values.0.key        FLOAT16['batch_size', 8, 'past_sequence_length', 'kv_cache_dim']
+  [ 3] past_key_values.1.key        FLOAT16['batch_size', 8, 'past_sequence_length', 'kv_cache_dim']
+  [56] past_key_values.26.value     FLOAT16['batch_size', 8, 'past_sequence_length', 'kv_cache_dim']
+  [57] past_key_values.27.value     FLOAT16['batch_size', 8, 'past_sequence_length', 'kv_cache_dim']
+  total=58
+--- outputs ---
+  [ 0] logits                       FLOAT16['batch_size', 'sequence_length', 151936]
+  [ 1] present.0.key                FLOAT16['batch_size', 8, 'total_sequence_length', 'kv_cache_dim']
+  [ 2] present.1.key                FLOAT16['batch_size', 8, 'total_sequence_length', 'kv_cache_dim']
+  [ 3] present.2.key                FLOAT16['batch_size', 8, 'total_sequence_length', 'kv_cache_dim']
+  [55] present.26.value             FLOAT16['batch_size', 8, 'total_sequence_length', 'kv_cache_dim']
+  [56] present.27.value             FLOAT16['batch_size', 8, 'total_sequence_length', 'kv_cache_dim']
+  total=57
+--- op histogram (15 kinds) ---
+  MatMul                     141
+  Reshape                    112
+  SimplifiedLayerNormalization 57
+  SkipSimplifiedLayerNormalization 56
+  Mul                        56
+  Split                      28
+  GroupQueryAttention        28
+  Sigmoid                    28
+  Constant                   6
+  Cast                       2
+  Gather                     2
+  ReduceSum                  1
+  Sub                        1
+  Shape                      1
+  Transpose                  1
+--- rope / attention node attrs ---
+  GroupQueryAttention [/model/layers.0/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.1/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.2/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.3/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.4/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.5/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.6/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.7/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.8/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.9/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.10/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.11/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.12/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.13/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.14/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.15/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.16/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.17/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.18/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.19/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.20/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.21/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.22/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.23/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.24/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.25/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.26/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  GroupQueryAttention [/model/layers.27/attn/GroupQueryAttention] in=12 out=3 num_heads=16; kv_num_heads=8; scale=0.0883883461356163; local_window_size=-1; softcap=0.0; do_rotary=1; rotary_interleaved=0
+  INIT cos_cache                FLOAT16 (40960, 64) ext=[('location', 'model.onnx.data'), ('offset', '117571584'), ('length', '5242880')]
+  INIT sin_cache                FLOAT16 (40960, 64) ext=[('location', 'model.onnx.data'), ('offset', '122814464'), ('length', '5242880')]
+# --- model.onnx / .data 实物（certutil -hashfile MD5 ＋ dir，读数取自校机 10-30 05:54）---
+model.onnx       103,511 B  md5=6f07fa164050bb4785584b90d0bb458e
+model.onnx.data  755,105,792 B  md5=788afdcb6bfd2502ceda667bcf0d1aac
+dir total        766,418,358 B (6 files)  D: free 1,645,066,383,360 B

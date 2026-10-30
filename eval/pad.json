@@ -1,0 +1,798 @@
+[
+ {
+  "case": "item1",
+  "L": 3,
+  "slots512": {
+   "cos": 0.683071,
+   "maxabs": 15.2275,
+   "rank_of_hf_top1": 3650,
+   "top1": 94786,
+   "same_as_hf": false,
+   "seeded_cos": 0.960732,
+   "seeded_same_as_hf": false
+  },
+  "slots256": {
+   "cos": 0.683071,
+   "maxabs": 15.2275,
+   "rank_of_hf_top1": 3650,
+   "top1": 94786,
+   "same_as_hf": false,
+   "seeded_cos": 0.960732,
+   "seeded_same_as_hf": false
+  },
+  "slots128": {
+   "cos": 0.683071,
+   "maxabs": 15.2275,
+   "rank_of_hf_top1": 3650,
+   "top1": 94786,
+   "same_as_hf": false,
+   "seeded_cos": 0.960732,
+   "seeded_same_as_hf": false
+  },
+  "slots64": {
+   "cos": 0.683071,
+   "maxabs": 15.2275,
+   "rank_of_hf_top1": 3650,
+   "top1": 94786,
+   "same_as_hf": false,
+   "seeded_cos": 0.960732,
+   "seeded_same_as_hf": false
+  },
+  "slots32": {
+   "cos": 0.683071,
+   "maxabs": 15.2275,
+   "rank_of_hf_top1": 3650,
+   "top1": 94786,
+   "same_as_hf": false,
+   "seeded_cos": 0.960732,
+   "seeded_same_as_hf": false
+  },
+  "slots16": {
+   "cos": 0.683071,
+   "maxabs": 15.2275,
+   "rank_of_hf_top1": 3650,
+   "top1": 94786,
+   "same_as_hf": false,
+   "seeded_cos": 0.960732,
+   "seeded_same_as_hf": false
+  }
+ },
+ {
+  "case": "item5",
+  "L": 3,
+  "slots512": {
+   "cos": 0.37138,
+   "maxabs": 20.583,
+   "rank_of_hf_top1": 48309,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.94256,
+   "seeded_same_as_hf": false
+  },
+  "slots256": {
+   "cos": 0.37138,
+   "maxabs": 20.583,
+   "rank_of_hf_top1": 48309,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.94256,
+   "seeded_same_as_hf": false
+  },
+  "slots128": {
+   "cos": 0.37138,
+   "maxabs": 20.583,
+   "rank_of_hf_top1": 48309,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.94256,
+   "seeded_same_as_hf": false
+  },
+  "slots64": {
+   "cos": 0.37138,
+   "maxabs": 20.583,
+   "rank_of_hf_top1": 48309,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.94256,
+   "seeded_same_as_hf": false
+  },
+  "slots32": {
+   "cos": 0.37138,
+   "maxabs": 20.583,
+   "rank_of_hf_top1": 48309,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.94256,
+   "seeded_same_as_hf": false
+  },
+  "slots16": {
+   "cos": 0.37138,
+   "maxabs": 20.583,
+   "rank_of_hf_top1": 48309,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.94256,
+   "seeded_same_as_hf": false
+  }
+ },
+ {
+  "case": "item16",
+  "L": 5,
+  "slots512": {
+   "cos": 0.992851,
+   "maxabs": 1.9672,
+   "rank_of_hf_top1": 10,
+   "top1": 94001,
+   "same_as_hf": false,
+   "seeded_cos": 0.995057,
+   "seeded_same_as_hf": false
+  },
+  "slots256": {
+   "cos": 0.992851,
+   "maxabs": 1.9672,
+   "rank_of_hf_top1": 10,
+   "top1": 94001,
+   "same_as_hf": false,
+   "seeded_cos": 0.995057,
+   "seeded_same_as_hf": false
+  },
+  "slots128": {
+   "cos": 0.992851,
+   "maxabs": 1.9672,
+   "rank_of_hf_top1": 10,
+   "top1": 94001,
+   "same_as_hf": false,
+   "seeded_cos": 0.995057,
+   "seeded_same_as_hf": false
+  },
+  "slots64": {
+   "cos": 0.992851,
+   "maxabs": 1.9672,
+   "rank_of_hf_top1": 10,
+   "top1": 94001,
+   "same_as_hf": false,
+   "seeded_cos": 0.995057,
+   "seeded_same_as_hf": false
+  },
+  "slots32": {
+   "cos": 0.992851,
+   "maxabs": 1.9672,
+   "rank_of_hf_top1": 10,
+   "top1": 94001,
+   "same_as_hf": false,
+   "seeded_cos": 0.995057,
+   "seeded_same_as_hf": false
+  },
+  "slots16": {
+   "cos": 0.992851,
+   "maxabs": 1.9672,
+   "rank_of_hf_top1": 10,
+   "top1": 94001,
+   "same_as_hf": false,
+   "seeded_cos": 0.995057,
+   "seeded_same_as_hf": false
+  }
+ },
+ {
+  "case": "item17",
+  "L": 6,
+  "slots512": {
+   "cos": 0.996832,
+   "maxabs": 1.4293,
+   "rank_of_hf_top1": 0,
+   "top1": 23,
+   "same_as_hf": true,
+   "seeded_cos": 0.992154,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.996832,
+   "maxabs": 1.4293,
+   "rank_of_hf_top1": 0,
+   "top1": 23,
+   "same_as_hf": true,
+   "seeded_cos": 0.992154,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.996832,
+   "maxabs": 1.4293,
+   "rank_of_hf_top1": 0,
+   "top1": 23,
+   "same_as_hf": true,
+   "seeded_cos": 0.992154,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.996832,
+   "maxabs": 1.4293,
+   "rank_of_hf_top1": 0,
+   "top1": 23,
+   "same_as_hf": true,
+   "seeded_cos": 0.992154,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.996832,
+   "maxabs": 1.4293,
+   "rank_of_hf_top1": 0,
+   "top1": 23,
+   "same_as_hf": true,
+   "seeded_cos": 0.992154,
+   "seeded_same_as_hf": true
+  },
+  "slots16": {
+   "cos": 0.996832,
+   "maxabs": 1.4293,
+   "rank_of_hf_top1": 0,
+   "top1": 23,
+   "same_as_hf": true,
+   "seeded_cos": 0.992154,
+   "seeded_same_as_hf": true
+  }
+ },
+ {
+  "case": "item31",
+  "L": 3,
+  "slots512": {
+   "cos": 0.988438,
+   "maxabs": 2.6824,
+   "rank_of_hf_top1": 0,
+   "top1": 3991,
+   "same_as_hf": true,
+   "seeded_cos": 0.874814,
+   "seeded_same_as_hf": false
+  },
+  "slots256": {
+   "cos": 0.988438,
+   "maxabs": 2.6824,
+   "rank_of_hf_top1": 0,
+   "top1": 3991,
+   "same_as_hf": true,
+   "seeded_cos": 0.874814,
+   "seeded_same_as_hf": false
+  },
+  "slots128": {
+   "cos": 0.988438,
+   "maxabs": 2.6824,
+   "rank_of_hf_top1": 0,
+   "top1": 3991,
+   "same_as_hf": true,
+   "seeded_cos": 0.874814,
+   "seeded_same_as_hf": false
+  },
+  "slots64": {
+   "cos": 0.988438,
+   "maxabs": 2.6824,
+   "rank_of_hf_top1": 0,
+   "top1": 3991,
+   "same_as_hf": true,
+   "seeded_cos": 0.874814,
+   "seeded_same_as_hf": false
+  },
+  "slots32": {
+   "cos": 0.988438,
+   "maxabs": 2.6824,
+   "rank_of_hf_top1": 0,
+   "top1": 3991,
+   "same_as_hf": true,
+   "seeded_cos": 0.874814,
+   "seeded_same_as_hf": false
+  },
+  "slots16": {
+   "cos": 0.988438,
+   "maxabs": 2.6824,
+   "rank_of_hf_top1": 0,
+   "top1": 3991,
+   "same_as_hf": true,
+   "seeded_cos": 0.874814,
+   "seeded_same_as_hf": false
+  }
+ },
+ {
+  "case": "item34",
+  "L": 3,
+  "slots512": {
+   "cos": 0.989557,
+   "maxabs": 2.5369,
+   "rank_of_hf_top1": 1,
+   "top1": 26807,
+   "same_as_hf": false,
+   "seeded_cos": 0.945161,
+   "seeded_same_as_hf": false
+  },
+  "slots256": {
+   "cos": 0.989557,
+   "maxabs": 2.5369,
+   "rank_of_hf_top1": 1,
+   "top1": 26807,
+   "same_as_hf": false,
+   "seeded_cos": 0.945161,
+   "seeded_same_as_hf": false
+  },
+  "slots128": {
+   "cos": 0.989557,
+   "maxabs": 2.5369,
+   "rank_of_hf_top1": 1,
+   "top1": 26807,
+   "same_as_hf": false,
+   "seeded_cos": 0.945161,
+   "seeded_same_as_hf": false
+  },
+  "slots64": {
+   "cos": 0.989557,
+   "maxabs": 2.5369,
+   "rank_of_hf_top1": 1,
+   "top1": 26807,
+   "same_as_hf": false,
+   "seeded_cos": 0.945161,
+   "seeded_same_as_hf": false
+  },
+  "slots32": {
+   "cos": 0.989557,
+   "maxabs": 2.5369,
+   "rank_of_hf_top1": 1,
+   "top1": 26807,
+   "same_as_hf": false,
+   "seeded_cos": 0.945161,
+   "seeded_same_as_hf": false
+  },
+  "slots16": {
+   "cos": 0.989557,
+   "maxabs": 2.5369,
+   "rank_of_hf_top1": 1,
+   "top1": 26807,
+   "same_as_hf": false,
+   "seeded_cos": 0.945161,
+   "seeded_same_as_hf": false
+  }
+ },
+ {
+  "case": "item46",
+  "L": 4,
+  "slots512": {
+   "cos": 0.605447,
+   "maxabs": 15.322,
+   "rank_of_hf_top1": 3,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.995044,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.605447,
+   "maxabs": 15.322,
+   "rank_of_hf_top1": 3,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.995044,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.605447,
+   "maxabs": 15.322,
+   "rank_of_hf_top1": 3,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.995044,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.605447,
+   "maxabs": 15.322,
+   "rank_of_hf_top1": 3,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.995044,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.605447,
+   "maxabs": 15.322,
+   "rank_of_hf_top1": 3,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.995044,
+   "seeded_same_as_hf": true
+  },
+  "slots16": {
+   "cos": 0.605447,
+   "maxabs": 15.322,
+   "rank_of_hf_top1": 3,
+   "top1": 4,
+   "same_as_hf": false,
+   "seeded_cos": 0.995044,
+   "seeded_same_as_hf": true
+  }
+ },
+ {
+  "case": "item51",
+  "L": 4,
+  "slots512": {
+   "cos": 0.557629,
+   "maxabs": 14.3674,
+   "rank_of_hf_top1": 1,
+   "top1": 5,
+   "same_as_hf": false,
+   "seeded_cos": 0.993837,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.557629,
+   "maxabs": 14.3674,
+   "rank_of_hf_top1": 1,
+   "top1": 5,
+   "same_as_hf": false,
+   "seeded_cos": 0.993837,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.557629,
+   "maxabs": 14.3674,
+   "rank_of_hf_top1": 1,
+   "top1": 5,
+   "same_as_hf": false,
+   "seeded_cos": 0.993837,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.557629,
+   "maxabs": 14.3674,
+   "rank_of_hf_top1": 1,
+   "top1": 5,
+   "same_as_hf": false,
+   "seeded_cos": 0.993837,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.557629,
+   "maxabs": 14.3674,
+   "rank_of_hf_top1": 1,
+   "top1": 5,
+   "same_as_hf": false,
+   "seeded_cos": 0.993837,
+   "seeded_same_as_hf": true
+  },
+  "slots16": {
+   "cos": 0.557629,
+   "maxabs": 14.3674,
+   "rank_of_hf_top1": 1,
+   "top1": 5,
+   "same_as_hf": false,
+   "seeded_cos": 0.993837,
+   "seeded_same_as_hf": true
+  }
+ },
+ {
+  "case": "item54",
+  "L": 4,
+  "slots512": {
+   "cos": 0.423527,
+   "maxabs": 18.4372,
+   "rank_of_hf_top1": 1,
+   "top1": 3,
+   "same_as_hf": false,
+   "seeded_cos": 0.995963,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.423527,
+   "maxabs": 18.4372,
+   "rank_of_hf_top1": 1,
+   "top1": 3,
+   "same_as_hf": false,
+   "seeded_cos": 0.995963,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.423527,
+   "maxabs": 18.4372,
+   "rank_of_hf_top1": 1,
+   "top1": 3,
+   "same_as_hf": false,
+   "seeded_cos": 0.995963,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.423527,
+   "maxabs": 18.4372,
+   "rank_of_hf_top1": 1,
+   "top1": 3,
+   "same_as_hf": false,
+   "seeded_cos": 0.995963,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.423527,
+   "maxabs": 18.4372,
+   "rank_of_hf_top1": 1,
+   "top1": 3,
+   "same_as_hf": false,
+   "seeded_cos": 0.995963,
+   "seeded_same_as_hf": true
+  },
+  "slots16": {
+   "cos": 0.423527,
+   "maxabs": 18.4372,
+   "rank_of_hf_top1": 1,
+   "top1": 3,
+   "same_as_hf": false,
+   "seeded_cos": 0.995963,
+   "seeded_same_as_hf": true
+  }
+ },
+ {
+  "case": "item55",
+  "L": 4,
+  "slots512": {
+   "cos": 0.397038,
+   "maxabs": 19.9825,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.995376,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.397038,
+   "maxabs": 19.9825,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.995376,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.397038,
+   "maxabs": 19.9825,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.995376,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.397038,
+   "maxabs": 19.9825,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.995376,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.397038,
+   "maxabs": 19.9825,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.995376,
+   "seeded_same_as_hf": true
+  },
+  "slots16": {
+   "cos": 0.397038,
+   "maxabs": 19.9825,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.995376,
+   "seeded_same_as_hf": true
+  }
+ },
+ {
+  "case": "item58",
+  "L": 8,
+  "slots512": {
+   "cos": 0.650305,
+   "maxabs": 12.019,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.990904,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.650305,
+   "maxabs": 12.019,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.990904,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.650305,
+   "maxabs": 12.019,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.990904,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.650305,
+   "maxabs": 12.019,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.990904,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.650305,
+   "maxabs": 12.019,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.990904,
+   "seeded_same_as_hf": true
+  },
+  "slots16": {
+   "cos": 0.650305,
+   "maxabs": 12.019,
+   "rank_of_hf_top1": 0,
+   "top1": 4,
+   "same_as_hf": true,
+   "seeded_cos": 0.990904,
+   "seeded_same_as_hf": true
+  }
+ },
+ {
+  "case": "item60",
+  "L": 10,
+  "slots512": {
+   "cos": 0.552957,
+   "maxabs": 15.0314,
+   "rank_of_hf_top1": 2,
+   "top1": 9,
+   "same_as_hf": false,
+   "seeded_cos": 0.983134,
+   "seeded_same_as_hf": false
+  },
+  "slots256": {
+   "cos": 0.552957,
+   "maxabs": 15.0314,
+   "rank_of_hf_top1": 2,
+   "top1": 9,
+   "same_as_hf": false,
+   "seeded_cos": 0.983134,
+   "seeded_same_as_hf": false
+  },
+  "slots128": {
+   "cos": 0.552957,
+   "maxabs": 15.0314,
+   "rank_of_hf_top1": 2,
+   "top1": 9,
+   "same_as_hf": false,
+   "seeded_cos": 0.983134,
+   "seeded_same_as_hf": false
+  },
+  "slots64": {
+   "cos": 0.552957,
+   "maxabs": 15.0314,
+   "rank_of_hf_top1": 2,
+   "top1": 9,
+   "same_as_hf": false,
+   "seeded_cos": 0.983134,
+   "seeded_same_as_hf": false
+  },
+  "slots32": {
+   "cos": 0.552957,
+   "maxabs": 15.0314,
+   "rank_of_hf_top1": 2,
+   "top1": 9,
+   "same_as_hf": false,
+   "seeded_cos": 0.983134,
+   "seeded_same_as_hf": false
+  },
+  "slots16": {
+   "cos": 0.552957,
+   "maxabs": 15.0314,
+   "rank_of_hf_top1": 2,
+   "top1": 9,
+   "same_as_hf": false,
+   "seeded_cos": 0.983134,
+   "seeded_same_as_hf": false
+  }
+ },
+ {
+  "case": "zh24",
+  "L": 24,
+  "slots512": {
+   "cos": 0.99766,
+   "maxabs": 1.2005,
+   "rank_of_hf_top1": 0,
+   "top1": 93964,
+   "same_as_hf": true,
+   "seeded_cos": 0.988521,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.99766,
+   "maxabs": 1.2005,
+   "rank_of_hf_top1": 0,
+   "top1": 93964,
+   "same_as_hf": true,
+   "seeded_cos": 0.988521,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.99766,
+   "maxabs": 1.2005,
+   "rank_of_hf_top1": 0,
+   "top1": 93964,
+   "same_as_hf": true,
+   "seeded_cos": 0.988521,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.99766,
+   "maxabs": 1.2005,
+   "rank_of_hf_top1": 0,
+   "top1": 93964,
+   "same_as_hf": true,
+   "seeded_cos": 0.988521,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.99766,
+   "maxabs": 1.2005,
+   "rank_of_hf_top1": 0,
+   "top1": 93964,
+   "same_as_hf": true,
+   "seeded_cos": 0.988521,
+   "seeded_same_as_hf": true
+  },
+  "slots16": null
+ },
+ {
+  "case": "en24",
+  "L": 24,
+  "slots512": {
+   "cos": 0.856519,
+   "maxabs": 11.5587,
+   "rank_of_hf_top1": 13,
+   "top1": 5246,
+   "same_as_hf": false,
+   "seeded_cos": 0.99372,
+   "seeded_same_as_hf": true
+  },
+  "slots256": {
+   "cos": 0.856519,
+   "maxabs": 11.5587,
+   "rank_of_hf_top1": 13,
+   "top1": 5246,
+   "same_as_hf": false,
+   "seeded_cos": 0.99372,
+   "seeded_same_as_hf": true
+  },
+  "slots128": {
+   "cos": 0.856519,
+   "maxabs": 11.5587,
+   "rank_of_hf_top1": 13,
+   "top1": 5246,
+   "same_as_hf": false,
+   "seeded_cos": 0.99372,
+   "seeded_same_as_hf": true
+  },
+  "slots64": {
+   "cos": 0.856519,
+   "maxabs": 11.5587,
+   "rank_of_hf_top1": 13,
+   "top1": 5246,
+   "same_as_hf": false,
+   "seeded_cos": 0.99372,
+   "seeded_same_as_hf": true
+  },
+  "slots32": {
+   "cos": 0.856519,
+   "maxabs": 11.5587,
+   "rank_of_hf_top1": 13,
+   "top1": 5246,
+   "same_as_hf": false,
+   "seeded_cos": 0.99372,
+   "seeded_same_as_hf": true
+  },
+  "slots16": null
+ }
+]

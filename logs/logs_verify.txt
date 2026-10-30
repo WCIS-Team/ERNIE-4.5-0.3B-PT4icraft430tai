@@ -1,0 +1,12 @@
+CFG layers=18 heads=16 kv=2 head_dim=128 hidden=1024 vocab=103424 tie=True
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]Loading weights:  41%|¨€¨€¨€¨€¨‡     | 68/164 [00:00<00:00, 677.10it/s]Loading weights:  83%|¨€¨€¨€¨€¨€¨€¨€¨€¨† | 136/164 [00:00<00:00, 566.66it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 164/164 [00:00<00:00, 583.18it/s]
+PROMPT_TOKENS 7 [94515, 94036, 31282, 5502, 44284, 3458, 93977]
+GOLD top5 [23, 44284, 2, 93919, 269] next 23
+ORT_PROVIDERS_USED ['CPUExecutionProvider']
+ONNX_INPUTS 38 ONNX_OUTPUTS 37
+KV_DTYPE tensor(float16)
+PREFILL maxabs=0.02105 relmax=0.00114 cos=0.999999
+PREFILL top5_onnx [23, 44284, 2, 93919, 269] next 23 | top5_gold [23, 44284, 2, 93919, 269] next 23 | MATCH_TOP1 True
+DECODE maxabs=1.56689 relmax=0.12047 cos=0.991060
+DECODE top5_onnx [23, 93942, 4, 3, 93993] next 23 | top5_gold [23, 93942, 93993, 1300, 4] next 23 | MATCH_TOP1 True
+DONE_VERIFY

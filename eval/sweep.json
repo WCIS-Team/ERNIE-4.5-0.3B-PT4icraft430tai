@@ -1,0 +1,228 @@
+{
+ "texts": {
+  "zh": 76,
+  "en": 71
+ },
+ "length": [
+  {
+   "L": 4,
+   "seeded": {
+    "maxabs": 3.6685,
+    "relmax": 0.21711,
+    "cos": 0.98071,
+    "kl": 0.0767,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.785,
+    "relmax": 0.10564,
+    "cos": 0.995798,
+    "kl": 0.02269,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 93956,
+   "argmax_seeded": 93956,
+   "argmax_chain": 93956
+  },
+  {
+   "L": 8,
+   "seeded": {
+    "maxabs": 1.4977,
+    "relmax": 0.10074,
+    "cos": 0.996907,
+    "kl": 0.07296,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.4909,
+    "relmax": 0.10028,
+    "cos": 0.997136,
+    "kl": 0.06973,
+    "top1_match": false,
+    "rank_of_ref_top1": 1
+   },
+   "argmax_hf": 54249,
+   "argmax_seeded": 54249,
+   "argmax_chain": 60199
+  },
+  {
+   "L": 16,
+   "seeded": {
+    "maxabs": 1.894,
+    "relmax": 0.09984,
+    "cos": 0.995295,
+    "kl": 0.02525,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.2562,
+    "relmax": 0.06621,
+    "cos": 0.997935,
+    "kl": 0.01706,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 94142,
+   "argmax_seeded": 94142,
+   "argmax_chain": 94142
+  },
+  {
+   "L": 24,
+   "seeded": {
+    "maxabs": 3.0143,
+    "relmax": 0.16199,
+    "cos": 0.988521,
+    "kl": 0.16159,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.2005,
+    "relmax": 0.06452,
+    "cos": 0.99766,
+    "kl": 0.02749,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 93964,
+   "argmax_seeded": 93964,
+   "argmax_chain": 93964
+  },
+  {
+   "L": 32,
+   "seeded": {
+    "maxabs": 0.7867,
+    "relmax": 0.04832,
+    "cos": 0.999295,
+    "kl": 0.0097,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.7268,
+    "relmax": 0.10605,
+    "cos": 0.9984,
+    "kl": 0.01404,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 23,
+   "argmax_seeded": 23,
+   "argmax_chain": 23
+  },
+  {
+   "L": 48,
+   "seeded": {
+    "maxabs": 0.7373,
+    "relmax": 0.04693,
+    "cos": 0.999201,
+    "kl": 0.01169,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.3909,
+    "relmax": 0.08852,
+    "cos": 0.998477,
+    "kl": 0.01678,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 23,
+   "argmax_seeded": 23,
+   "argmax_chain": 23
+  },
+  {
+   "L": 64,
+   "seeded": {
+    "maxabs": 1.4704,
+    "relmax": 0.06307,
+    "cos": 0.994824,
+    "kl": 0.01262,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.7532,
+    "relmax": 0.0752,
+    "cos": 0.995432,
+    "kl": 0.00196,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 93956,
+   "argmax_seeded": 93956,
+   "argmax_chain": 93956
+  },
+  {
+   "L": 76,
+   "seeded": {
+    "maxabs": 0.575,
+    "relmax": 0.03442,
+    "cos": 0.999377,
+    "kl": 0.00529,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "chain": {
+    "maxabs": 1.1564,
+    "relmax": 0.06922,
+    "cos": 0.998803,
+    "kl": 0.01594,
+    "top1_match": true,
+    "rank_of_ref_top1": 0
+   },
+   "argmax_hf": 23,
+   "argmax_seeded": 23,
+   "argmax_chain": 23
+  }
+ ],
+ "ppl": {
+  "zh": {
+   "tokens": 76,
+   "scored": 75,
+   "ppl_hf32": 33.758,
+   "ppl_hf16": 33.762,
+   "ppl_native": 33.737,
+   "ppl_chain": 36.297,
+   "nll_hf32": 3.5192,
+   "nll_chain": 3.5917,
+   "chain_ms_per_step": 56.8,
+   "argmax_agree_over_text": "65/75"
+  },
+  "en": {
+   "tokens": 71,
+   "scored": 70,
+   "ppl_hf32": 29.455,
+   "ppl_hf16": 29.451,
+   "ppl_native": 29.451,
+   "ppl_chain": 153.215,
+   "nll_hf32": 3.3829,
+   "nll_chain": 5.0318,
+   "chain_ms_per_step": 98.4,
+   "argmax_agree_over_text": "30/70"
+  }
+ },
+ "greedy": [
+  {
+   "key": "zh",
+   "prefix_tokens": 12,
+   "agree_after_prefix": "7/24",
+   "first_divergence": 15,
+   "chain_text": "今天早上下了小雨，街面上的水洼映着路灯，像一面面镜子，倒映着过往的行人。\n00:00:00 -->",
+   "hf_text": "今天早上下了小雨，街面上的水洼映着路灯，像一条条银色的丝带。\n00:00:00 --> 00:"
+  },
+  {
+   "key": "en",
+   "prefix_tokens": 12,
+   "agree_after_prefix": "0/24",
+   "first_divergence": 12,
+   "chain_text": "The morning was quiet, and a thin rain covered the street, the air was fresh and clear, the noise was muted, and the setting sun shimmered through the window",
+   "hf_text": "The morning was quiet, and a thin rain covered the street. The old man sat on the bench, his face pale, and his eyes fixed on the horizon.\n\n\""
+  }
+ ]
+}

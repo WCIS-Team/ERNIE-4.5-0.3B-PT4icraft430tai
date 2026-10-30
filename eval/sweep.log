@@ -1,0 +1,24 @@
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]Loading weights:  46%|████▋     | 76/164 [00:00<00:00, 744.68it/s]Loading weights:  92%|█████████▏| 151/164 [00:00<00:00, 649.33it/s]Loading weights: 100%|██████████| 164/164 [00:00<00:00, 667.11it/s]
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]Loading weights:  36%|███▌      | 59/164 [00:00<00:00, 577.14it/s]Loading weights:  74%|███████▍  | 121/164 [00:00<00:00, 586.86it/s]Loading weights: 100%|██████████| 164/164 [00:00<00:00, 608.37it/s]
+MODEL vocab=103424 threads=24
+SWEEP length scaling of the chained walk (final-step logits vs HF float32)
+L=  4  seeded cos 0.98071 maxabs 3.668 rank_of_hf1   0 | chain cos 0.99580 maxabs 1.785 rank_of_hf1     0 | argmax H/S/C 93956/93956/93956
+L=  8  seeded cos 0.99691 maxabs 1.498 rank_of_hf1   0 | chain cos 0.99714 maxabs 1.491 rank_of_hf1     1 | argmax H/S/C 54249/54249/60199
+L= 16  seeded cos 0.99530 maxabs 1.894 rank_of_hf1   0 | chain cos 0.99794 maxabs 1.256 rank_of_hf1     0 | argmax H/S/C 94142/94142/94142
+L= 24  seeded cos 0.98852 maxabs 3.014 rank_of_hf1   0 | chain cos 0.99766 maxabs 1.200 rank_of_hf1     0 | argmax H/S/C 93964/93964/93964
+L= 32  seeded cos 0.99930 maxabs 0.787 rank_of_hf1   0 | chain cos 0.99840 maxabs 1.727 rank_of_hf1     0 | argmax H/S/C 23/23/23
+L= 48  seeded cos 0.99920 maxabs 0.737 rank_of_hf1   0 | chain cos 0.99848 maxabs 1.391 rank_of_hf1     0 | argmax H/S/C 23/23/23
+L= 64  seeded cos 0.99482 maxabs 1.470 rank_of_hf1   0 | chain cos 0.99543 maxabs 1.753 rank_of_hf1     0 | argmax H/S/C 93956/93956/93956
+L= 76  seeded cos 0.99938 maxabs 0.575 rank_of_hf1   0 | chain cos 0.99880 maxabs 1.156 rank_of_hf1     0 | argmax H/S/C 23/23/23
+SWEEP perplexity (mean -log P of the actual next token, whole text chained token by token)
+zh 76 tokens  PPL hf32 33.758 | hf16 33.762 | native 33.737 | chain 36.297  (chain 56.8 ms/step, per-step argmax agreement 65/75)
+en 71 tokens  PPL hf32 29.455 | hf16 29.451 | native 29.451 | chain 153.215  (chain 98.4 ms/step, per-step argmax agreement 30/70)
+SWEEP free-running greedy continuation, chained net vs HF greedy
+zh agree 7/24 first divergence at 15
+   chain: '今天早上下了小雨，街面上的水洼映着路灯，像一面面镜子，倒映着过往的行人。\n00:00:00 -->'
+   hf  : '今天早上下了小雨，街面上的水洼映着路灯，像一条条银色的丝带。\n00:00:00 --> 00:'
+en agree 0/24 first divergence at 12
+   chain: 'The morning was quiet, and a thin rain covered the street, the air was fresh and clear, the noise was muted, and the setting sun shimmered through the window'
+   hf  : 'The morning was quiet, and a thin rain covered the street. The old man sat on the bench, his face pale, and his eyes fixed on the horizon.\n\n"'
+WROTE D:\yzd\WCIS\MOD\ernie\eval\sweep.json
+DONE_SWEEP
