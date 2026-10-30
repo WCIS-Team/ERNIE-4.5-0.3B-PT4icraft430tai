@@ -81,7 +81,7 @@ D:\yzd\WCIS\MOD\qwen3\venv\Scripts\python.exe D:\yzd\WCIS\MOD\ernie\dl_ernie.py
 - 算式核对（A）：`MatMul 91 ＝ 18×5＋1`（融合 qkv ⇒ 每层 qkv/o/gate/up/down 五颗 ＋ `lm_head` 一颗）；Qwen3 是 `7×28＋1＝197`，因为它的 q/k/v 分三颗。对照页 §7 那条"Matmul＝7×层数＋1"**对 ERNIE 不适用**，得按融合形态用 `5×层数＋1`。
 - 算式核对（A）：norm 类 `1＋36＝37 ＝ 18×2＋1` ⇒ 没有 QK-Norm 这条在图里成立。
 - 算式核对（A）：qkv 投影宽 `1024＋2560＝3584 ＝ 128×(16＋2＋2)` ⇒ Q 16 头、K/V 各 2 头、head_dim 128，与 GQA 属性互证。
-- `.data` 对账（A）：755,105,792 − 721,514,672（safetensors） − 33,554,432（两颗 rope 表） ＝ **36,688 B 未核**（＝18,344 个 fp16）。另：对照页 §6.3 的参数算式 360,747,520×2＝721,495,040 比 safetensors 少 **19,632 B** ⇒ 算式可用但没咬死，两处"成分未核"都保留。
+- `.data` 对账（A，**10-31 按张量级读数更正**）：`model.safetensors` 头部 164 张量逐张求和＝**360,748,032 个元素**、全 BF16 ⇒ 权重字节 ＝ 360,748,032×2 ＝ **721,496,064**（文件 721,514,672 − 18,608 B 的头部与对齐，算式对平）。于是 `.data` 的未核余量 ＝ 755,105,792 − 721,496,064 − 33,554,432（两颗 rope 表）＝ **55,296 B**（＝27,648 个 fp16，成分仍未核）。原先这里写的"36,688 B 未核"是拿 safetensors 的**文件字节**当权重字节算的（36,688 ＋ 18,608 ＝ 55,296，两处差额对得上）；对照页 §6.3 那句"参数算式比 safetensors 少 19,632 B"是同一个错的另一面（18,608 ＋ 1,024；那 1,024 B ＝ `103,424×1,024` 少写 512 个元素，正确值 105,906,176 而非 105,905,664）。**参数量升到 A：360,748,032 ≈ 0.36 B（164 张量，全 BF16）。**
 
 ## 4. 门 0：对 HF 基准（校机导出件，`logs/logs_verify.txt`，A）
 
@@ -132,7 +132,9 @@ D:\yzd\WCIS\MOD\qwen3\venv\Scripts\python.exe D:\yzd\WCIS\MOD\ernie\dl_ernie.py
 
 ### 7.1 到案的件
 
-`E41-decoder`（`compile/E41_parse.toml` 902 B，五段各带自己的文件名与 `jr_path`，由 `mk_toml.py` 从基座 toml 文本改写）：
+`E41-decoder`（`compile/E41_parse.toml` 902 B／md5 `00a4ce9f4205e095676c6154d3c7d58e`，五段各带自己的文件名与 `jr_path`，由 `mk_toml.py` 从基座 toml 文本改写；**10-31 起这份 toml 已入本仓 `compile/`**，之前只在编译根）：
+
+- toml 里烘死的三个数（A，件直读）：`max_tokens_length = 512`＝**KV 窗口**（所以 §9.4 那条"改 `SLOTS`"必须重编才对图有效）、`max_prompt_length = 32`、`qdtype = "fp16"`＋`quantized = true`⇒ 门 2 的量化档只有 fp16 这一种走过；`llm_mode = true`／`target = "zhuge"`／`pass_off = "icraft.MergeTransDataOpSeqPass"`（adapt 段唯一关掉的 pass）。
 
 | 段 | `.json` B | `.raw` B |
 |---|---|---|
@@ -315,12 +317,13 @@ D:\yzd\WCIS\MOD\qwen3\venv\Scripts\python.exe D:\yzd\WCIS\MOD\ernie\dl_ernie.py
 - 计时：修复链 8 步 13.4／13.3／13.5／12.7／13.1／13.2／13.0 s（step0 冷启 31.1 s，不计入）比不修链的 11.2～11.8 s 慢 **约 12%**（(13.4+13.3+13.5+12.7+13.1+13.2+13.0)/7＝13.17 vs 11.557，A）＝多一步前向＋每步 40 次槽复制的代价；板端代价**未测**（C）。
 - **驱动修复的独立证据**：`--padfix` 首版在 walk 走完后越界（`IndexError`，因为只索引了 `walk`），修成索引 `feed`（walk＋已生成 token）后，2 token 提示 ×`--max-new 2` 连跑 5 步到 step4 仍在生成（`eval/compiled_padfix/smoke_2token/`，A）。
 
-## 10. 更正记录（我判错、现已否证的三条）
+## 10. 更正记录（我判错、现已否证的四条）
 
 1. **`-PT` ＝ PyTorch 权重格式，不是 pretrain 底座**（A，两张 ModelScope 卡片并读）。原话 `"-Paddle" models use PaddlePaddle weights, while "-PT" models use Transformer-style PyTorch weights`；裸底座叫 `-Base-PT`（`Training Stage | Pretraining`），本颗是 `a text dense Post-trained model`／`Posttraining`。`baidu` org 37 个模型里 0.3B 只有 `Base-PT`／`Base-Paddle`／`PT`／`Paddle` 四档 ⇒ **不存在 Instruct／Chat 档，"换 Instruct 重导"没有对象**。
 2. **`interleaved` 那条坑先被作废、又翻回一半**（A，§5／§7.3）：ORT／genai 侧约定本来就对；icraft 侧因为 parser 丢属性而确实错位，需数据层置换。
 3. **"REPAIR HURTS on 18/60" 这句是错的**（A，§9.6）：真实读数是裸提示 60 题里 **43 题 cos 变好、17 题变差**，`top1==HF` 23→40；chat 面 **60/60 全变好**、`top1==HF` 11→56。我把一个"部分题变差"的计数写成了"整体变差"（那个 18 现在追不到出处，不解释，直接作废）。**结论方向反了**，以 §9.6 表为准。
 
+4. **参数量算式与两处"未核余量"错在同一个地方**（A，10-31，§3）：先前拿 `model.safetensors` 的**文件字节** 721,514,672 当权重字节去对 `.data`，于是得到"多 36,688 B"；对照页 §6.3 的算式又把 embedding 写成 103,424×1,024＝105,905,664（少 512 个元素）。现在按件直读：safetensors 头部 **164 张量、全 BF16、合计 360,748,032 个元素** ⇒ 权重 721,496,064 B，`.data` 未核余量 **55,296 B**（＝36,688 ＋ 18,608，那 18,608 B 是 safetensors 自己的头部与对齐）。参数量从"B 级算式"升成 **A 级件读数**；`.raw` 的那句外推（≈970 MB，C）同时作废——实测 1,054,488,148 B ≈ 1,005.6 MiB（§7.1）。
 ## 11. 复跑
 
 ```
