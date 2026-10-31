@@ -388,6 +388,6 @@ ssh root@192.168.1.113 "cd /mnt/data/ernie && E41_PADFIX=1 E41_MAX_NEW=8 \
 **驱动的两个实现要点**：
 
 - 输入缓冲按 `net.ops[0].outputs[i].tensorType()` 一次性建好（40.0 MiB＝41,943,056 B），`present` 用 `item.read(buf, item.offset(), chunk.byte_size)` 直读回配对槽位，不新建 numpy 数组。前两路用 `xir.Layout("*C")`，其余用 `tensorType()`——与 `q3_infer_board.py` 同法。
-- `E41_PADFIX=1` 在**回喂时**做 `buf[:, :, 0, :] = buf[:, :, 1, :]`，并把首 token 重喂一次（`walk=[prompt[0]]+prompt`）；这与 `host_gen.py --padfix` 是同一约定，板上读数逐 token 相同（台账 §25.2）。
+- `E41_PADFIX`（**默认 1**，设 0 关）在**回喂时**做 `buf[:, :, 0, :] = buf[:, :, 1, :]`，并把首 token 重喂一次（`walk=[prompt[0]]+prompt`）；这与 `host_gen.py --padfix` 是同一约定，板上读数逐 token 相同（台账 §25.2）。默认值是在板上 A/B 之后（11-01）改的，代码里就是 1，不靠启动命令带环境变量。
 
 **位流门禁这次怎么过的**：`/mnt/boot` 未挂载，`md5sum /mnt/boot/BOOT.bin` 这条路不可用；改判证据＝同日另一进程在同一块板打出 `Device Name: zg330aiu`，加本次 `openDevice` 秒回、`precheck=True`（台账 §25.1）。**下次上板仍应先查 `/mnt/boot` 是否挂上**，别把这套替代证据当常规通道。

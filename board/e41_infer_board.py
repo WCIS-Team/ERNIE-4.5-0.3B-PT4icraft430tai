@@ -16,13 +16,16 @@ Feed contract, read off E41-decoder_ZG.json (42 declared input values, 37 output
 Outputs: logits fp16 [1,1,103424], then 36 present tensors that go straight back as the next
 step's past (whole tensor, no compaction -- host_gen does the same).
 
---padfix (env E41_PADFIX=1) repairs the pad slot: the graph never writes slot 0, so position 0
-attends to an all-zero pad.  The repair feeds token 0 twice and copies slot 1 into slot 0 of
-every chained cache, so the repeat's window is {self, self}.
+--padfix (env E41_PADFIX, default 1; set 0 to disable) repairs the pad slot: the graph never
+writes slot 0, so position 0 attends to an all-zero pad.  The repair feeds token 0 twice and
+copies slot 1 into slot 0 of every chained cache, so the repeat's window is {self, self}.
+Default is 1 because the board A/B on 2026-11-01 showed padfix=0 degenerates into a timestamp
+loop on the same prompt and padfix=1 answers coherently, at no measurable speed cost.
 
 Run (board):
-  E41_PADFIX=0 E41_MAX_NEW=1 python3 e41_infer_board.py
-  E41_TEXT='你好' E41_MAX_NEW=16 E41_PADFIX=1 python3 e41_infer_board.py
+  E41_MAX_NEW=1 python3 e41_infer_board.py
+  E41_TEXT='你好' E41_MAX_NEW=16 python3 e41_infer_board.py
+  E41_PADFIX=0 E41_MAX_NEW=16 python3 e41_infer_board.py    # A/B off
 """
 import datetime
 import json
@@ -49,7 +52,7 @@ CONFIG_DIR = os.environ.get("E41_CONFIG", "/mnt/data/ernie/config/ernie")
 PROMPT = os.environ.get("E41_PROMPT", "94515,94036,31282,5502,44284,3458,93977")
 TEXT = os.environ.get("E41_TEXT", "")
 MAX_NEW = int(os.environ.get("E41_MAX_NEW", "8"))
-PADFIX = os.environ.get("E41_PADFIX", "0") == "1"
+PADFIX = os.environ.get("E41_PADFIX", "1") == "1"
 STOP = {int(t) for t in os.environ.get("E41_STOP", "2").split(",") if t.strip()}
 POS_OFFSET = int(os.environ.get("E41_POS_OFFSET", "1"))
 MAX_SLOTS = 512
