@@ -1,6 +1,6 @@
-# ERNIE-4.5-0.3B-PT · NPU 迁移流程正本（导出→改写→五段编译→PC 校验→校机实测）
+# ERNIE-4.5-0.3B-PT · NPU 迁移流程正本（导出→改写→五段编译→PC 校验→校机实测→板上点火）
 
-> 立项 2026-10-30，按她那句"开 ERNIE 这条线（开的话第一步只是'校机导出＋对 HF 基准'，在 WCIS/repos 里开一个 ERNIE 的 repo）"。**10-30 当天走到的只是第一步**；10-30 晚～10-31 凌晨把门 1～3、PC 侧数值校验和校机实测一并跑完，本页现在记的是**整条链**，第一步那批读数留在 §2～§4。
+> 立项 2026-10-30，按她那句"开 ERNIE 这条线（开的话第一步只是'校机导出＋对 HF 基准'，在 WCIS/repos 里开一个 ERNIE 的 repo）"。**10-30 当天走到的只是第一步**；10-30 晚～10-31 凌晨把门 1～3、PC 侧数值校验和校机实测一并跑完，**11-01 上板把门 4 走通**（§14），本页现在记的是**整条链**，第一步那批读数留在 §2～§4。
 > 上板判据的正本＝`wiki/PL/MOD/llm/LLM上板要求与候选模型对照.md`（四道门那张表在 §二）；本条线的"介绍页"＝`wiki/PL/MOD/llm/ERNIE-4.5-0.3B-PT.md`（只写型号与状态，读数指回本页，不复制表格）；配方来源＝[[Qwen3-Instruct按Qwen3配方迁移]] 与 `repos/Qwen3-0.6B-Instruct/pipeline.md`。
 > **证据分级**：A＝从件／日志／终端直取；B＝原文照录或推导；C＝按比例外推、未实测；D＝听说。**没执行的步骤一律写成"未执行"**，不写成结果。§10 单列我判错过又更正的三条。
 
@@ -15,7 +15,7 @@
 7. **校机实测：可用性判到了"能用但窄"**（A，§9.1～§9.3）：60 题、5 列对照。`native`（原始 genai 件）对 HF fp32 `cos` 0.999999／`top1_match` **60/60**；`e41_chain`（逐 token 链）`cos` 中位 0.816、`top1_match` **23/60**、`acc_top1` 0.0667。中文 76 token 文本困惑度 `ppl_chain` 36.297 vs `ppl_hf32` 33.758（argmax 一致 65/75）；**英文 71 token `ppl_chain` 153.215** vs `ppl_hf32` 29.455（一致 30/70）⇒ 退化主要落在英文侧。
 8. **修首步＝slot1→slot0 复制，收益已量化**（A，§9.6）：替身面 60 题裸提示 `top1==HF` 23/60→**40/60**，chat template 面 11/60→**56/60**、`cos` 中位 0.7853→0.9956。**10-31 更正**：我先前那句"REPAIR HURTS on 18/60"是把"18 题 cos 变差"错写成整体变差；实际是净收益（见 §10 第 3 条）。
 9. **这个修复在编译件上复核过**（A，§9.7，10-31 新跑）：`compiled_padfix` 8 步——step0 与不修链逐字节相等（控制组），8/8 每步 argmax 与替身完全一致，两种走法首 token 都取 23、与 HF 同；`TV` 0.03192→**0.02512** 变好，`cos` 0.992162→0.983253、`maxabs` 1.857→3.090 变差 ⇒ **一个提示上判不了"一定更好"，但机制在真件上成立**。
-10. **门 4 零读数**（未执行）：`.raw` 只有 C 级外推；CMA／位流门禁、上板传输、驱动上板、点火全部没跑，板上零读数。动板前先查 `113.txt`，且她要求"模型上板之前跟我说一声"。
+10. **门 4 通**（A，11-01，§14）：板上 `precheck=True`、`apply` 46.4 s；**逐 token 与 PC Host 后端全同**（padfix=0 七步、padfix=1 八步两模式都对上）；稳态 **0.42 s/步＝2.38 token/s**，64 token 长跑第 62 步吐 eos、`VmHWM` 不涨；padfix 板上 A/B 后**默认开**（关→时间戳循环，开→55 token 通顺到 eos）。**板上读数正本＝`wiki/PS/板端我方代码与产物台账.md` §廿五**，本页只记流程与合同。
 
 ## 1. 主机与环境（A，10-30 建线直读；10-31 分工沿用）
 
@@ -342,19 +342,26 @@ python -X utf8 compile/host_gen.py --json S:/apps/llm/agentwork/ernie/compile/jr
   --work S:/apps/llm/agentwork/ernie/compile/gen_e41_chain --prompt "94515,94036,31282,5502,44284,3458,93977" \
   --max-new 1 --stop 151645,151643        # 加 --padfix 走修复链
 python -X utf8 compile/zg_census.py S:/apps/llm/agentwork/ernie/compile/jr_path/E41/E41-decoder_ZG.json
+
+# 板（192.168.1.113；动手前先看 113.txt 是不是 off）
+scp board/e41_probe.py board/e41_infer_board.py root@192.168.1.113:/mnt/data/ernie/
+ssh root@192.168.1.113 "E41STEP=3 timeout 600 python3 /mnt/data/ernie/e41_probe.py"          # 分步探针
+ssh root@192.168.1.113 "cd /mnt/data/ernie && E41_PADFIX=1 E41_MAX_NEW=8 \
+  E41_PROMPT=94515,94036,31282,5502,44284,3458,93977 python3 e41_infer_board.py"           # 点火
 ```
 
 `compile/` 与 `scripts/` ＝现役正本；工作副本与逐里程碑日志（`logs/*.log` 的 parse/optimize/quantize/adapt/generate、UTF-16LE 原件 `export_a_raw.log`、`padfix_compiled.out`）在 `S:\work\WCIS\workenv\ernie\`（不入库）。
 
 ## 12. 还没做（一条都没执行，别当进度）
 
-1. **门 4 板端**：`.raw` 体积只有 C 级外推（ZG `.raw` 1,054,488,148 B ≈ 1005 MiB，比 Qwen3 那颗 1.6 GB 小，B）；CMA／位流是否含 NPU、传输、驱动上板、点火**全部未执行**。**动板前先查 `113.txt`，且她要求上板前明说**。
-2. **板端驱动**：42 路喂入合同（§8.1）已写死在本页，但**没有一行板端代码**；`dead` 4 路要不要真喂（运行时按条数检查，必须喂）已判，值给零即可（§9.4 读数对 `SLOTS` 不敏感 ⇒ pad 内容不影响，B）。
-3. **padfix 是否设成默认**：§9.6 的替身面收益 120 题、§9.7 的编译件面只有 1 个提示 ⇒ **板上默认开不开这条还没有对 Her 的正式建议依据**；先按"驱动提供开关、默认关、逐题比对再定"处理（未执行 60 题的编译件面）。
-4. **量化档**：只出 fp16；int8／mix 一个都没试。
-5. **长链逐级比对**：Qwen3 线那套 25 token `ref_hf.py --simulate --teacher`／`cmp_chain.py` 对 ERNIE **没跑**；§9.6 只有 3 条贪心样本 ×24 位。
-6. **英文退化归因**：§9.3 的 `ppl_chain` 153.215 vs 29.455 只记了现象，没查是 tokenizer／rope 表长度（131072 行 vs 实际用到）还是平铺 KV 带来的。
-7. **`e_v*` 中间件的入库**：编译根 68 个 `fmodel/` 目录**没进本仓**（体积＋可再生），只留 `E41` 的合同读数与本表；要复算门 1 的某一步得回编译根。
+1. **板上直接吃中文（分词在板上做）**：板上 `tokenizers` 是 0.13.3，读不了 ERNIE 的 `tokenizer.json`（`data did not match any variant of untagged enum ModelWrapper`——新版 BPE 才有 `ignore_merges` 字段）。现役驱动是**喂 id、出 id**，分词解码在本机做（本机 `tokenizers` 0.23.3 正常）。要板上端到端跑中文，得升板上的 `tokenizers` 或换 sentencepiece 路线——**未执行**。
+2. **量化档**：只出 fp16；int8／mix 一个都没试。
+3. **长链逐级比对**：Qwen3 线那套 25 token `ref_hf.py --simulate --teacher`／`cmp_chain.py` 对 ERNIE **没跑**；§9.6 只有 3 条贪心样本 ×24 位。
+4. **英文退化归因**：§9.3 的 `ppl_chain` 153.215 vs 29.455 只记了现象，没查是 tokenizer／rope 表长度（131072 行 vs 实际用到）还是平铺 KV 带来的。
+5. **60 题的编译件面**：§9.6 的替身面 120 题、§9.7 的编译件面只有 1 个提示；60 题在编译件／板上都没跑（板上只跑了 3 条提示）。
+6. **`e_v*` 中间件的入库**：编译根 68 个 `fmodel/` 目录**没进本仓**（体积＋可再生），只留 `E41` 的合同读数与本表；要复算门 1 的某一步得回编译根。
+
+> **11-01 从这张表划掉的三条**（都已执行，读数在 §14／台账 §廿五）：门 4 板端全套；板端驱动（`board/e41_infer_board.py` 已写并上板）；padfix 是否设默认（板上 A/B 后定为默认开）。
 
 ## 13. 路径对照
 
@@ -366,4 +373,21 @@ python -X utf8 compile/zg_census.py S:/apps/llm/agentwork/ernie/compile/jr_path/
 | 门 1 改写链／门 2～3 五段件 | — | 编译根 `S:\apps\llm\agentwork\ernie\compile\`（`fmodel/e_v*`、`jr_path/E41/*_ZG.*`，不入库）；脚本正本＝本仓 `compile/` |
 | 逐级链（不修／修复） | `D:\yzd\WCIS\MOD\ernie\eval\compiled_chain`／`compiled_padfix` | 本仓 `eval/compiled_chain/`／`eval/compiled_padfix/`（`logits.npy` fp32，103,424 元素＋128 B 头＝413,824 B／件） |
 | 评测读数 json | `D:\yzd\WCIS\MOD\ernie\eval\*.json` | 本仓 `eval/*.json`（逐件 md5 见 `MANIFEST.md5`） |
-| 板端 | — | **不存在**（门 4 未走） |
+| 板端件 | — | 板上 `/mnt/data/ernie/jr_path/decode/E41-decoder_ZG.{json,raw}`（md5 与本机全等）／`/mnt/data/ernie/config/ernie/` 四件／`/mnt/data/ernie/e41_{probe,infer_board}.py`；本机源＝`board/`。台账 #218～#222 |
+
+## 14. 门 4：板上（2026-11-01，A）
+
+**读数不在这里**——板上件、逐项内存读数、逐 token 对齐表、A/B 对照都在 `wiki/PS/板端我方代码与产物台账.md` §廿五。本节只记**在 PC 上复算不出来、只有上板才会碰到的东西**。
+
+**板端合同与 `host_gen.py`（§8）的三处差异**（都是实测，不是推断）：
+
+1. **输出不是"逐步压实"，是整块回喂**。`host_gen.py` 把 `present` 整个张量 chain 回 `past`（槽位 `past_len` 写入，前 `past_len-1` 槽原样带过）；Qwen3 现役驱动 `q3_infer_board.py` 走的是"每步把第 i 槽抠出来塞回第 i 槽"的压实法。**这颗必须用整块法**——照抄 Qwen3 驱动会错位。
+2. **`token_dynamic_fm` 三元组**：`[new_token_count, past_len, 0]`，`past_len` 是真的"已填槽数"（含 padfix 的重复首 token），`--pos-offset 1` 等价物是 `past_len = 1 + 已走步数`。喂 `past_len=0` 会让 `SliceDynamic` 炸到 512 倍并死在 `Reshape`。
+3. **42 路必须喂满**：`v_id 38..41` 四条 `past_key_values` 声明在图里没人消费，但运行时先比 `network_inputs_size == tensor_inputs_size` 再派发 ⇒ **四条零张量也得占位**，每步多 4 MiB。
+
+**驱动的两个实现要点**：
+
+- 输入缓冲按 `net.ops[0].outputs[i].tensorType()` 一次性建好（40.0 MiB＝41,943,056 B），`present` 用 `item.read(buf, item.offset(), chunk.byte_size)` 直读回配对槽位，不新建 numpy 数组。前两路用 `xir.Layout("*C")`，其余用 `tensorType()`——与 `q3_infer_board.py` 同法。
+- `E41_PADFIX=1` 在**回喂时**做 `buf[:, :, 0, :] = buf[:, :, 1, :]`，并把首 token 重喂一次（`walk=[prompt[0]]+prompt`）；这与 `host_gen.py --padfix` 是同一约定，板上读数逐 token 相同（台账 §25.2）。
+
+**位流门禁这次怎么过的**：`/mnt/boot` 未挂载，`md5sum /mnt/boot/BOOT.bin` 这条路不可用；改判证据＝同日另一进程在同一块板打出 `Device Name: zg330aiu`，加本次 `openDevice` 秒回、`precheck=True`（台账 §25.1）。**下次上板仍应先查 `/mnt/boot` 是否挂上**，别把这套替代证据当常规通道。

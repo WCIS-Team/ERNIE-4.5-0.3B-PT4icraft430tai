@@ -1,5 +1,7 @@
 71f1ff107278f965544a80926ea71b4c  ./.gitignore
-4716eb10bb8601f10729784671ad6908  ./README.md
+042f7a8f88d6be1dd0edf9908ec0c896  ./README.md
+718a81cad3208698fab9758a0dfaf8f1  ./board/e41_infer_board.py
+8d2c35e829f3cf879277bb99b4518cdf  ./board/e41_probe.py
 00a4ce9f4205e095676c6154d3c7d58e  ./compile/E41_parse.toml
 5ed1f1e8e877af99e55a4e9be8c9ec87  ./compile/add_head_roundtrip.py
 6b84a2284b72ddd16e24b552472c2ec3  ./compile/bake_kv_dim.py
@@ -106,7 +108,7 @@ d677e642c5a4da70647bc61052bc9ab1  ./export/ernie_fp16_cuda/tokenizer.model
 d6bae1dd8eb421e50dfc473c92d0284f  ./logs/logs_census.txt
 e1e43b0a93333689d11ad85661ed69ee  ./logs/logs_export.txt
 75cb1c7b56dd29b11ee6fda548fd5ac4  ./logs/logs_verify.txt
-85936219327533ea60ce4f62faed8450  ./pipeline.md
+d0b88d8430083af0106a47f8d236c253  ./pipeline.md
 59272e0d8b46b5621f6a9b2efafe4cbf  ./scripts/census_onnx.py
 6419d70d670346a2c507fd898a1425cb  ./scripts/dl_ernie.py
 6b4ee07c6dae641e3b7195c9abdaf53e  ./scripts/export_a.ps1
