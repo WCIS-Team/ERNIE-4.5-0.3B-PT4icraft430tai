@@ -1,7 +1,7 @@
 # ERNIE-4.5-0.3B-PT4icraft430tai · 迁移交付件
 
 > 这条线的仓：把 ModelScope `PaddlePaddle/ERNIE-4.5-0.3B-PT`（18 层／hidden 1024／16 Q＋2 KV head／head_dim 128／vocab 103,424，参数 **360,748,032 ≈ 0.36 B**，A：safetensors 头部 164 张量逐张求和、全 BF16）推到 iCraft（30TAI／ZG330）的 `_ZG` 件，并把它在板外的两条主机上量完，最后在板上点火。**2026-10-30 立项**（她那句"砍掉 Q3I 那两份 1.6 GB，然后开 ERNIE 这条线"），**10-30～10-31 走完门 1～3＋PC 数值＋校机实测，11-01 上板走完门 4**。
-> **门 4 已通（2026-11-01）**：板上 `precheck=True`、逐 token 与 PC Host 后端全同（padfix 两模式各 7～8 步）、稳态 **0.42 s/步＝2.38 token/s**、64 token 长跑到 eos 无泄漏；padfix 板上 A/B 后**默认开**。板上件与读数＝`wiki/PS/板端我方代码与产物台账.md` §廿五（#218～#222）。
+> **门 4 已通（2026-11-01）**：板上 `precheck=True`、逐 token 与 PC Host 后端对上（padfix 两模式各 7～8 步）、稳态 **0.42 s/步＝2.38 token/s**、64 token 长跑到 eos 无泄漏；padfix 板上 A/B 后**默认开**。**可复现的是板端**（两次跑 11 步 logits 极值逐位相同）；**PC Host 后端复跑会抖**（同一 42 路输入 |Δ| 均值 0.177／最大 0.668，并列第一会翻 argmax），所以"全同"要带 top-2 间距读。板上件与读数＝`wiki/PS/板端我方代码与产物台账.md` §廿五（#218～#222）。
 > 全部读数与流程＝本目录 [`pipeline.md`](pipeline.md)（正本，含 §10 四条公开更正）；介绍页＝`wiki/PL/MOD/llm/ERNIE-4.5-0.3B-PT.md`；四道门判据正本＝`wiki/PL/MOD/llm/LLM上板要求与候选模型对照.md`；配方来源＝[[Qwen3-Instruct按Qwen3配方迁移]] 与 `repos/Qwen3-0.6B-Instruct/pipeline.md`。**本页只做索引与状态，不复制读数表。**
 > 与 vpu-live／Qwen3 同模式：小件与证据进 git、体积件挡在库外（`.gitignore` 的 `*.onnx`、`*.onnx.data`、`*.raw`、`*.safetensors`、压缩包等）。
 
@@ -52,7 +52,7 @@
 | PC 侧数值：本机 Host 后端逐级链 | **通**（A：7/7 argmax 与替身逐位相同；首步除外＝已知缺陷） |
 | 校机实测 60 题＋chat 面＋长度／困惑度扫描 | **通**（A：`pipeline.md` §9；可用性＝中文窄可用、英文链明显退化） |
 | padfix（slot1→slot0）复核 | **替身面通、编译件面通**（A，§9.6／§9.7）；60 题编译件面**未跑** |
-| 门 4 板端（CMA／位流门禁、传输、驱动、点火） | **通**（A，11-01：`precheck=True`／`apply` 46.4 s／logic 936.6 MiB、WEIGHT 742.2 MiB 落 `plddr`／CMA 起跑前 ≥126 MiB／`VmHWM` 505 MB 峰值）；**逐 token 与 PC 全同**（padfix 0／1 各 7／8 步），稳态 0.42 s/步，62 步到 eos 无泄漏。台账 §廿五 #218～#222 |
+| 门 4 板端（CMA／位流门禁、传输、驱动、点火） | **通**（A，11-01：`precheck=True`／`apply` 46.4 s／logic 936.6 MiB、WEIGHT 742.2 MiB 落 `plddr`／CMA 起跑前 ≥126 MiB／`VmHWM` 505 MB 峰值）；**逐 token 与 PC 对上**（padfix 0／1 各 7／8 步；间距 <0.7 的步不作硬判据），稳态 0.42 s/步，62 步到 eos 无泄漏。**板端两次跑逐位可复现；PC Host 后端复跑有 0.177～0.668 抖动**。台账 §廿五 #218～#222 |
 | padfix 板上 A/B | **该开，已定为默认**（A：关→时间戳循环退化；开→55 token 通顺到 eos；速度无可测差） |
 | 板上直接吃中文（分词在板上做） | **未执行**：板上 `tokenizers` 0.13.3 读不了 ERNIE 的 `tokenizer.json`（新版 `ignore_merges` 字段），驱动现为"喂 id／出 id" |
 | 量化档（int8／mix）、25 token 长链逐级比对、英文退化归因 | **未执行** |
