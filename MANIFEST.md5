@@ -1,5 +1,7 @@
 71f1ff107278f965544a80926ea71b4c  ./.gitignore
 5a81638e73e8b53aa144a7756ab58609  ./README.md
+1e8aa501d7dd18ef945903d5707e6d5a  ./board/e41_chat_console.py
+13995c641b4808d33891ce1ffdb734a8  ./board/e41_chatd.py
 3e4feca8fdead31008ea7e594c116ab7  ./board/e41_infer_board.py
 8d2c35e829f3cf879277bb99b4518cdf  ./board/e41_probe.py
 00a4ce9f4205e095676c6154d3c7d58e  ./compile/E41_parse.toml
