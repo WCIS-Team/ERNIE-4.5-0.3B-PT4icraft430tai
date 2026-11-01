@@ -70,7 +70,7 @@ def read_lock():
 def write_lock(value):
     try:
         subprocess.run(["ssh", "-o", "ConnectTimeout=8", "deb-h61",
-                        "printf '%s\\n' > /home/user/Desktop/113.txt" % value],
+                        "printf '%s' > /home/user/Desktop/113.txt" % value],
                        capture_output=True, timeout=20, stdin=subprocess.DEVNULL)
     except Exception:
         pass
