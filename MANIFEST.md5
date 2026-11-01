@@ -1,9 +1,14 @@
 71f1ff107278f965544a80926ea71b4c  ./.gitignore
-2f9a867b0a42885e182724ca8012dff0  ./README.md
+11a5cdb0d1de1668c962fee39cf9d6c2  ./README.md
 1e3bb0a715a46315dec8df6dd40877b6  ./board/e41_chat_console.py
 13995c641b4808d33891ce1ffdb734a8  ./board/e41_chatd.py
 3e4feca8fdead31008ea7e594c116ab7  ./board/e41_infer_board.py
 8d2c35e829f3cf879277bb99b4518cdf  ./board/e41_probe.py
+2b224fae4551e435ec6343191c4487d6  ./board/e41_prof.py
+f1202f4a7d682cb7e4b4f359f13ed7a9  ./board/e41p_prof.txt
+5d41a3830583b5d3aff6ead8044e3f38  ./board/e41p_prof_ops_after_7_steps.csv
+0c60d142e399e7cbeab6bd3735da6f29  ./board/e41p_prof_ops_after_first_dump.csv
+f2335a15b0eeef3dc85a1f6976af9d76  ./board/e41p_wall.txt
 00a4ce9f4205e095676c6154d3c7d58e  ./compile/E41_parse.toml
 5ed1f1e8e877af99e55a4e9be8c9ec87  ./compile/add_head_roundtrip.py
 6b84a2284b72ddd16e24b552472c2ec3  ./compile/bake_kv_dim.py

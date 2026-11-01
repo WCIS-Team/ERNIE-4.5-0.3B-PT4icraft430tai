@@ -1,0 +1,34 @@
+[12:13:15] === e41_prof MODE=wall pid=54765 steps=24 reps=5 ocm=1 padfix=True slot=8
+[12:13:15] icraft='?' numpy='1.23.0' python='3.8.10'
+[12:13:15] MEM start VmRSS=47304kB VmHWM=47304kB | MemAvailable=588676 kB CmaFree=127412 kB Cached=208844 kB
+[12:14:07] json+raw 52.0 s
+[12:14:07] pair=36 n_past=36 dead=[38, 39, 40, 41]
+[12:15:04] apply 44.3 s
+[12:15:04] CAP ocmopt=<OcmOpt.OPTION1: 1> is_etmOptimize=True is_mergeHardop=True is_applied=True
+[12:15:47] precheck=True
+[12:15:48] step 00 past_len=1 fwd=851.999 wait=21.511 reset=0.027 logits=0.435 kvread=73.934 argmax=17.149 all=965.054 (ms)
+[12:15:49] step 01 past_len=2 fwd=392.506 wait=25.399 reset=0.017 logits=0.343 kvread=37.862 argmax=8.012 all=464.140 (ms)
+[12:15:49] step 02 past_len=3 fwd=392.964 wait=25.357 reset=0.018 logits=0.318 kvread=37.774 argmax=8.111 all=464.541 (ms)
+[12:15:59] step 23 past_len=24 fwd=392.702 wait=25.455 reset=0.017 logits=0.306 kvread=37.871 argmax=8.130 all=464.481 (ms)
+[12:15:59] SEG forward          n=24 min=391.95 med=393.13 p95=399.58 max=852.00 ms
+[12:15:59] SEG waitForReady     n=24 min=21.51 med=25.41 p95=25.46 max=25.46 ms
+[12:15:59] SEG reset            n=24 min=0.02 med=0.02 p95=0.02 max=0.03 ms
+[12:15:59] SEG read_logits      n=24 min=0.31 med=0.32 p95=0.34 max=0.43 ms
+[12:15:59] SEG read_kv36        n=24 min=37.36 med=37.76 p95=38.14 max=73.93 ms
+[12:15:59] SEG argmax           n=24 min=8.01 med=8.12 p95=8.16 max=17.15 ms
+[12:15:59] SEG step_total       n=24 min=463.41 med=464.83 p95=471.44 max=965.05 ms
+[12:15:59] PRODUCTION_DT_EQUIV med=418.542 ms (forward+wait+reset == e41_chatd dt)
+[12:15:59] WALL_STEP med=464.828 ms (== round-level s/step)
+[12:15:59] POST_DT_TAIL med=46.203 ms (read_logits+read_kv36+argmax == the ceiling for narrow read)
+[12:15:59] READ_KV36 share of WALL_STEP = 8.1 %
+[12:15:59] BATT read_36x1MiB         calls=36 bytes=37748736 min=35.18 med=35.46 ms -> 1073.1 MB/s
+[12:15:59] BATT read_288x256B        calls=288 bytes=73728 min=9.11 med=9.14 ms -> 8.1 MB/s
+[12:15:59] BATT read_36x2KiB         calls=36 bytes=73728 min=1.26 med=1.27 ms -> 58.5 MB/s
+[12:15:59] BATT host_memcpy36MiB     calls=36 bytes=37748736 min=12.43 med=12.59 ms -> 3036.8 MB/s
+[12:15:59] SOLVE per-call a=31.4 us  per-byte r=1108.7 MB/s (0.902 ns/B)
+[12:15:59] PRED frag=9.11 ms vs measured 9.11 ms; net saving if narrow: 26.07 ms/step
+[12:15:59] BREAKEVEN per-call overhead where narrow read stops paying = 122.1 us (= full-read time / 288)
+[12:15:59] CHECK 36x2KiB predicted 1.20 ms vs measured 1.26 ms
+[12:15:59] HOST baseline 12.43 ms for the same 37748736 B
+[12:15:59] MEM end VmRSS=618372kB VmHWM=641776kB | MemAvailable=229828 kB CmaFree=6260 kB Cached=244316 kB
+[12:15:59] === done out=/mnt/data/ernie/e41p_wall.txt

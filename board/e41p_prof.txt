@@ -1,0 +1,38 @@
+[12:16:34] === e41_prof MODE=prof pid=54900 steps=8 reps=5 ocm=1 padfix=True slot=8
+[12:16:34] icraft='?' numpy='1.23.0' python='3.8.10'
+[12:16:34] MEM start VmRSS=47316kB VmHWM=47316kB | MemAvailable=611340 kB CmaFree=34748 kB Cached=297104 kB
+[12:17:26] json+raw 52.2 s
+[12:17:27] pair=36 n_past=36 dead=[38, 39, 40, 41]
+[12:17:38] enableTimeProfile(True) ok, time_profile='?'
+[12:18:23] apply 44.8 s
+[12:18:23] CAP ocmopt=<OcmOpt.OPTION1: 1> is_etmOptimize=True is_mergeHardop=True is_applied=True
+[12:19:08] precheck=True
+[12:19:09] step 00 past_len=1 fwd=860.827 wait=9.392 reset=0.030 logits=0.467 kvread=76.593 argmax=16.896 all=964.205 (ms)
+[12:19:09] step 01 past_len=2 fwd=434.371 wait=0.440 reset=0.018 logits=0.301 kvread=39.711 argmax=8.169 all=483.011 (ms)
+[12:19:10] step 02 past_len=3 fwd=437.129 wait=0.438 reset=0.018 logits=0.301 kvread=37.761 argmax=8.111 all=483.758 (ms)
+[12:19:12] step 07 past_len=8 fwd=433.915 wait=0.425 reset=0.031 logits=0.300 kvread=37.838 argmax=8.138 all=480.647 (ms)
+[12:19:12] SEG forward          n=8 min=429.91 med=433.92 p95=860.83 max=860.83 ms
+[12:19:12] SEG waitForReady     n=8 min=0.41 med=0.43 p95=9.39 max=9.39 ms
+[12:19:12] SEG reset            n=8 min=0.02 med=0.02 p95=0.03 max=0.03 ms
+[12:19:12] SEG read_logits      n=8 min=0.30 med=0.30 p95=0.47 max=0.47 ms
+[12:19:12] SEG read_kv36        n=8 min=37.44 med=37.87 p95=76.59 max=76.59 ms
+[12:19:12] SEG argmax           n=8 min=8.08 med=8.14 p95=16.90 max=16.90 ms
+[12:19:12] SEG step_total       n=8 min=476.48 med=480.65 p95=964.21 max=964.21 ms
+[12:19:12] PRODUCTION_DT_EQUIV med=434.372 ms (forward+wait+reset == e41_chatd dt)
+[12:19:12] WALL_STEP med=480.647 ms (== round-level s/step)
+[12:19:12] POST_DT_TAIL med=46.279 ms (read_logits+read_kv36+argmax == the ceiling for narrow read)
+[12:19:12] READ_KV36 share of WALL_STEP = 7.9 %
+[12:19:12] PROFILE after_first_dump entries=62 totalTime=401.423907
+[12:19:12] PROFILE after_first_dump SUM total=399.1 memcpy=118.1 hard=114.1 other=166.9 ms => memcpy share 29.6 % hard share 28.6 %
+[12:19:12] TOP memcpy ops (op_id, memcpy_ms): [(9930, 58.843), (9920, 3.682), (9915, 3.675), (9928, 3.631), (9914, 3.625), (9926, 3.615), (9918, 3.54), (9929, 3.499), (9923, 3.494), (9919, 3.38)]
+[12:19:13] prof-step 0 wall 482.135 ms
+[12:19:13] prof-step 1 wall 476.898 ms
+[12:19:14] prof-step 2 wall 477.639 ms
+[12:19:14] prof-step 3 wall 477.551 ms
+[12:19:15] prof-step 4 wall 478.153 ms
+[12:19:15] prof-step 5 wall 477.554 ms
+[12:19:15] PROFILE after_7_steps entries=62 totalTime=397.79238
+[12:19:15] PROFILE after_7_steps SUM total=395.5 memcpy=115.2 hard=114.2 other=166.1 ms => memcpy share 29.1 % hard share 28.9 %
+[12:19:15] TOP memcpy ops (op_id, memcpy_ms): [(9930, 56.961), (9914, 3.67), (9916, 3.631), (9923, 3.487), (9920, 3.421), (9917, 3.394), (9921, 3.389), (9924, 3.388), (9928, 3.386), (9915, 3.385)]
+[12:19:15] MEM end VmRSS=549328kB VmHWM=647192kB | MemAvailable=230008 kB CmaFree=81660 kB Cached=177028 kB
+[12:19:15] === done out=/mnt/data/ernie/e41p_prof.txt
