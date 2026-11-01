@@ -97,7 +97,7 @@ class Board:
                 continue
             ev = json.loads(line)
             if ev.get("status") == "starting":
-                say("板上服务启动中（装模型约 50 s，请稍候）…")
+                say("板上服务启动中（载图约 50 s ＋ apply 约 45 s，请稍候）…")
             elif ev.get("ready"):
                 self.apply_s = ev.get("apply_s")
                 return ev
