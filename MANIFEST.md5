@@ -1,9 +1,10 @@
 71f1ff107278f965544a80926ea71b4c  ./.gitignore
-11a5cdb0d1de1668c962fee39cf9d6c2  ./README.md
+224191c13ed1e183cdd5553ae9ad659a  ./README.md
 1e3bb0a715a46315dec8df6dd40877b6  ./board/e41_chat_console.py
 13995c641b4808d33891ce1ffdb734a8  ./board/e41_chatd.py
 3e4feca8fdead31008ea7e594c116ab7  ./board/e41_infer_board.py
-11916a52f5b5eebadf6976af19c07e38  ./board/e41_ocm.py
+3f7b024c16f17aaa62afd420f0b1e3b4  ./board/e41_ocm.py
+f09712a9e10399e0b82b7226012364ee  ./board/e41_ocm_oracle.sh
 f19cdad82ef43a00d9a5e5cef54e94ce  ./board/e41_ocm_run.sh
 8d2c35e829f3cf879277bb99b4518cdf  ./board/e41_probe.py
 2b224fae4551e435ec6343191c4487d6  ./board/e41_prof.py
@@ -30,6 +31,14 @@ ff9e462e64e53d45ce9ca2cd30f908ea  ./board/ocm/ocm1.stdout
 fe8477e8316ecbf52deea635a1bac6fe  ./board/ocm/ocm3.stdout
 74c049baa56909076ab8acb6f4f78c59  ./board/ocm/ocm3.txt
 1cffa024108768ddbe47d37dc2a52b25  ./board/ocm/progress.txt
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/best.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/bothoff.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/etmoff.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/mergeoff.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/ocm0.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/ocm1.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/ocm2.json
+e67b4c50e5d5ee1a2cbdb39b855c778b  ./board/oracle/ocm3.json
 00a4ce9f4205e095676c6154d3c7d58e  ./compile/E41_parse.toml
 5ed1f1e8e877af99e55a4e9be8c9ec87  ./compile/add_head_roundtrip.py
 6b84a2284b72ddd16e24b552472c2ec3  ./compile/bake_kv_dim.py

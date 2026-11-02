@@ -46,6 +46,9 @@ PRECHK = os.environ.get("E41P_PRECHECK", "0") == "1"
 STEPS = int(os.environ.get("E41P_STEPS", "12"))
 PADFIX = os.environ.get("E41_PADFIX", "1") == "1"
 OUT = os.environ.get("E41P_OUT", "/mnt/data/ernie/ocm/%s.txt" % CFG)
+# 喂一段真提示（逗号分隔 id），不设就按老行为从 token 4 空跑；喂完转回贪心接续
+PREFIX = [int(x) for x in os.environ.get("E41P_PREFIX", "").replace(" ", "").split(",") if x]
+OUT_JSON = os.environ.get("E41P_OUTJSON", "")
 
 SEG = {0: "WEIGHT", 1: "INSTR", 2: "FTMP", 3: "INPUT", 4: "OUTPUT"}
 _LOG = open(OUT, "w", encoding="utf-8")
@@ -239,7 +242,8 @@ class E41(object):
         nxt = int(np.argmax(flat))
         t6 = time.perf_counter()
         return nxt, pair2, outs, (t1 - t0, t2 - t1, t3 - t2, t4 - t3,
-                                  t5 - t4, t6 - t5, t6 - t0)
+                                  t5 - t4, t6 - t5, t6 - t0), \
+            float(flat.min()), float(flat.max())
 
 
 def main():
@@ -251,13 +255,17 @@ def main():
     say("MEM start %s | %s" % (read_stat(("VmRSS", "VmHWM")), meminfo()))
     m = E41()
     cols = [[] for _ in range(7)]
-    chain, gaps = [], []
+    chain, gaps, rows = [], [], []
     tok, past = 4, 1
     for i in range(STEPS):
-        tok, top2, outs, d = m.step(tok, past)
+        fed = PREFIX[i] if i < len(PREFIX) else tok
+        tok, top2, outs, d, lmin, lmax = m.step(fed, past)
         past += 1
         chain.append(tok)
         gaps.append(round(float(top2[0] - top2[1]), 4))
+        rows.append({"step": i, "fed": fed, "past_len": past - 1, "argmax": tok,
+                     "logits_min": lmin, "logits_max": lmax,
+                     "top1_minus_top2": round(float(top2[0] - top2[1]), 4)})
         for j, v in enumerate(d):
             cols[j].append(v)
         if i < 3 or i == STEPS - 1:
@@ -278,6 +286,10 @@ def main():
                                pct([v * 1e3 for v in tail], 0.5)))
     say("CHAIN cfg=%s %s" % (CFG, chain))
     say("GAPS  cfg=%s %s" % (CFG, gaps))
+    if OUT_JSON:
+        with open(OUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(rows, f, ensure_ascii=False)
+        say("JSON  %s (%d 步)" % (OUT_JSON, len(rows)))
     say("MEM end %s | %s" % (read_stat(("VmRSS", "VmHWM")), meminfo()))
     say("=== done cfg=%s out=%s" % (CFG, OUT))
 
