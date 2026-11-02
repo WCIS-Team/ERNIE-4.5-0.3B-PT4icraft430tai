@@ -89,7 +89,29 @@
 - **`precheck()` 自己就要 43 s** ⇒ 只能当一次性门禁，**绝不能进热路径**（A）。
 - **`mmuMode` 参数在 ZG 分支是空转**：厂商 helper 只在 buyi 分支调 `mmuModeSwitch`（`pyrtutils/icraft_utils.py:105`）（A，源码直读）。
 - **profiler 的占比**：`timeProfileResults()` 只有 **62 条**（不是 1373 个算子，疑合并后的执行单元，**归属未取证**），一次前向 total 399.1 ms ＝ memcpy **118.1（29.6 %）**／hard **114.1（28.6 %）**／other **166.9（41.8 %）**；两次 dump（1 步后 vs 7 步后）SUM 几乎不变 ⇒ **per-forward 语义**。top memcpy 是 `op_id 9930` ＝ 58.843 ms（占 memcpy 49.8 %），**与"每步 36 MiB 上行 ≈ 642 MB/s"量级吻合，但认成 KV 上行只是推断（C）**——CSV 的 `op_id` 与图 JSON 的 `op_id` 零命中。**最大的一块是 `other` 41.8 %，拆它要的是 op 级归属，窄读动不到 forward 内部。**
-- **仍没跑的**：⑤ ocm `BEST_SCORE` vs 现役 `OPTION1` 的 A/B——Python helper 表达不了 `-1`（`ocmOptimize(OcmOpt.BEST_SCORE)` 得直接对 backend 调），要同进程换档，探针没做这层。
+- **⑤ 已跑**（11-01 22:56–23:16 UTC，9 档单变量）：见下一节。
+
+## ocm／etm／merge 三开关 A/B（2026-11-01 22:56–23:16 UTC，9 档单变量）
+
+**为什么做**：驱动里 `initSession("zg330", net, dev, 1)` 的那个 `1` 是 `OcmOpt.OPTION1`，从 Qwen2 那套厂商 helper 沿袭而来，**从来没做过对照**；同一个 helper 里 `is_etmOptimize=True`、`is_mergeHardop=True` 也一样没人验过。厂商文档对 `BEST_SCORE` 写的是"三种方案各算一遍、取评分最高的那套，可减小读写 etm 的带宽压力"，但 Python 侧 `ocm_options` 只认 0–4，传 `-1` 直接抛异常 ⇒ 要 `initSession(..., 4)` 建会话再手工 `backend.ocmOptimize(OcmOpt.BEST_SCORE)`，且**必须在 `apply()` 之前**；换档＝重建会话，每档一次独立冷启动。
+
+**做法**：`board/e41_ocm.py` 一进程一档（`E41O_CFG` 选档），`board/e41_ocm_run.sh` 串 9 档，**末档把现役档原地复跑一遍**（`ocm1_recheck`）——不复跑就看不出档间差是不是同档噪声。同图同 prompt（`padfix=1`、12 步），每档记 `apply` 后的 `ocmopt`／`is_etmOptimize`／`is_mergeHardop` 回读、六段计时、12 步 token 链与 top1 间隙。原件在 `board/ocm/`（9 档 × `.txt`＋`.stdout`＋`progress.txt`）。**读数正本＝`wiki/PS/板端我方代码与产物台账.md` §廿九**，这里只写判定。
+
+**口径**：取 **12 步 `forward` 的 min**，不用中位——板上同时跑着别的会话的进程，ocm0 那档 `forward` 的 p95 是 1,435 ms、max 2,331 ms，ocm1 的 `argmax` max 冲到 199.58 ms，中位会被抢核抬高，min 不会（min 是这套读数里唯一对并发稳健的量）。
+
+**判定（A）**
+
+| 结论 | 依据 |
+| --- | --- |
+| **ocm 保持 `OPTION1`，不改** | `OPTION2/3/BEST_SCORE` 相对现役复跑只快 **0.3–0.7 %**，而**同档复跑本身的差就有 2.8 %（min 口径）／6.6 %（中位口径）** ⇒ 四档分不出。且 `BEST_SCORE` 自选结果的回读就是 `OPTION1`＝厂商评分函数也认为现役这档最优 |
+| **`NONE` 更差，但判不死** | 418.77 ms ＝ **+6.3 %**：超得过 min 口径的 2.8 % 带宽，超不过中位口径的 6.6 % ⇒ 只能写成"倾向更差"，要判死得再复跑一轮 |
+| **`is_mergeHardop` 必须开** | 关掉后 `forward` 489.40 ms ＝ **+24.3 %**（墙钟 +15.0 %、`dt` 口径 +16.8 %），是带宽的 3.7 倍以上。`bothoff`≈`mergeoff` ⇒ 两者不叠加、效应全在 merge。附一条读数陷阱：关掉后 `waitForReady` 从 25.27 ms 掉到 0.55 ms，**等待被并进了 `forward`，不是变快** |
+| **`is_etmOptimize` 对时间零影响** | 关掉 393.84 vs 现役复跑 393.79＝**+0.01 %**。它确实改了 FTMP 摆放量（`apply` 后残留 458,752 vs 40,960 B），只是不转化成时间。**不开不关**（零收益＋数值面未验，没有理由去动） |
+| **换档不改数值（覆盖面已写清）** | 9 档的 12 步 token 链 **9/9 完全相同**（`[4,23,23,23,2969,93919,4,93963,93919,253,172,177]`），top1 与次差的间隙逐位到 4 位小数全等 ⇒ 档位/etm/merge 都是纯性能开关。**覆盖＝1 条 prompt × 12 步**，7 条 prompt 的完整 oracle 未跑 |
+
+**一条解读（B，不是结论）**：`apply` 后的 FTMP 残留量与 `forward` 时间不同向——`OPTION1` 残留最小（40,960 B）却不是最快的档，`NONE` 残留 2,158,592 B 却也不是唯一最慢的档内异常。这说明这 393 ms 不由中间张量摆放主导，**ocm 本来就是个错的目标**；权重段 778,268,672 B 那条路才是。
+
+**成本口径**：一档启动（载图+mid 62.6–87.5 s ＋ `apply` 42.1–74.0 s）＝ **106.6–161.5 s，中位 111.8 s**；9 档连跑 22:56:27→23:16:32＝1,205 s÷9＝**133.9 s/档**。这与上一节"冷启动 106～110 s"同口径，差别只在这轮是"每档独立冷启动"，前几档还叠着上一档的 CMA 未归还。
 
 ## 状态（2026-11-01）
 

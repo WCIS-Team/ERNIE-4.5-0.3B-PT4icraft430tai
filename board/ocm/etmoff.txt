@@ -1,0 +1,26 @@
+[23:08:34] === e41_ocm CFG=etmoff pid=9022 ocm=1 best=False etm=off merge=on steps=12 padfix=True precheck=False
+[23:08:34] icraft='?' numpy='1.23.0' python='3.8.10'
+[23:08:34] MEM start VmRSS=47184kB VmHWM=47184kB | MemAvailable=568412 kB CmaFree=87976 kB Cached=179780 kB
+[23:09:27] json+raw 52.9 s
+[23:09:28] pair=36 n_past=36 dead=[38, 39, 40, 41]
+[23:09:39] mid 11.7 s (graph map+openDevice+initSession)
+[23:09:39] SEGMAP logic(before apply) FTMP=101408768 OUTPUT=38113280 INPUT=18890752 INSTR=45383680 WEIGHT=778268672 TOTAL=982065152 B (936.6 MiB)
+[23:10:23] apply 43.2 s
+[23:10:23] CAP ocmopt=<OcmOpt.OPTION1: 1> is_etmOptimize=False is_mergeHardop=True is_applied=True
+[23:10:23] SEGMAP phy(after apply) WEIGHT=778268672 INSTR=45383680 INPUT=18890752 OUTPUT=38113280 FTMP=458752 TOTAL=881115136 B (840.3 MiB)
+[23:10:23] step 00 past_len=1 tok=4 top1=20.0938 gap=5.9297 fwd=497.709 wait=20.743 kvread=87.813 all=674.144 (ms)
+[23:10:24] step 01 past_len=2 tok=23 top1=13.8203 gap=1.0000 fwd=394.393 wait=25.315 kvread=37.478 all=467.467 (ms)
+[23:10:24] step 02 past_len=3 tok=23 top1=15.6641 gap=2.6016 fwd=394.039 wait=25.406 kvread=37.411 all=464.879 (ms)
+[23:10:28] step 11 past_len=12 tok=177 top1=21.4062 gap=0.0156 fwd=393.842 wait=25.434 kvread=37.576 all=465.382 (ms)
+[23:10:28] SEG forward          n=12 min=393.84 med=394.16 p95=394.59 max=497.71 ms
+[23:10:28] SEG waitForReady     n=12 min=20.74 med=25.41 p95=25.48 max=25.50 ms
+[23:10:28] SEG reset            n=12 min=0.02 med=0.02 p95=0.02 max=0.03 ms
+[23:10:28] SEG read_logits      n=12 min=0.32 med=0.32 p95=0.34 max=0.46 ms
+[23:10:28] SEG read_kv36        n=12 min=37.41 med=37.70 p95=38.18 max=87.81 ms
+[23:10:28] SEG argmax           n=12 min=6.12 med=7.96 p95=9.94 max=67.39 ms
+[23:10:28] SEG step_total       n=12 min=463.78 med=465.38 p95=467.47 max=674.14 ms
+[23:10:28] RESULT cfg=etmoff apply_med_forward=394.16 wall_step=465.38 dt_equiv=419.51 post_dt_tail=46.09
+[23:10:28] CHAIN cfg=etmoff [4, 23, 23, 23, 2969, 93919, 4, 93963, 93919, 253, 172, 177]
+[23:10:28] GAPS  cfg=etmoff [5.9297, 1.0, 2.6016, 0.8984, 0.3359, 6.7578, 0.0938, 5.7188, 0.5703, 1.5312, 7.625, 0.0156]
+[23:10:28] MEM end VmRSS=494272kB VmHWM=602256kB | MemAvailable=185604 kB CmaFree=80784 kB Cached=104344 kB
+[23:10:28] === done cfg=etmoff out=/mnt/data/ernie/ocm/etmoff.txt

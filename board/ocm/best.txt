@@ -1,0 +1,27 @@
+[23:06:07] === e41_ocm CFG=best pid=8988 ocm=4 best=True etm=on merge=on steps=12 padfix=True precheck=False
+[23:06:07] icraft='?' numpy='1.23.0' python='3.8.10'
+[23:06:07] MEM start VmRSS=47048kB VmHWM=47048kB | MemAvailable=564080 kB CmaFree=61052 kB Cached=193476 kB
+[23:07:02] json+raw 54.9 s
+[23:07:02] pair=36 n_past=36 dead=[38, 39, 40, 41]
+[23:07:14] manual ocmOptimize(BEST_SCORE=-1) ok
+[23:07:14] mid 12.2 s (graph map+openDevice+initSession)
+[23:07:14] SEGMAP logic(before apply) FTMP=101408768 OUTPUT=38113280 INPUT=18890752 INSTR=45383680 WEIGHT=778268672 TOTAL=982065152 B (936.6 MiB)
+[23:08:24] apply 69.5 s
+[23:08:24] CAP ocmopt=<OcmOpt.OPTION1: 1> is_etmOptimize=True is_mergeHardop=True is_applied=True
+[23:08:24] SEGMAP phy(after apply) WEIGHT=778268672 INSTR=45383680 INPUT=18890752 OUTPUT=38113280 FTMP=40960 TOTAL=880697344 B (839.9 MiB)
+[23:08:25] step 00 past_len=1 tok=4 top1=20.0938 gap=5.9297 fwd=596.213 wait=13.792 kvread=89.260 all=768.420 (ms)
+[23:08:25] step 01 past_len=2 tok=23 top1=13.8203 gap=1.0000 fwd=395.979 wait=25.453 kvread=37.696 all=469.427 (ms)
+[23:08:26] step 02 past_len=3 tok=23 top1=15.6641 gap=2.6016 fwd=395.953 wait=25.407 kvread=37.703 all=467.636 (ms)
+[23:08:30] step 11 past_len=12 tok=177 top1=21.4062 gap=0.0156 fwd=395.146 wait=25.448 kvread=37.830 all=466.987 (ms)
+[23:08:30] SEG forward          n=12 min=394.85 med=395.83 p95=398.69 max=596.21 ms
+[23:08:30] SEG waitForReady     n=12 min=13.79 med=25.42 p95=25.48 max=25.49 ms
+[23:08:30] SEG reset            n=12 min=0.02 med=0.02 p95=0.02 max=0.03 ms
+[23:08:30] SEG read_logits      n=12 min=0.31 med=0.32 p95=0.33 max=0.47 ms
+[23:08:30] SEG read_kv36        n=12 min=37.70 med=37.83 p95=38.05 max=89.26 ms
+[23:08:30] SEG argmax           n=12 min=6.22 med=8.13 p95=9.97 max=68.66 ms
+[23:08:30] SEG step_total       n=12 min=465.59 med=467.53 p95=469.43 max=768.42 ms
+[23:08:30] RESULT cfg=best apply_med_forward=395.83 wall_step=467.53 dt_equiv=421.27 post_dt_tail=46.26
+[23:08:30] CHAIN cfg=best [4, 23, 23, 23, 2969, 93919, 4, 93963, 93919, 253, 172, 177]
+[23:08:30] GAPS  cfg=best [5.9297, 1.0, 2.6016, 0.8984, 0.3359, 6.7578, 0.0938, 5.7188, 0.5703, 1.5312, 7.625, 0.0156]
+[23:08:30] MEM end VmRSS=553416kB VmHWM=600184kB | MemAvailable=183656 kB CmaFree=53240 kB Cached=143784 kB
+[23:08:30] === done cfg=best out=/mnt/data/ernie/ocm/best.txt
