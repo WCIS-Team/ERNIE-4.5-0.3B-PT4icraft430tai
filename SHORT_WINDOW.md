@@ -19,7 +19,14 @@
 本分支的 `board/e41_chatd.py` ＝ `master` 现役那颗窄读 daemon 只加四处槽数改动（`git diff master..short-kv-window -- board/e41_chatd.py` 只吐出这四处），
 所以单独 checkout 这条分支也能跑。
 
-分支基点＝`a9098b1`，分支尖＝`71bf9d8`（**取过两次**：早先起在 `9ce054d` 上、尖是 `8cf5b99`，`a9098b1` 落进 `master` 后 rebase 到新基点，旧尖作废）。
+分支基点＝`master` 的 `a9098b1`（早先起在 `9ce054d` 上、那一版分支尖 `8cf5b99` 已作废 ⇒ rebase 过）。
+本分支**未推远端**，所以分支尖以现读为准：`git rev-parse --short short-kv-window`。
+
+```sh
+cd <本库>          # repos/ERNIE-4.5-0.3B-PT4icraft430tai
+git log --oneline master..short-kv-window        # 分支相对 master 的那几笔
+git diff --stat master..short-kv-window          # 6 个件
+```
 
 件本体（`*.raw` ≈1.0 GB／颗）不进库——单文件 >100 MiB 会被拒推。板上的 E42／E43 在
 `/mnt/data/ernie/jr_path/depth/`，登记见 `wiki/PS/板端我方代码与产物台账.md` §卅二。
