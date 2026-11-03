@@ -15,8 +15,11 @@
 | `SHORT_WINDOW.md` | 本文件 |
 
 窄读那一版的探针（`board/e41_narrow.py`／`e41_kvres.py`／`ab_chatd.sh`／`narrow_run.sh`）和它们的读数
-`board/narrow/` **不在这条分支里**：它们属于 `master` 那条窄读线，当前还挂在 `master` 工作区未提交（等裁）。
-本分支的 `board/e41_chatd.py` 已经把窄读回抄 inline 进来了，所以单独 checkout 这条分支也能跑。
+`board/narrow/` 已在 `master` 入库（`a9098b1`），本分支直接从它们上面长出来，所以不重复列进上面那张表。
+本分支的 `board/e41_chatd.py` ＝ `master` 现役那颗窄读 daemon 只加四处槽数改动（`git diff master..short-kv-window -- board/e41_chatd.py` 只吐出这四处），
+所以单独 checkout 这条分支也能跑。
+
+分支基点＝`a9098b1`，分支尖＝`71bf9d8`（**取过两次**：早先起在 `9ce054d` 上、尖是 `8cf5b99`，`a9098b1` 落进 `master` 后 rebase 到新基点，旧尖作废）。
 
 件本体（`*.raw` ≈1.0 GB／颗）不进库——单文件 >100 MiB 会被拒推。板上的 E42／E43 在
 `/mnt/data/ernie/jr_path/depth/`，登记见 `wiki/PS/板端我方代码与产物台账.md` §卅二。
