@@ -20,7 +20,8 @@
 所以单独 checkout 这条分支也能跑。
 
 分支基点＝`master` 的 `a9098b1`（早先起在 `9ce054d` 上、那一版分支尖 `8cf5b99` 已作废 ⇒ rebase 过）。
-本分支**未推远端**，所以分支尖以现读为准：`git rev-parse --short short-kv-window`。
+本分支已推远端（`origin/short-kv-window`，远端＝`takomitkm/ERNIE-4.5-0.3B-PT4icraft430tai`）；**已推到的那一号**以现读为准，别信本页写死的号：
+`git rev-parse --short origin/short-kv-window`。
 
 ```sh
 cd <本库>          # repos/ERNIE-4.5-0.3B-PT4icraft430tai
