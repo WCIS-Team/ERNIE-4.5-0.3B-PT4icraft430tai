@@ -16,7 +16,7 @@
 
 窄读那一版的探针（`board/e41_narrow.py`／`e41_kvres.py`／`ab_chatd.sh`／`narrow_run.sh`）和它们的读数
 `board/narrow/` 已在 `master` 入库（`a9098b1`），本分支直接从它们上面长出来，所以不重复列进上面那张表。
-本分支的 `board/e41_chatd.py` ＝ `master` 现役那颗窄读 daemon 只加四处槽数改动（`git diff master..short-kv-window -- board/e41_chatd.py` 只吐出这四处），
+本分支的 `board/e41_chatd.py` ＝ `master` 现役那颗窄读 daemon 之上**只加槽数从图推导这一组**（`git diff master..short-kv-window -- board/e41_chatd.py` 只吐出 5 处：删 `MAX_SLOTS = 511` 常数、加 `self.max_slots`、`max_new` 上界、`past_len` 门禁、`ready` 回吐），
 所以单独 checkout 这条分支也能跑。
 
 分支基点＝`master` 的 `a9098b1`（早先起在 `9ce054d` 上、那一版分支尖 `8cf5b99` 已作废 ⇒ rebase 过）。
@@ -76,11 +76,11 @@ connect rc=0 wall=122s      # json+raw 54.4 s ＋ apply 45.5 s ＋ 16 步
 ```
 
 `max_slots`／`kv_depth` 由图推出＝255／256，不是写死的 511／512；16 步、每步 ≈0.29 s（与窗口对照那一轮的 N256 读数 295.38 ms 同量级）。
-`E41_IDLE=20` 到点自退，收尾 `pgrep` 零颗。脚本＝`workenv/ernie/board/short_smoke.sh`，读数落点＝板上 `/tmp/short_smoke.txt`。
+`E41_IDLE=20` 到点自退，收尾 `pgrep` 零颗。脚本＝`workenv/ernie/board/short_smoke.sh`，读数落点＝板上 `/tmp/short_smoke.txt`（**该文件没取回**：11-03 收尾时板在 TCP 22 上失联，本表就是它唯一的摘录；登记＝台账 §卅三 #263）。
 
 ## 六、这条分支没做的事
 
-- 没换产品件，`master` 一行没动，现役板上跑的仍是 E41／NS=512＋窄读。
+- 没换产品件，**短窗口这件事在 `master` 上一行没动**（`master` 这轮唯一变化＝窄读线入库 `a9098b1`，与窗口无关），现役板上跑的仍是 E41／NS=512＋窄读。
 - `board/e41_infer_board.py`（10-31 那条单发推理路，`MAX_SLOTS = 512`）与 `eval/` 下几处的 512 常数**未改**：它们不在运行时路径上，改了要重跑那批已归档的读数。
 - **多轮真实对话跑穿 256 窗口未测**：上面只冒烟单轮 6 token。回合级要判的是"历史涨到 228 槽以后客户端怎么裁"，那是第五节预算的实测版，本轮未跑。
 - 件本体未入库（>100 MiB 拒推），板上 E42／E43 的 md5 与路径在文档库台账 §卅二。
