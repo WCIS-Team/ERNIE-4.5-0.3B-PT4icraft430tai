@@ -1,0 +1,8 @@
+PRE CmaFree=97744 kB Avail=623764 kB
+START OLD 22:18:36 script=/mnt/data/ernie/e41_chatd.py
+END OLD rc=0 22:20:50
+POST OLD CmaFree=79040 kB
+START NEW 22:20:56 script=/mnt/data/ernie/e41_chatd_narrow.py
+END NEW rc=0 22:23:12
+POST NEW CmaFree=67444 kB
+ALLDONE 22:23:12

@@ -1,0 +1,29 @@
+[21:54:12] === e41_narrow CFG=W pid=17848 read=whole steps=12 audit=False padfix=True ocm=1
+[21:54:12] icraft='?' numpy='1.23.0' python='3.8.10'
+[21:54:12] MEM start VmRSS=47248 kB VmHWM=47248 kB | CmaFree=3968 kB MemAvailable=593200 kB
+[21:55:05] json+raw 53.4 s
+[21:55:05] pair=36 n_past=36 dead=[38, 39, 40, 41]
+[21:56:02] apply 43.6 s
+[21:56:02] CAP ocmopt=<OcmOpt.OPTION1: 1> is_etmOptimize=True is_mergeHardop=True is_applied=True
+[21:56:02] MEM after apply VmRSS=600644 kB VmHWM=620880 kB | CmaFree=8156 kB MemAvailable=330376 kB
+[21:56:03] step 00 past_len=1 tok=4 top1=20.0938 gap=5.9297 fwd=606.680 kv=72.782 all=735.579 (ms)
+[21:56:04] step 01 past_len=2 tok=23 top1=13.8203 gap=1.0000 fwd=391.520 kv=37.793 all=464.802 (ms)
+[21:56:04] step 02 past_len=3 tok=23 top1=15.6641 gap=2.6016 fwd=391.721 kv=37.503 all=462.553 (ms)
+[21:56:05] step 03 past_len=4 tok=23 top1=14.2344 gap=0.8984 fwd=392.132 kv=37.633 all=461.515 (ms)
+[21:56:08] step 11 past_len=12 tok=177 top1=21.4062 gap=0.0156 fwd=391.615 kv=37.661 all=463.096 (ms)
+[21:56:08] READ calls_per_step=0 bytes_per_step=37748736
+[21:56:08] SEG forward          n=12 min=391.52 med=392.27 p95=422.94 max=606.68 ms
+[21:56:08] SEG waitForReady     n=12 min=23.70 med=25.25 p95=25.28 max=25.28 ms
+[21:56:08] SEG reset            n=12 min=0.02 med=0.02 p95=0.02 max=0.07 ms
+[21:56:08] SEG read_logits      n=12 min=0.31 med=0.32 p95=0.35 max=0.45 ms
+[21:56:08] SEG read_kv(whole)   n=12 min=37.50 med=37.65 p95=41.69 max=72.78 ms
+[21:56:08] SEG argmax           n=12 min=6.23 med=8.13 p95=9.91 max=31.89 ms
+[21:56:08] SEG step_total       n=12 min=461.51 med=463.10 p95=499.49 max=735.58 ms
+[21:56:08] PRODUCTION_DT_EQUIV med=417.518 ms (forward+wait+reset)
+[21:56:08] POST_DT_TAIL med=46.107 ms (read_logits+kv+argmax)
+[21:56:08] RESULT cfg=W read=whole med_forward=392.27 med_kv=37.65 med_step=463.10 tokens_per_s=2.159
+[21:56:08] CHAIN cfg=W [4, 23, 23, 23, 2969, 93919, 4, 93963, 93919, 253, 172, 177]
+[21:56:08] GAPS  cfg=W [5.9297, 1.0, 2.6016, 0.8984, 0.3359, 6.7578, 0.0938, 5.7188, 0.5703, 1.5312, 7.625, 0.0156]
+[21:56:08] JSON  /mnt/data/ernie/narrow/W.json (12 steps)
+[21:56:08] MEM end VmRSS=569544 kB VmHWM=620880 kB | CmaFree=35188 kB MemAvailable=219984 kB
+[21:56:08] === done cfg=W out=/mnt/data/ernie/narrow/W.txt

@@ -120,6 +120,19 @@ class E41:
             self.feed.append(np.zeros(list(t.shape), dtype=dt))
         self.logits = np.zeros(list(self.net.ops[-1].inputs[0].tensorType().shape),
                                dtype=np.float16)
+        # Narrow readback wants each KV feed seen as [head, slot, fragment bytes].
+        g = list(self.specs[2].tensorType().shape)
+        self.kv_heads, self.kv_depth, frag = int(g[1]), int(g[2]), int(g[3])
+        self.kv_slot_b = frag * self.feed[2].itemsize
+        self.kv_view = {}
+        for pvid in set(self.gmap["pair"].values()):
+            if list(self.specs[pvid].tensorType().shape)[1:] != g[1:] \
+                    or self.feed[pvid].itemsize != self.feed[2].itemsize:
+                raise SystemExit("KV v%d shape %s/%d B != %s"
+                                 % (pvid, list(self.specs[pvid].tensorType().shape),
+                                    self.feed[pvid].itemsize, g))
+            self.kv_view[pvid] = self.feed[pvid].view(np.uint8).reshape(
+                self.kv_heads, self.kv_depth, self.kv_slot_b)
         self.dev = openDevice("zg330", "192.168.125.143", True, False)
         self.sess = initSession("zg330", self.net, self.dev, 1)
         t0 = time.time()
@@ -146,15 +159,17 @@ class E41:
         if ch.byte_size != self.logits.nbytes:
             raise SystemExit("logits %d B != %d B" % (ch.byte_size, self.logits.nbytes))
         outs[0].read(self.logits, outs[0].offset(), ch.byte_size)
+        if past_len >= self.kv_depth:
+            raise SystemExit("past_len %d >= cache depth %d" % (past_len, self.kv_depth))
         for oidx, pvid in self.gmap["pair"].items():
-            buf = f[pvid]
             t = outs[oidx]
-            ch = t.chunk()
-            if ch.byte_size != buf.nbytes:
-                raise SystemExit("out[%d] %d B != past v%d %d B"
-                                 % (oidx, ch.byte_size, pvid, buf.nbytes))
-            t.read(buf, t.offset(), ch.byte_size)
+            base = t.offset()
+            dst = self.kv_view[pvid]
+            for h in range(self.kv_heads):
+                t.read(dst[h, past_len], base + (h * self.kv_depth + past_len) * self.kv_slot_b,
+                       self.kv_slot_b)
             if PADFIX:
+                buf = f[pvid]
                 buf[:, :, 0, :] = buf[:, :, 1, :]
         self.n_steps += 1
         return int(np.argmax(self.logits.reshape(-1))), dt

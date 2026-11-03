@@ -1,0 +1,47 @@
+[21:58:53] === e41_kvres CFG=PJ pid=18139 kv=bindonly pad=host dead=host reset=True steps=8 reg=default align=4096
+[21:58:53] icraft='?' numpy='1.23.0' python='3.8.10'
+[21:58:53] MEM start VmRSS=47576kB VmHWM=47576kB | MemAvailable=601036 kB CmaFree=78740 kB
+[21:59:49] json+raw 56.1 s
+[21:59:49] pair=36 dead=[38, 39, 40, 41] out_vids=37
+[22:00:02] mid 12.8 s (graph map+openDevice+initSession)
+[22:00:02] SEGMAP logic(before connect) SegmentType.FTMP=101408768 SegmentType.OUTPUT=38113280 SegmentType.INPUT=18890752 SegmentType.INSTR=45383680 SegmentType.WEIGHT=778268672 TOTAL=982065152 B (936.6 MiB)
+[22:00:02] region=default default same_as plddr=True udma=False ocm=False
+[22:00:02] CONNECT 36 chunks / 36 output binds in 0.00 s | MemAvailable=333452 kB CmaFree=128892 kB
+[22:00:02] PRIMED 36 chunks with zeros
+[22:00:02] enableTimeProfile(True) ok time_profile='?'
+[22:00:55] apply 52.8 s
+[22:00:55] CAP ocmopt=<OcmOpt.OPTION1: 1> is_mergeHardop=True is_applied=True | MemAvailable=333456 kB CmaFree=71312 kB
+[22:00:55] SEGMAP phy(after apply) SegmentType.WEIGHT=778268672 SegmentType.INSTR=45383680 SegmentType.INPUT=18890752 SegmentType.OUTPUT=38113280 SegmentType.FTMP=40960 TOTAL=880697344 B (839.9 MiB)
+[22:00:55] OUT tensors built n=37 (36 on bound KV chunks, 1 own chunks align=4096)
+[22:00:55] ALIGN asked=4096; outputs not phy-aligned=0/37
+[22:00:55] ALIGN sample v6087 phy=880361472(m0) beg=880705536(m0) | v130 phy=4096(m0) beg=4096(m0) | v287 phy=1052672(m0) beg=1052672(m0) | v2572 phy=35655680(m0) beg=35655680(m0) | v2724 phy=36704256(m0) beg=36704256(m0)
+[22:00:55] value_info len=1409; bindable? token=True logits=True present0=True past_kv2=False
+[22:00:55] OUT chunk == bound chunk for 36/36 KV tensors (in-place with the past input)
+[22:00:56] step 00 past_len=1 fed=4 tok=4 top1=20.0938 gap=5.9297 fwd=558.980 wait=34.643 kv=69.764 all=942.183 (ms)
+[22:00:56]   tick 0 CmaFree=62124 kB VmRSS=569068kB
+[22:00:57] step 01 past_len=2 fed=4 tok=23 top1=13.8203 gap=1.0000 fwd=387.359 wait=0.448 kv=36.684 all=435.746 (ms)
+[22:00:57] PROFILE early entries=62 total_time=386.450908
+[22:00:57] PROFILE early SUM total=384.1 memcpy=113.0 hard=114.1 other=157.1 ms => memcpy 29.4 % hard 29.7 % other 40.9 %
+[22:00:57] PROFILE early CSV /mnt/data/ernie/narrow/PJ_ops_early.csv rows=62
+[22:00:57] PROFILE early TOP memcpy (op_id, memcpy_ms) [(9930, 56.161), (9918, 3.409), (9927, 3.374), (9929, 3.358), (9928, 3.34), (9915, 3.339), (9926, 3.33), (9916, 3.329), (9923, 3.326), (9921, 3.325)]
+[22:00:57] step 02 past_len=3 fed=23 tok=23 top1=15.6641 gap=2.6016 fwd=395.665 wait=0.458 kv=39.858 all=446.162 (ms)
+[22:00:58] step 03 past_len=4 fed=23 tok=23 top1=14.2344 gap=0.8984 fwd=414.282 wait=0.442 kv=39.143 all=462.150 (ms)
+[22:00:59]   tick 5 CmaFree=62124 kB VmRSS=550720kB
+[22:01:00] step 07 past_len=8 fed=4 tok=93963 top1=18.6562 gap=5.7188 fwd=392.771 wait=0.435 kv=36.558 all=438.757 (ms)
+[22:01:00] PROFILE late entries=62 total_time=390.696371
+[22:01:00] PROFILE late SUM total=388.3 memcpy=115.0 hard=114.1 other=159.2 ms => memcpy 29.6 % hard 29.4 % other 41.0 %
+[22:01:00] PROFILE late CSV /mnt/data/ernie/narrow/PJ_ops_late.csv rows=62
+[22:01:00] PROFILE late TOP memcpy (op_id, memcpy_ms) [(9930, 57.534), (9921, 3.459), (9922, 3.431), (9929, 3.423), (9915, 3.403), (9926, 3.399), (9925, 3.39), (9928, 3.387), (9916, 3.381), (9920, 3.38)]
+[22:01:00] SEG forward          n=8 min=387.36 med=395.66 p95=558.98 max=558.98 ms
+[22:01:00] SEG waitForReady     n=8 min=0.43 med=0.46 p95=34.64 max=34.64 ms
+[22:01:00] SEG reset            n=8 min=0.02 med=0.02 p95=0.02 max=0.02 ms
+[22:01:00] SEG read_logits      n=8 min=0.70 med=1.37 p95=57.17 max=57.17 ms
+[22:01:00] SEG read_kv(host)    n=8 min=36.49 med=36.68 p95=69.76 max=69.76 ms
+[22:01:00] SEG argmax           n=8 min=6.52 med=8.20 p95=221.60 max=221.60 ms
+[22:01:00] SEG step_total       n=8 min=433.22 med=444.62 p95=942.18 max=942.18 ms
+[22:01:00] RESULT cfg=PJ kv=bindonly pad=host dead=host reset=True med_forward=395.66 med_step=444.62
+[22:01:00] CHAIN cfg=PJ [4, 23, 23, 23, 2969, 93919, 4, 93963]
+[22:01:00] JSON  /mnt/data/ernie/narrow/PJ.json (8 steps)
+[22:01:00] CMA low during run = 62124 kB
+[22:01:00] MEM end VmRSS=550720kB VmHWM=609548kB | MemAvailable=221552 kB CmaFree=62124 kB
+[22:01:00] === done cfg=PJ out=/mnt/data/ernie/narrow/PJ.txt
