@@ -18,7 +18,6 @@ REMOTE = "/mnt/data/ernie/e41_chatd.py"
 TOK_JSON = r"S:\work\WCIS\repos\ERNIE-4.5-0.3B-PT4icraft430tai\export\ernie_fp16_cuda\tokenizer.json"
 BOS = "<|begin_of_sentence|>"
 EOS = "<|end_of_sentence|>"
-MAX_SLOTS = 500
 DEFAULT_MAX_NEW = 96
 
 try:
@@ -159,7 +158,9 @@ def main():
     board = Board()
     try:
         ev = board.read_until_ready()
-        say("已连上板端服务（apply %s s，padfix=%s）" % (ev.get("apply_s"), ev.get("padfix")))
+        MAX_SLOTS = ev["max_slots"] - 11          # NS=512 -> 500，与旧常数一致
+        say("已连上板端服务（apply %s s，padfix=%s，窗口 %s 槽）"
+            % (ev.get("apply_s"), ev.get("padfix"), ev.get("max_slots")))
         say("")
         history = []
         max_new = DEFAULT_MAX_NEW

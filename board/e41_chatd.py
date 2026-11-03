@@ -58,7 +58,6 @@ LOG = os.environ.get("E41_LOG", "/tmp/e41_chatd.log")
 PADFIX = os.environ.get("E41_PADFIX", "1") == "1"
 STOP = {int(t) for t in os.environ.get("E41_STOP", "2,100272").split(",") if t.strip()}
 POS_OFFSET = int(os.environ.get("E41_POS_OFFSET", "1"))
-MAX_SLOTS = 511
 IDLE = int(os.environ.get("E41_IDLE", "300"))
 MAX_NEW_CAP = int(os.environ.get("E41_MAX_NEW_CAP", "192"))
 
@@ -123,6 +122,7 @@ class E41:
         # Narrow readback wants each KV feed seen as [head, slot, fragment bytes].
         g = list(self.specs[2].tensorType().shape)
         self.kv_heads, self.kv_depth, frag = int(g[1]), int(g[2]), int(g[3])
+        self.max_slots = self.kv_depth - 1
         self.kv_slot_b = frag * self.feed[2].itemsize
         self.kv_view = {}
         for pvid in set(self.gmap["pair"].values()):
@@ -183,7 +183,7 @@ class E41:
         walk = ([ids[0]] + list(ids)) if PADFIX else list(ids)
         seq = list(ids)
         feedt = list(walk)
-        max_new = max(1, min(max_new, MAX_NEW_CAP, MAX_SLOTS - len(walk) - 1))
+        max_new = max(1, min(max_new, MAX_NEW_CAP, self.max_slots - len(walk) - 1))
         t0 = time.time()
         reason = "limit"
         gen = []
@@ -191,7 +191,7 @@ class E41:
         last_pre = 0
         for i in range(total):
             past_len = i + POS_OFFSET - (1 if (PADFIX and i >= 1) else 0)
-            if past_len >= MAX_SLOTS:
+            if past_len >= self.max_slots:
                 reason = "full"
                 break
             tok = feedt[i]
@@ -246,7 +246,8 @@ def serve():
             buf = b""
             try:
                 send(conn, {"ready": True, "apply_s": round(m.apply_s, 1),
-                            "padfix": PADFIX})
+                            "padfix": PADFIX, "max_slots": m.max_slots,
+                            "kv_depth": m.kv_depth})
                 while True:
                     chunk = conn.recv(65536)
                     if not chunk:

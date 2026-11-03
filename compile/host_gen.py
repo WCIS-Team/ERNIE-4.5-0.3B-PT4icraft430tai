@@ -130,6 +130,7 @@ def load_net(jsonpath):
     return {'name': d['name'], 'ctrl': ctrl, 'past': past, 'dead': dead, 'pair': pair,
             'nbytes': {o['v_id']: nbytes(o) for o in ins + outs},
             'dt': {o['v_id']: DT[o['dtype']['element_dtype']] for o in ins + outs},
+            'depth': int(past[0]['dtype']['shape'][2]),
             'logits': logits[0], 'shape': logits[0]['dtype']['shape']}
 
 
@@ -286,7 +287,7 @@ def main():
         os.makedirs(feed_dir, exist_ok=True)
         token = feed[i]
         past_len = args.past_base + i + args.pos_offset - (1 if (args.padfix and i >= 1) else 0)
-        if past_len >= 512:
+        if past_len >= net['depth']:
             print('cache full at step %d' % i)
             break
         dyn = ([float(x) for x in args.tdf.split(',')] if args.tdf

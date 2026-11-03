@@ -1,0 +1,36 @@
+[parse]
+net_name = 'E42'
+framework = 'onnx'
+network = './fmodel/e_v41/model.onnx'
+network_exdata = './fmodel/e_v41/model.onnx.data'
+jr_path = './jr_path/E42/'
+max_prompt_length = 32
+max_tokens_length = 256
+target = 'zhuge'
+llm_mode = true
+quantized = true
+
+[optimize]
+target = 'zhuge'
+json = './jr_path/E42/E42-decoder_parsed.json'
+raw = './jr_path/E42/E42-decoder_parsed.raw'
+jr_path = './jr_path/E42/'
+
+[quantize]
+json = './jr_path/E42/E42-decoder_optimized.json'
+raw = './jr_path/E42/E42-decoder_optimized.raw'
+jr_path = './jr_path/E42/'
+qdtype = "fp16"
+target = "zhuge"
+
+[adapt]
+target = 'zhuge'
+json = './jr_path/E42/E42-decoder_quantized.json'
+raw = './jr_path/E42/E42-decoder_quantized.raw'
+jr_path = './jr_path/E42/'
+pass_off = "icraft.MergeTransDataOpSeqPass"
+
+[generate]
+json = './jr_path/E42/E42-decoder_adapted.json'
+raw = './jr_path/E42/E42-decoder_adapted.raw'
+jr_path = './jr_path/E42/'
