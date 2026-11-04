@@ -5,6 +5,25 @@
 > 全部读数与流程＝本目录 [`pipeline.md`](pipeline.md)（正本，含 §10 四条公开更正）；介绍页＝`wiki/PL/MOD/llm/ERNIE-4.5-0.3B-PT.md`；四道门判据正本＝`wiki/PL/MOD/llm/LLM上板要求与候选模型对照.md`；配方来源＝[[Qwen3-Instruct按Qwen3配方迁移]] 与 `repos/Qwen3-0.6B-Instruct/pipeline.md`。**本页只做索引与状态，不复制读数表。**
 > 与 vpu-live／Qwen3 同模式：小件与证据进 git、体积件挡在库外（`.gitignore` 的 `*.onnx`、`*.onnx.data`、`*.raw`、`*.safetensors`、压缩包等）。
 
+## ⚠️ 板侧分词：纯标准库 `e41_tok`（**不需要装 tokenizers**）
+
+> **ERNIE 的板侧分词不走 `tokenizers`，也不走 `sentencepiece`**——用的是仓库自带的纯标准库实现 `board/e41_tok.py`
+> ＋预打数据包 `board/e41_tok.pack`（3,302,740 B，`scripts/mk_e41_tok.py` 打、`scripts/tok_parity.py` 对照）。
+> 数据是 PC 侧预打好的，板上运行时不解析 11 MB 的 tokenizer.json，只读这个 pack。
+>
+> 为什么不用 tokenizers：板上 `tokenizers 0.13.3` 的 `from_file` 读不了这颗 tokenizer.json（台账 #220），
+> 而重写纯 Python 版比升级更稳（板子可达性当时受限、且 Qwen3 那条线已验证过"升级到 0.20.3 能读"，
+> 见 [[Qwen3-0.6B-Instruct]] README 的板侧分词依赖节——ERNIE 不跟着升，因为这条线已经用 pack 闭环）。
+>
+> 板侧调用：
+> ```python
+> import e41_tok
+> tk = e41_tok.load()               # 或 load("/mnt/data/ernie/e41_tok.pack")
+> ids = tk.encode(prompt_text)
+> text = tk.decode(gen_ids)
+> ```
+> 校验：`scripts/tok_parity.py` 拿本机 tokenizers 当参照物逐条比 ids 与解码串，实测 0 mismatches（计数在该文件末尾）。
+
 ## 布局
 
 | 子目录／件 | 内容 | 入库 |
