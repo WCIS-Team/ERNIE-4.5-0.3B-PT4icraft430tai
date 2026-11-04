@@ -15,7 +15,9 @@ import time
 
 BOARD = "root@192.168.1.113"
 REMOTE = "/mnt/data/ernie/e41_chatd.py"
-TOK_JSON = r"S:\work\WCIS\repos\ERNIE-4.5-0.3B-PT4icraft430tai\export\ernie_fp16_cuda\tokenizer.json"
+# 仓库搬到 lang/llm/ 之后这条绝对路径就死了（2026-11-04 实测该路径不存在），改成跟着本文件走。
+TOK_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "..", "export", "ernie_fp16_cuda", "tokenizer.json")
 BOS = "<|begin_of_sentence|>"
 EOS = "<|end_of_sentence|>"
 MAX_SLOTS = 500

@@ -11,15 +11,16 @@ Verification status (2026-11-04): the e41_chatd engine is A (ran on the board, m
 turns).  This wrapper has NOT been run on the board -- the board is not back.  Nothing in
 this file changes what gets fed to the NPU.
 
-Board layout: push this file next to e41_chatd.py, same directory, so `import e41_chatd`
-resolves; the registry path is relative to lang/llm and the server runs from a directory
-that mirrors lang/llm (see npuserv/README.md).
+Board-side tokenization (text_in / text_out) lives in `e41_tok.py`: pure stdlib, no
+tokenizers, verified id-for-id and string-for-string equal to tokenizers 0.23.3 over
+219k comparisons (scripts/tok_parity.py).  The pack `e41_tok.pack` sits next to this file.
+On the board, pass `text` and the adapter encodes it; the response carries the generated
+ids (as before) plus `text` decoded from them.  No chat template is applied here -- the
+orchestration layer owns the prompt shape, so text_in encodes raw text.
 
 Request (POST /generate): {"ids":[...], "max_new":96}
-                          {"ids":[...], "max_new":96, "max_slots":512}   # see below
-Text is refused: this 件 takes ids in / ids out, encode+decode stay with the caller
-(why: 台账 #220 -- board tokenizers 0.13.3 fails to load its tokenizer.json; the cause is
-unattributed, board-side tokenization is not ruled out, it just has not been built).
+                          {"text":"...", "max_new":96}                  # board-side tokenize
+                          {"ids":[...], "max_new":96, "max_slots":512}  # see below
 """
 import os
 import sys
@@ -30,6 +31,7 @@ for path in (HERE, os.environ.get("NPUSERV_HOME", "")):
         sys.path.insert(0, path)
 
 import adapter_lib                                             # noqa: E402
+import e41_tok                                                 # noqa: E402
 
 
 def _apply_env(params):
@@ -62,6 +64,7 @@ class ErnieEngine(object):
         self.M = M
         self.m = m
         self.params = params
+        self.tok = None
         self.apply_s = m.apply_s
         self.info = {
             "max_slots_policy": M.MAX_SLOTS,
@@ -71,6 +74,8 @@ class ErnieEngine(object):
             "padfix": M.PADFIX, "pos_offset": M.POS_OFFSET,
             "stop_ids": sorted(M.STOP), "max_new_cap": M.MAX_NEW_CAP,
             "read": "narrow", "json": M.JSON_, "raw": M.RAW_,
+            "text_in": True, "text_out": True,
+            "tokenization": "board-side e41_tok.py (PC-parity-verified, board 未执行)",
         }
 
     @property
@@ -78,25 +83,34 @@ class ErnieEngine(object):
         return self.m.n_steps
 
     def generate(self, req, emit):
-        if req.get("text") and not req.get("ids"):
-            raise ValueError("this model takes ids; encode stays with the caller "
-                             "(capabilities.text_in=false, see GET /models)")
-        ids = [int(t) for t in req.get("ids") or []]
+        text = req.get("text")
+        if text and req.get("ids"):
+            raise ValueError("send either ids or text, not both")
+        if text is not None:
+            if self.tok is None:
+                self.tok = e41_tok.load()
+            ids = self.tok.encode(text)
+        else:
+            ids = [int(t) for t in req.get("ids") or []]
         if not ids:
-            raise ValueError("ids required")
+            raise ValueError("ids required (or text to tokenize)")
         max_new = int(req.get("max_new", self.params.get("max_new", 96)))
+        gen_ids = []
         box = {}
 
         def capture(ev):
             if ev.get("end"):
                 box.update(ev)
             else:
+                if ev.get("tok") is not None:
+                    gen_ids.append(int(ev["tok"]))
                 emit(ev)
 
         self.m.generate(ids, max_new, capture)
         out = dict(box)
-        out.setdefault("ids", [])
+        out["ids"] = gen_ids
         out["model"] = self.name
+        out["text"] = self.tok.decode(gen_ids) if self.tok else ""
         return out
 
     def close(self):
