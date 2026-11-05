@@ -1,0 +1,11 @@
+ERNIE-4.5-0.3B-PT port (iCraft 30TAI / ZG330 / FMQL30TAI)
+
+This repository is a cross-platform port/deployment of ERNIE-4.5-0.3B-PT onto the
+iCraft 30TAI (ZG330) NPU. Original model:
+
+  ERNIE-4.5-0.3B-PT  (Copyright (c) 2025 Baidu, Inc. All Rights Reserved.)
+  Licensed under the Apache License, Version 2.0.
+  https://huggingface.co/baidu/ERNIE-4.5-0.3B-PT
+
+Modifications for the iCraft ZG330 cross-platform port are made by the WCIS project.
+The full Apache-2.0 license text is in ./LICENSE.
