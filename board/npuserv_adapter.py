@@ -119,7 +119,7 @@ class ErnieEngine(object):
         pass
 
 
-def load(params):
+def load(params, device=None):
     _apply_env(params)
     alt = params.get("e41_dir")
     if alt:
@@ -136,7 +136,7 @@ def load(params):
         # the hard guard in E41.step (past_len >= kv_depth) still stops at 511.
         M.MAX_SLOTS = int(override)
     adapter_lib.log("importing e41_chatd and applying the net")
-    m = M.E41()
+    m = M.E41(device=device)
     return ErnieEngine(M, m, params)
 
 

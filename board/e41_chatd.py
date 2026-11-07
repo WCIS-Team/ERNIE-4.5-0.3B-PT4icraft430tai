@@ -50,8 +50,10 @@ def load_runtime():
     return _ic
 
 
-JSON_ = os.environ.get("E41_JSON", "/mnt/data/ernie/jr_path/decode/E41-decoder_ZG.json")
-RAW_ = os.environ.get("E41_RAW", "/mnt/data/ernie/jr_path/decode/E41-decoder_ZG.raw")
+JSON_ = os.environ.get("E41_JSON",
+                     "/root/llm/models/ERNIE-4.5-0.3B-PT4icraft430tai/jr_path/decode/E41-decoder_ZG.json")
+RAW_ = os.environ.get("E41_RAW",
+                     "/root/llm/models/ERNIE-4.5-0.3B-PT4icraft430tai/jr_path/decode/E41-decoder_ZG.raw")
 SOCK = os.environ.get("E41_SOCK", "/tmp/e41_chat.sock")
 LOCK = os.environ.get("E41_LOCK", "/tmp/e41_chat.lock")
 LOG = os.environ.get("E41_LOG", "/tmp/e41_chatd.log")
@@ -101,7 +103,7 @@ def load_graph_map(jsonpath):
 
 
 class E41:
-    def __init__(self):
+    def __init__(self, device=None):
         load_runtime()
         t0 = time.time()
         self.net = xir.Network.CreateFromJsonFile(JSON_)
@@ -133,7 +135,10 @@ class E41:
                                     self.feed[pvid].itemsize, g))
             self.kv_view[pvid] = self.feed[pvid].view(np.uint8).reshape(
                 self.kv_heads, self.kv_depth, self.kv_slot_b)
-        self.dev = openDevice("zg330", "192.168.125.143", True, False)
+        # multi-resident: device may be injected by npuserv (openDevice once per
+        # process; a second handle corrupts other sessions' DMA - 2026-11-08)
+        self.dev = device if device is not None else openDevice(
+            "zg330", "192.168.125.143", True, False)
         self.sess = initSession("zg330", self.net, self.dev, 1)
         t0 = time.time()
         self.sess.apply()
